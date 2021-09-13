@@ -1,0 +1,127 @@
+<div class="container-survey">
+    <div id="progress-bar-container-v1" style="display: none;">
+       <div class="progress-bar">
+          <div class="progress-bar__bar">
+             <i class="icon-circle progress-bar__step-filled"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step-end"></i>
+          </div>
+          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Your Pay</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Salary Report</span></div>
+       </div>
+    </div>
+    <div id="progress-bar-container-v2" style="display: none;">
+       <div class="progress-bar">
+          <div class="progress-bar__bar">
+             <i class="icon-circle progress-bar__step-filled"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 100%;"></div>
+             </div>
+             <i class="icon-circle progress-bar__step-filled"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 74%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step-end"></i>
+          </div>
+          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Education</span><span class="progress-bar__labels">Salary Report</span></div>
+       </div>
+    </div>
+    <div class="form-wrapper">
+       <form enctype="application/json" id="surveyForm" novalidate="">
+          <div class="survey__header">
+             <h1>你的福利</h1>
+             <p>除了薪酬之外，福利也是您获得报酬的重要组成部分。 请告诉我们您目前的福利和津贴！</p>
+          </div>
+          <div id="" class="pxl-form-group  ">
+             <label class="  pxl-control-label" for="VacationWeeks">带薪休假周数 (例如 0, 2)</label>
+             <div class="pxl-input-number">
+                <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="VacationWeeks" tabindex="0" value="">
+                <div class="pxl-input-number__format"></div>
+             </div>
+          </div>
+          <div id="" class="pxl-form-group   form-group--checkbox">
+             <label class="  pxl-control-label" for="HealthBenefits">您是否获得健康福利作为补偿的一部分？</label>
+             <div class="pxl-segmented pxl-segmented--justified control--sm pxl-segmented--primary" data-toggle="buttons"><button type="button" class="pxl-segmented__segment ">是</button><button type="button" class="pxl-segmented__segment ">否</button></div>
+             <div id="HealthBenefits" class="pxl-options toggle-checklist--hidden control--md">
+                <div class="">
+                   <label class="pxl-option pxl-option--checklist pxl-option--primary">
+                      <input id="Medical / Health" type="checkbox" tabindex="0" class="pxl-option__input" value="Medical / Health">
+                      <div class="pxl-option__text">Medical / Health</div>
+                   </label>
+                   <label class="pxl-option pxl-option--checklist pxl-option--primary">
+                      <input id="Dental" type="checkbox" tabindex="0" class="pxl-option__input" value="Dental">
+                      <div class="pxl-option__text">Dental</div>
+                   </label>
+                   <label class="pxl-option pxl-option--checklist pxl-option--primary">
+                      <input id="Vision" type="checkbox" tabindex="0" class="pxl-option__input" value="Vision">
+                      <div class="pxl-option__text">Vision</div>
+                   </label>
+                </div>
+             </div>
+          </div>
+          <div id="" class="pxl-form-group  ">
+             <label class="  pxl-control-label" for="Telecommute">你能在家远程办公/工作吗？</label>
+             <select id="Telecommute" class="control--md pxl-form-control" tabindex="0">
+                <option value="">- click to select -</option>
+                <option value="Yes, I telecommute 100% of the time">Yes, I telecommute 100% of the time</option>
+                <option value="Yes, I telecommute most of the time">Yes, I telecommute most of the time</option>
+                <option value="Yes, I telecommute some of the time">Yes, I telecommute some of the time</option>
+                <option value="Yes, I telecommute on an as-needed basis only (e.g., furniture delivery)">Yes, I telecommute on an as-needed basis only (e.g., furniture delivery)</option>
+                <option value="No, I can't telecommute">No, I can't telecommute</option>
+             </select>
+          </div>
+          <div id="" class="pxl-form-group  ">
+             <label class="  pxl-control-label" for="BenefitsPerks">您获得的所有其他福利和津贴</label>
+             <div class="pxl-tagsinput-autocomplete control--lg">
+                <div class="react-tagsinput">
+                   <div>
+                      <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-BenefitsPerks" aria-expanded="false" class="react-autosuggest__container">
+                         <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-BenefitsPerks" class="react-tagsinput-input" placeholder="Type your own answer" tabindex="0" id="BenefitsPerks" value="">
+                         <div id="react-autowhatever-BenefitsPerks" role="listbox" class="react-autosuggest__suggestions-container"></div>
+                      </div>
+                   </div>
+                </div>
+                <div id="BenefitsPerksoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
+                   <div class="pxl-options--horizontal">
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
+                         <input id="Casual Dress/Atmosphere" type="checkbox" tabindex="0" class="pxl-option__input" value="Casual Dress/Atmosphere">
+                         <div class="pxl-option__text">Casual Dress/Atmosphere</div>
+                      </label>
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
+                         <input id="Paid Holidays / Vacation" type="checkbox" tabindex="0" class="pxl-option__input" value="Paid Holidays / Vacation">
+                         <div class="pxl-option__text">Paid Holidays / Vacation</div>
+                      </label>
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
+                         <input id="Paid Sick Leave" type="checkbox" tabindex="0" class="pxl-option__input" value="Paid Sick Leave">
+                         <div class="pxl-option__text">Paid Sick Leave</div>
+                      </label>
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
+                         <input id="Flex-Time / Flexible Schedule" type="checkbox" tabindex="0" class="pxl-option__input" value="Flex-Time / Flexible Schedule">
+                         <div class="pxl-option__text">Flex-Time / Flexible Schedule</div>
+                      </label>
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
+                         <input id="401(k)" type="checkbox" tabindex="0" class="pxl-option__input" value="401(k)">
+                         <div class="pxl-option__text">401(k)</div>
+                      </label>
+                   </div>
+                   <div class="pxl-margin-top-md pxl-text-center"><a class="load-more">加载更多</a></div>
+                </div>
+             </div>
+          </div>
+          <button type="submit" class="survey-btn--block survey-btn--primary" (click)="next()">下一步</button>
+       </form>
+    </div>
+ </div>

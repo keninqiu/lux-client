@@ -1,0 +1,75 @@
+<div class="container-survey">
+    <div id="progress-bar-container-v1" style="display: none;">
+       <div class="progress-bar">
+          <div class="progress-bar__bar">
+             <i class="icon-circle progress-bar__step-filled"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step-end"></i>
+          </div>
+          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Your Pay</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Salary Report</span></div>
+       </div>
+    </div>
+    <div id="progress-bar-container-v2" style="display: none;">
+       <div class="progress-bar">
+          <div class="progress-bar__bar">
+             <i class="icon-circle progress-bar__step-filled"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 3%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step"></i>
+             <div class="progress-bar__range-unfilled">
+                <div class="progress-bar__range" style="width: 0%;"></div>
+             </div>
+             <i class="icon-circle-thin progress-bar__step-end"></i>
+          </div>
+          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Education</span><span class="progress-bar__labels">Salary Report</span></div>
+       </div>
+    </div>
+    <div class="form-wrapper">
+       <form enctype="application/json" id="surveyForm" novalidate="">
+          <div class="survey__header">
+             <h1>您的职位和位置</h1>
+             <p>让我们从基本信息开始构建您的报告，例如您的职位、位置和经验。 Lux 收集了超过 5400 万人的薪资和职业数据，涵盖 16,000 个独特的职位。</p>
+          </div>
+          <div id="" class="pxl-form-group  "><label class="  pxl-control-label" for="JobTitle">工作头衔</label><input class="control--md pxl-form-control" type="text" id="JobTitle" placeholder="" tabindex="0" value=""></div>
+          <div id="" class="pxl-form-group  ">
+             <label class="  pxl-control-label" for="YearsExperience">工作年限</label>
+             <div class="pxl-input-number">
+                <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="YearsExperience" tabindex="0" value="">
+                <div class="pxl-input-number__format"></div>
+             </div>
+          </div>
+          <div id="" class="pxl-form-group  ">
+             <label class="  pxl-control-label" for="Location">城市</label>
+             <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Location" aria-expanded="false" class="react-autosuggest__container">
+                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Location" class="pxl-form-control control--md" tabindex="0" id="Location" placeholder="" value="">
+                <div id="react-autowhatever-Location" role="listbox" class="react-autosuggest__suggestions-container"></div>
+             </div>
+          </div>
+          <div id="" class="pxl-form-group  ">
+             <div class="control--md">
+                <a class="">加拿大</a>
+                <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Country" aria-expanded="false" class="react-autosuggest__container">
+                   <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Country" class="pxl-form-control pxl-hidden" id="Country" placeholder="" value="Canada">
+                   <div id="react-autowhatever-Country" role="listbox" class="react-autosuggest__suggestions-container"></div>
+                </div>
+             </div>
+          </div>
+          <button type="button" class="survey-btn--block survey-btn--primary" (click)="next()">下一步</button>
+       </form>
+    </div>
+ </div>

@@ -1,0 +1,41 @@
+<div class="hero-wrapper">
+    <div id="rclandinghero" class="hero rclanding__hero" style="background:linear-gradient(rgba(45,103,185,.8),rgba(45,103,185,.8)), url(https://cdn-payscale.com/content/country-landing-hero.jpg)">
+       <div class="hero__content">
+          <div class="hero__content__center">
+             <h1 class="hero__header">{{title}}</h1>
+             <div class="hero__center">
+                <div class="search-bar ">
+                   <form class="search-bar__form" __bizdiag="0" __biza="W___">
+                      <div class="Dropdown-root search-bar__dropdown" (click)="toggle()" [ngClass]="isOpen ? 'is-open' : ''">
+                         <div class="Dropdown-control" aria-haspopup="listbox">
+                            <div class="Dropdown-placeholder is-selected">{{selectedCategory}}</div>
+                            <div class="Dropdown-arrow-wrapper"><span class="Dropdown-arrow"></span></div>
+                         </div>
+                         <div class="Dropdown-menu" aria-expanded="true" *ngIf="isOpen">
+                             <div class="Dropdown-option" role="option" aria-selected="false">所有</div>
+                             <div class="Dropdown-option" role="option" aria-selected="false">职位</div>
+                             <div class="Dropdown-option is-selected" role="option" aria-selected="true">公司</div>
+                             <div class="Dropdown-option" role="option" aria-selected="false">学校</div>
+                             <div class="Dropdown-option" role="option" aria-selected="false">学位</div>
+                             <div class="Dropdown-option" role="option" aria-selected="false">城市</div>
+                             <div class="Dropdown-option" role="option" aria-selected="false">州</div>
+                             <div class="Dropdown-option" role="option" aria-selected="false">国家</div>
+                          </div>
+                      </div>
+                      <div class="search-bar__input">
+                         <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-searchTxt" aria-expanded="false" class="react-autosuggest__container">
+                            <input type="text" value="" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-searchTxt" class="pxl-form-control " tabindex="0" id="searchTxt" placeholder="{{placeholder}}">
+                            <div id="react-autowhatever-searchTxt" role="listbox" class="react-autosuggest__suggestions-container"></div>
+                         </div>
+                      </div>
+                      <input class="search-bar__button" (click)="submit()" value="搜索薪酬">
+                   </form>
+                </div>
+             </div>
+             <!--
+             <div class="hero__lower hero--top-spaced"><a href="/research/Country">Looking for another country?</a></div>
+             -->
+          </div>
+       </div>
+    </div>
+ </div>

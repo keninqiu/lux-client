@@ -1,0 +1,20 @@
+<app-menu></app-menu>
+<app-search-salary 
+[title]="'按公司输入薪酬待遇'"
+[selectedCategory]="'公司'"
+[placeholder]="'例如Amazon, Inc.'"
+></app-search-salary>
+<div class="page  rc-directory">
+    <div class="content one-col">
+        <div class="maincontent">
+            <app-browse-companies-by-industry></app-browse-companies-by-industry>
+            <app-find-your-market-worth></app-find-your-market-worth>
+            <app-related-articles></app-related-articles>
+            <app-compensation-best-practices></app-compensation-best-practices>
+            <app-popular-searches></app-popular-searches>
+        </div>
+    </div>
+</div>
+
+<app-what-am-i-worth></app-what-am-i-worth>
+<app-footer></app-footer>

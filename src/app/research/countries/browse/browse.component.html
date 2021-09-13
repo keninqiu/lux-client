@@ -1,0 +1,8 @@
+<div class="page-section" id="browse-countries">
+    <h2 class="page-subtitle">Browse by Countries</h2>
+    <div class="location__row location--top-spaced" >
+        <div class="location__col location__col--full" *ngFor="let country of countries">
+            <a href="/research/Country/{{country.code}}/Salary">{{country.name}}</a>
+        </div>
+    </div>
+</div>

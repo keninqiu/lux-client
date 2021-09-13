@@ -1,0 +1,89 @@
+
+<section class="hero text-white overflow-hidden flex flex-col justify-center relative">
+    <video autoplay id="heroVid">
+        <source src="https://www.payscale.com/wp-content/themes/payscale-sage/resources/a6_inc/images/hero-bkg.mp4" type="video/mp4" id="vdo">
+    </video>
+
+    <div class="hero-grid">
+        <div class="col1 flex flex-col md:justify-center pl-4 md:pl-10 lg:pl-14 md:relative">
+            <div class="gsap slide active" id="slide1" [ngClass]="slideIndex == 0 ? 'show' : 'hide'">
+                <h1 class="heroHeadline mb-6 leading-tight">Pay is a<br> <span class="text-yellow">powerful</span> thing</h1>
+                <p class="lg:text-lg mb-12 font-light leading-normal content">Gain the insights and confidence to get pay right with relevant, validated salary data and industry-leading, AI-powered compensation software.</p>
+                <a href="https://www.payscale.com/price-a-job?tk=hp-hero-carousel" class="cta blue-cta" aria-label="Click here to access the Price a Job tool. This link opens another page in a new tab.">
+                    Price a job <div class="pl-2 md:pl-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+                            <g id="cta-circle-g" transform="translate(-242)">
+                                <path class="cta-circle" d="M22.5,0A22.5,22.5,0,1,1,0,22.5,22.5,22.5,0,0,1,22.5,0Z" transform="translate(242)"></path>
+                                <g class="cta-arrow" transform="translate(257.57 15.785)">
+                                    <path transform="translate(-7.5 -11.285)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    <path d="M18,7.5l6.715,6.715L18,20.93" transform="translate(-11.285 -7.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                </a>
+            </div>
+            <div class="invisible gsap a6_hide slide" id="slide2" [ngClass]="slideIndex == 1 ? 'show' : 'hide'">
+                <h1 class="heroHeadline mb-6  leading-tight">Follow the top compensation best practices for 2021</h1>
+                <p class="lg:text-lg mb-8 font-light leading-normal content">Take on 2021 with just-released insights on the best strategies and practices for pay increases, compensation management, communications, and transparency.</p>
+                <a href="https://www.payscale.com/cbpr" class="cta blue-cta" aria-label="Click here to read the Compensation Best Practices Report for 2021. This link opens another page in a new tab.">
+                    Read the report <div class="pl-2 md:pl-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+                            <g id="cta-circle-g" transform="translate(-242)">
+                                <path class="cta-circle" d="M22.5,0A22.5,22.5,0,1,1,0,22.5,22.5,22.5,0,0,1,22.5,0Z" transform="translate(242)"></path>
+                                <g class="cta-arrow" transform="translate(257.57 15.785)">
+                                    <path transform="translate(-7.5 -11.285)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    <path d="M18,7.5l6.715,6.715L18,20.93" transform="translate(-11.285 -7.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="nav absolute bottom-5 lg:bottom-16 xlg:bottom-20  flex">
+                <div class="slidenav mr-4" id="heroNav_1" (click)="changeSlideIndex(0)" [ngClass]="slideIndex == 0 ? 'active' : ''"></div>
+                <div class="slidenav mr-4" id="heroNav_2" (click)="changeSlideIndex(1)" [ngClass]="slideIndex == 1 ? 'active' : ''"></div>
+            </div>
+        </div>
+        <div class="col2">
+            <svg width="100%" id="vidMask" class="" aria-labelledby="videMaskTitle vidMaskDesc">
+                <title id="videMaskTitle">Hero  Image</title>
+                <desc id="vidMaskDesc">Monochromatic color overlays an ambient video of people walking across a busy city crosswalk at sunrise, a circle shape reveals the people walking in full color, a pie chart appears and fills the circle.</desc>&gt;
+                <g id="fullMask">
+                    <defs>
+                        <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="0.917" gradientUnits="objectBoundingBox">
+                            <stop offset="0" stop-color="#3880ee"></stop>
+                            <stop offset="1" stop-color="#2e0b96"></stop>
+                        </linearGradient>
+                    </defs>
+                    <mask id="maskLayer" class="gsaps">
+                        <rect width="100vw" class="gsaps" height="100vh" fill="rgb(255,255,255)"></rect>
+                        <circle cx="50%" cy="50%" class="gsap" id="circ" fill="rgb(0,0,0)" data-svg-origin="190 -25" style="transform-origin: 0px 0px; opacity: 1; visibility: inherit;"></circle>
+                    </mask>
+                    <rect id="masked" width="100%" fill="rgb(46,11,150,.6)" style="fill: rgba(46, 11, 150, 0.6);"></rect>
+                </g>
+                <circle cx="50%" cy="50%" id="pie" class="shape gsap slide2" fill="url(#linear-gradient)" data-svg-origin="230 30.6953125" style="transform-origin: 0px 0px; opacity: 1; visibility: inherit;"></circle>
+                <circle cx="50%" cy="50%" id="slice" class="shape gsap slide2" stroke="rgb(56,128,238,.75)" fill="rgb(255,255,255,0)" data-svg-origin="500 101.3906125" style="transform-origin: 0px 0px; opacity: 1; stroke-dashoffset: 181.316; stroke-dasharray: 503.655px, 513.655px; visibility: inherit;" transform=""></circle>
+                <g id="pNum" >
+                    <text id="pieNum" class="slide2 gsap" x="50%" y="47%" text-anchor="middle" fill="white" dy="0" data-svg-origin="260.6875 55.25" style="transform-origin: 0px 0px; opacity: 1; visibility: inherit;">64%</text>
+                </g>
+                <g class="pieDetails-iphone">
+                    <text class="wrap slide2 gsap" id="pieDesc" x="50%" y="51%" text-anchor="middle" fill="white" dy="0" data-svg-origin="252.609375 81.5" style="transform-origin: 0px 0px; opacity: 1; visibility: inherit;">
+                        <tspan id="tspan0" x="50%" text-anchor="middle" dy="4">of employers</tspan>
+                        <tspan id="tspan1" x="50%" text-anchor="middle" dy="18">gave raises</tspan>
+                        <tspan id="tspan2" x="50%" text-anchor="middle" dy="18">in 2020</tspan>
+                    </text>
+                </g>
+                <g class="pieDetails-desk">
+                    <text class="wrap slide2 gsap" id="pieDesc" x="50%" y="51%" text-anchor="middle" fill="white" dy="0" data-svg-origin="252.609375 84.5" style="transform-origin: 0px 0px; opacity: 1; visibility: inherit;">
+                        <tspan id="tspan0" x="50%" text-anchor="middle" dy="7">of employers</tspan>
+                        <tspan id="tspan1" x="50%" text-anchor="middle" dy="23">gave raises</tspan>
+                        <tspan id="tspan2" x="50%" text-anchor="middle" dy="24">in 2020</tspan>
+                    </text>
+                </g>
+
+            </svg>
+        </div>
+    </div>
+</section>

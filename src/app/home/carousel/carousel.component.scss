@@ -1,0 +1,6 @@
+.show {
+    display: block; transform: translate(0px, 0px); opacity: 1; visibility: inherit;
+}
+.hide {
+    opacity: 0; visibility: hidden; transform: translate(0px, 10px); display: none;
+}

@@ -1,0 +1,9 @@
+<h1 class="subcats__subtitle">Popular For Profit Schools</h1>
+
+<div class="rc-directory">
+    <div class="subcats__links">
+        <a class="subcats__links__item" *ngFor="let school of schools" href="/research/{{countryCode}}/School={{school.name}}/Salary">
+            {{school.name}}
+        </a>
+    </div>
+</div>

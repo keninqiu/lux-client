@@ -39,6 +39,9 @@ import { PopularJobsComponent } from './country/popular-jobs/popular-jobs.compon
 import { EmployersComponent } from './country/employers/employers.component';
 import { SchoolsDegreesComponent } from './country/schools-degrees/schools-degrees.component';
 import { StatesComponent } from './country/states/states.component';
+import { CategorySchoolsComponent } from './category-schools/category-schools.component';
+import { BreadcrumbComponent } from './category-schools/breadcrumb/breadcrumb.component';
+import { PopularSchoolsComponent } from './category-schools/popular-schools/popular-schools.component';
 
 
 @NgModule({
@@ -72,7 +75,7 @@ import { StatesComponent } from './country/states/states.component';
     BrowseIndustriesByCategoryComponent, 
     BrowseSchoolsByCategoryComponent, 
     CountriesComponent, 
-    CountryComponent, BreadcrumbsComponent, CategoriesComponent, PopularJobsComponent, EmployersComponent, SchoolsDegreesComponent, StatesComponent
+    CountryComponent, BreadcrumbsComponent, CategoriesComponent, PopularJobsComponent, EmployersComponent, SchoolsDegreesComponent, StatesComponent, CategorySchoolsComponent, BreadcrumbComponent, PopularSchoolsComponent
   ],
   imports: [
     ResearchRoutingModule,

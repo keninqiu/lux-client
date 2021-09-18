@@ -10,9 +10,14 @@ import { IndustryComponent } from './industry/industry.component';
 import { SchoolComponent } from './school/school.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryComponent } from './country/country.component';
+import { CategorySchoolsComponent } from './category-schools/category-schools.component';
+
 const routes: Routes = [
   { path: '', component: ResearchComponent },
   { path: 'Country', component: CountriesComponent },
+  {
+    path: ':countryCode/:type/:salaryType', loadChildren: () => import('./salary/salary.module').then(m => m.SalaryModule)
+  },
   { path: 'Country/:code/Salary', component: CountryComponent },
   { path: 'job', component: JobComponent },
   { path: 'employer', component: EmployerComponent },
@@ -20,7 +25,8 @@ const routes: Routes = [
   { path: 'certification', component: CertificationComponent },
   { path: 'skill', component: SkillComponent },
   { path: 'industry', component: IndustryComponent },
-  { path: ':countryCode/school', component: SchoolComponent }
+  { path: ':countryCode/school', component: SchoolComponent },
+  { path: ':countryCode/School/:categoryName', component: CategorySchoolsComponent }
 ];
 
 @NgModule({

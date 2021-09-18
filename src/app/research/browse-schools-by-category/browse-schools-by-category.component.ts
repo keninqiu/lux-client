@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Category } from 'src/app/interfaces/category.interface';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-browse-schools-by-category',
@@ -11,10 +14,24 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class BrowseSchoolsByCategoryComponent implements OnInit {
-
-  constructor() { }
+  countryCode: string;
+  categories: Category[];
+  constructor(private route: ActivatedRoute, private categoryServ: CategoryService) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( paramMap => {
+      this.countryCode = paramMap.get('countryCode');
+      this.categoryServ.getAllByCountryCodeAndType(this.countryCode, 'School').subscribe(
+        (categories: Category[]) => {
+          this.categories = categories;
+        }
+      );
+    });
   }
 
+  getCategoryUrl(category: Category) {
+    const categoryName = category.name.split(' ').join('-');
+    console.log('categoryName====', categoryName);
+    return '/research/' + this.countryCode + '/School/' + categoryName;
+  }
 }

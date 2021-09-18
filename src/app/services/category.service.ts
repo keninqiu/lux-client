@@ -23,6 +23,10 @@ export class CategoryService {
     return this.api.getPublic('category/type/' + type) as Observable<Category[]>;
   }
 
+  getAllByCountryCodeAndType(countryCode: string, type: string): Observable<Category[]> {
+    return this.api.getPublic('category/countryCode/' + countryCode +'/type/' + type) as Observable<Category[]>;
+  }
+
   get(id: string): Observable<Category> {
     return this.api.getPublic('category/' + id) as Observable<Category>;
   }

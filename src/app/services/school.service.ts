@@ -16,7 +16,11 @@ export class SchoolService {
   }
 
   getAll(): Observable<School[]> {
-    return this.api.getPrivate('school') as Observable<School[]>;
+    return this.api.getPublic('school') as Observable<School[]>;
+  }
+
+  getAllByCountryCodeAndCategoryName(countryCode: string, categoryName: string): Observable<School[]> {
+    return this.api.getPublic('school/countryCode/' + countryCode + '/categoryName/' + categoryName) as Observable<School[]>;
   }
 
   get(id: string): Observable<School> {

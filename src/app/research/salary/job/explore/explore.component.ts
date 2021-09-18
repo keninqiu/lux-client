@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-explore',
   templateUrl: './explore.component.html',
   styleUrls: [
-    '../../../../assets/css/salary/4866015dcfec8e17e4f5.css', 
+    '../../../../../assets/css/salary/4866015dcfec8e17e4f5.css', 
     './explore.component.scss'
   ]
 })

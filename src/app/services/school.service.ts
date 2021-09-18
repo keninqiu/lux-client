@@ -23,6 +23,10 @@ export class SchoolService {
     return this.api.getPublic('school/countryCode/' + countryCode + '/categoryName/' + categoryName) as Observable<School[]>;
   }
 
+  getByCountryCodeAndName(countryCode: string, name: string): Observable<School> {
+    return this.api.getPublic('school/countryCode/' + countryCode + '/name/' + name) as Observable<School>;
+  }
+
   get(id: string): Observable<School> {
     return this.api.getPublic('school/' + id) as Observable<School>;
   }

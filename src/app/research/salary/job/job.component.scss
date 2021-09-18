@@ -1,0 +1,24 @@
+.page .content {
+    padding-top: 10px;
+}
+
+@media (min-width: 576px) {
+    .page .container, .page .content {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .page .container, .page .content {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .page .container, .page .content {
+        max-width: 960px;
+    }
+}
+
+
+

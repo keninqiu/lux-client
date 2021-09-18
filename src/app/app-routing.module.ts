@@ -10,9 +10,6 @@ const routes: Routes = [
     path: 'research', loadChildren: () => import('./research/research.module').then(m => m.ResearchModule)
   },
   {
-    path: 'salary', loadChildren: () => import('./salary/salary.module').then(m => m.SalaryModule)
-  },
-  {
     path: 'price-job', loadChildren: () => import('./price-job/price-job.module').then(m => m.PriceJobModule)
   },
   {

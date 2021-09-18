@@ -1,1 +1,4 @@
-<app-school-sub-nav></app-school-sub-nav>
+<div *ngIf="school">
+    <app-school-sub-nav [school]="school"></app-school-sub-nav>
+    <app-school-overview [school]="school"></app-school-overview>
+</div>

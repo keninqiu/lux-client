@@ -17,6 +17,7 @@ import { SchoolComponent } from './school/school.component';
 import { JobComponent } from './job/job.component';
 
 import { SchoolSubNavComponent } from './school/sub-nav/sub-nav.component';
+import { SchoolOverviewComponent } from './school/overview/overview.component';
 @NgModule({
     declarations: [
       SalaryComponent, 
@@ -32,7 +33,8 @@ import { SchoolSubNavComponent } from './school/sub-nav/sub-nav.component';
       JobSatisfactionComponent, 
       SchoolComponent, 
       JobComponent,
-      SchoolSubNavComponent
+      SchoolSubNavComponent,
+      SchoolOverviewComponent
     ],
     imports: [
         SalaryRoutingModule,

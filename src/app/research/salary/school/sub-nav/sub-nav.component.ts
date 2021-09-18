@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { School } from 'src/app/interfaces/school.interface';
 
 @Component({
   selector: 'app-school-sub-nav',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class SchoolSubNavComponent implements OnInit {
-
+  @Input() school: School;
   constructor() { }
 
   ngOnInit(): void {

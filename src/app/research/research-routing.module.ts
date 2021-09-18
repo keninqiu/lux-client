@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'certification', component: CertificationComponent },
   { path: 'skill', component: SkillComponent },
   { path: 'industry', component: IndustryComponent },
-  { path: 'school', component: SchoolComponent }
+  { path: ':countryCode/school', component: SchoolComponent }
 ];
 
 @NgModule({

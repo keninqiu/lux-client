@@ -32,7 +32,7 @@ export class ContentComponent implements OnInit {
       this.salaryType = params.get('salaryType');
 
       if(this.typeName == 'School') {
-        this.schoolServ.getByCountryCodeAndName(this.countryCode, typeValue).subscribe(
+        this.schoolServ.getByCountryCodeAndSlug(this.countryCode, typeValue).subscribe(
           (school:School) => {
             this.school = school;
           }

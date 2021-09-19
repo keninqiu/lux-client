@@ -2,7 +2,7 @@
     <div class="entitycards">
         <h1 class="entitycards__title">按类别浏览学校</h1>
         <div class="entitycards__container">
-            <a data-instant="true" class="related-content-card" *ngFor="let category of categories" href="{{getCategoryUrl(category)}}">
+            <a data-instant="true" class="related-content-card" *ngFor="let category of categories" href="{{category.url}}">
                 <div class="related-content-card__image-container">
                     <div class="lazyload-wrapper ">
                         <img class="conux-logo related-content-card__image-container__image" src="/assets/images/school-placeholder.png" alt="">

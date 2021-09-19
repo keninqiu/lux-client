@@ -18,6 +18,11 @@ import { JobComponent } from './job/job.component';
 
 import { SchoolSubNavComponent } from './school/sub-nav/sub-nav.component';
 import { SchoolOverviewComponent } from './school/overview/overview.component';
+import { JobsBySalaryComponent } from './school/jobs-by-salary/jobs-by-salary.component';
+import { SchoolsBySalaryComponent } from './school/schools-by-salary/schools-by-salary.component';
+import { SchoolByDimensionComponent } from './school/by-dimension/by-dimension.component';
+import { PopularCompaniesComponent } from './school/popular-companies/popular-companies.component';
+import { AboutThisSchoolComponent } from './school/about-this-school/about-this-school.component';
 @NgModule({
     declarations: [
       SalaryComponent, 
@@ -34,7 +39,12 @@ import { SchoolOverviewComponent } from './school/overview/overview.component';
       SchoolComponent, 
       JobComponent,
       SchoolSubNavComponent,
-      SchoolOverviewComponent
+      SchoolOverviewComponent,
+      JobsBySalaryComponent,
+      SchoolsBySalaryComponent,
+      SchoolByDimensionComponent,
+      PopularCompaniesComponent,
+      AboutThisSchoolComponent
     ],
     imports: [
         SalaryRoutingModule,

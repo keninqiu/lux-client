@@ -15,18 +15,19 @@ import { CategorySchoolsComponent } from './category-schools/category-schools.co
 const routes: Routes = [
   { path: '', component: ResearchComponent },
   { path: 'Country', component: CountriesComponent },
+  { path: ':countryCode/School/:categorySlug', component: CategorySchoolsComponent },
+  { path: ':countryCode/Salary', component: CountryComponent },
+  { path: ':countryCode/School', component: SchoolComponent },
   {
     path: ':countryCode/:type/:salaryType', loadChildren: () => import('./salary/salary.module').then(m => m.SalaryModule)
   },
-  { path: 'Country/:code/Salary', component: CountryComponent },
+  
   { path: 'job', component: JobComponent },
   { path: 'employer', component: EmployerComponent },
   { path: 'degree', component: DegreeComponent },
   { path: 'certification', component: CertificationComponent },
   { path: 'skill', component: SkillComponent },
-  { path: 'industry', component: IndustryComponent },
-  { path: ':countryCode/school', component: SchoolComponent },
-  { path: ':countryCode/School/:categoryName', component: CategorySchoolsComponent }
+  { path: 'industry', component: IndustryComponent }
 ];
 
 @NgModule({

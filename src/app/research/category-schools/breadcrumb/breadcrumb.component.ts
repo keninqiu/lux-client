@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Country } from 'src/app/interfaces/country.interface';
 
 @Component({
   selector: 'app-category-schools-breadcrumb',
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class BreadcrumbComponent implements OnInit {
-
+  @Input() country: Country;
   constructor() { }
 
   ngOnInit(): void {

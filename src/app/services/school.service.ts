@@ -19,12 +19,13 @@ export class SchoolService {
     return this.api.getPublic('school') as Observable<School[]>;
   }
 
-  getAllByCountryCodeAndCategoryName(countryCode: string, categoryName: string): Observable<School[]> {
-    return this.api.getPublic('school/countryCode/' + countryCode + '/categoryName/' + categoryName) as Observable<School[]>;
+  getAllByCountryCodeAndCategorySlug(countryCode: string, categorySlug: string): Observable<School[]> {
+    console.log('categorySlug====', categorySlug);
+    return this.api.getPublic('school/countryCode/' + countryCode + '/categorySlug/' + categorySlug) as Observable<School[]>;
   }
 
-  getByCountryCodeAndName(countryCode: string, name: string): Observable<School> {
-    return this.api.getPublic('school/countryCode/' + countryCode + '/name/' + name) as Observable<School>;
+  getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<School> {
+    return this.api.getPublic('school/countryCode/' + countryCode + '/slug/' + slug) as Observable<School>;
   }
 
   get(id: string): Observable<School> {

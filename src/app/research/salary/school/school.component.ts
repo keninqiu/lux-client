@@ -11,6 +11,7 @@ export class SchoolComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('school=', this.school);
   }
 
 }

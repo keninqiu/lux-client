@@ -6,15 +6,17 @@
             </div>
             <div class="default-overview__pay">
                 <div class="default-overview__pay-container">
-                    <span class="default-overview__value">$71k</span>
-                    <div class="pxl-dropdown default-overview__dropdown  ">
-                        <button class="pxl-btn dropdown__btn pxl-dropdown__toggle" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">/ 年</button>
-                        <div class="pxl-dropdown__menu" aria-labelledby="">
-                            <a href="" title="Show Hourly Rate">/ 小时</a>
+                    <span class="default-overview__value">${{showCompensation()}}</span>
+                    <div class="pxl-dropdown default-overview__dropdown  " [ngClass]="isOpen ? 'open' : ''">
+                        <button class="pxl-btn dropdown__btn pxl-dropdown__toggle" type="button" id="" data-toggle="dropdown" aria-haspopup="true" (click)="toggleOpen()">
+                            / <span *ngIf="salaryType=='Salary'">年</span><span *ngIf="salaryType!='Salary'">时</span>
+                        </button>
+                        <div class="pxl-dropdown__menu" aria-labelledby="" (click)="changeSalaryType()">
+                            <a title="显示{{salaryType == 'Salary' ? '年薪' : '时薪'}}">/ <span *ngIf="salaryType!='Salary'">年薪</span><span *ngIf="salaryType=='Salary'">时薪</span></a>
                         </div>
                     </div>
                 </div>
-                <span class="default-overview__text">平均基本年薪<!-- --> (<!-- -->USD<!-- -->)</span>
+                <span class="default-overview__text">平均基本<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span><!-- --> (<!-- -->{{school.currencyCode}}<!-- -->)</span>
             </div>
             <div class="default-overview__divider"></div>
         </div>

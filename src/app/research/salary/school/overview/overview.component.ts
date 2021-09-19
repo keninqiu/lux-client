@@ -10,10 +10,29 @@ import { School } from 'src/app/interfaces/school.interface';
   ]
 })
 export class SchoolOverviewComponent implements OnInit {
+  isOpen: boolean;
+  salaryType: string;
   @Input() school: School;
   constructor() { }
 
   ngOnInit(): void {
+    this.salaryType = this.school.salaryType;
+    this.isOpen = false;
   }
 
+  showCompensation() {
+    if(this.salaryType == 'Salary') {
+      return this.school.compensation.salary.avg;
+    }
+    return this.school.compensation.hourlyRate.avg;
+  }
+
+  toggleOpen() {
+    this.isOpen = !this.isOpen;
+  }
+
+  changeSalaryType() {
+    this.salaryType = (this.salaryType == 'Salary' ? 'Hourly_Rate' : 'Salary');
+    this.toggleOpen();
+  }
 }

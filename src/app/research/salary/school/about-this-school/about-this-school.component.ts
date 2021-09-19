@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { School } from 'src/app/interfaces/school.interface';
 
 @Component({
   selector: 'app-about-this-school',
@@ -9,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class AboutThisSchoolComponent implements OnInit {
-
+  @Input() school: School;
+  about: any;
   constructor() { }
 
   ngOnInit(): void {
+    this.about = this.school.about;
   }
 
 }

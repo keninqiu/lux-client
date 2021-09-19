@@ -16,4 +16,7 @@ export class JobsBySalaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUrl(url) {
+    return url.replace('=', '%3D');
+  }
 }

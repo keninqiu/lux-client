@@ -1,8 +1,9 @@
+import { Category } from './category.interface';
 import { Entity } from './entity.interface';
 export interface School extends Entity {
     name: string,
     url: string,
-    category: string,
+    category: Category,
     salaryType: string,
     slug: string,
     currencyCode: string,
@@ -116,6 +117,11 @@ export interface School extends Entity {
               max: number,
               avg: number
             }
-        }
-    }      
+        },
+        salaryByJob: [],
+        hourlyRateByJob: [],
+        salaryByEmployer: [],
+        hourlyRateByEmployer: []
+    },
+    related: []      
 }

@@ -1,1 +1,48 @@
-<section class="page-section"><div class="additional-stats"><div class="yoe additional-stats__half-section"><h2 class="page-subtitle">Years of Experience</h2><div class="yoe__data"><div class="yoe__item"><div class="yoe__label">Entry Level</div><div class="yoe__value">1.1<!-- -->%</div></div><div class="yoe__item"><div class="yoe__label">Early Career</div><div class="yoe__value">19.4<!-- -->%</div></div><div class="yoe__item"><div class="yoe__label">Mid Career</div><div class="yoe__value">22.5<!-- -->%</div></div><div class="yoe__item"><div class="yoe__label">Late Career</div><div class="yoe__value">23.3<!-- -->%</div></div><div class="yoe__item"><div class="yoe__label">Experienced</div><div class="yoe__value">33.7<!-- -->%</div></div></div><div class="yoe__blurb">This data is based on <!-- -->4,620<!-- --> survey responses.</div></div><div class="gender additional-stats__half-section"><h2 class="page-subtitle">Gender Breakdown</h2><div class="gender__data"><div class="gender__item"><div class="gender__label">Female</div><div class="gender__value">61.5<!-- -->%</div><div class="gender__range gender__range--salary">Avg. <!-- -->Salary<!-- -->: <!-- -->$40k - $111k</div></div><div class="gender__item"><div class="gender__label">Male</div><div class="gender__value">38.1<!-- -->%</div><div class="gender__range gender__range--salary">Avg. <!-- -->Salary<!-- -->: <!-- -->$49k - $141k</div></div></div><div class="gender__blurb">This data is based on <!-- -->4,359<!-- --> survey responses. Learn more about<!-- --> <a href="/data/gender-pay-gap?tk=genderwidget-ps-rc-school">the gender pay gap</a>.</div></div></div></section>
+<section class="page-section">
+    <div class="additional-stats">
+        <div class="yoe additional-stats__half-section">
+            <h2 class="page-subtitle">工作经验</h2>
+            <div class="yoe__data">
+                <div class="yoe__item">
+                    <div class="yoe__label">入门级</div>
+                    <div class="yoe__value">{{getExperiencePercentage('entryLevel')}}<!-- -->%</div>
+                </div>
+                <div class="yoe__item">
+                    <div class="yoe__label">初级</div>
+                    <div class="yoe__value">{{getExperiencePercentage('earlyCareer')}}<!-- -->%</div>
+                </div>
+                <div class="yoe__item">
+                    <div class="yoe__label">中级</div>
+                    <div class="yoe__value">{{getExperiencePercentage('midCareer')}}<!-- -->%</div>
+                </div>
+                <div class="yoe__item">
+                    <div class="yoe__label">高级</div>
+                    <div class="yoe__value">{{getExperiencePercentage('lateCareer')}}<!-- -->%</div>
+                </div>
+                <div class="yoe__item">
+                    <div class="yoe__label">专家级</div>
+                    <div class="yoe__value">{{getExperiencePercentage('experienced')}}<!-- -->%</div>
+                </div>
+            </div>
+            <div class="yoe__blurb">该数据基于 {{getExperienceTotal()}} 份调查回复。</div>
+        </div>
+        <div class="gender additional-stats__half-section">
+            <h2 class="page-subtitle">性别细分</h2>
+            <div class="gender__data">
+                <div class="gender__item">
+                    <div class="gender__label">女性</div>
+                    <div class="gender__value">{{getGenderPercentage('female')}}<!-- -->%</div>
+                    <div class="gender__range gender__range--salary">平均薪资待遇: <!-- -->$40k - $111k</div>
+                </div>
+                <div class="gender__item">
+                    <div class="gender__label">男性</div>
+                    <div class="gender__value">{{getGenderPercentage('male')}}<!-- -->%</div>
+                    <div class="gender__range gender__range--salary">平均薪资待遇: <!-- -->$49k - $141k</div>
+                </div>
+            </div>
+            <div class="gender__blurb">
+                该数据基于 {{getGenderTotal()}} 份调查回复。
+            </div>
+        </div>
+    </div>
+</section>

@@ -16,11 +16,15 @@ export class CertificationService {
   }
 
   getAll(): Observable<Certification[]> {
-    return this.api.getPrivate('certification') as Observable<Certification[]>;
+    return this.api.getPublic('certification') as Observable<Certification[]>;
   }
 
   get(id: string): Observable<Certification> {
     return this.api.getPublic('certification/' + id) as Observable<Certification>;
+  }
+  
+  getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Certification> {
+    return this.api.getPublic('certification/countryCode/' + countryCode + '/slug/' + slug) as Observable<Certification>;
   }
 
   deleteMany(ids: string[]): Observable<any> {

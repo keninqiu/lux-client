@@ -21,4 +21,8 @@ export class PopularSchoolsComponent implements OnInit {
 
   }
 
+  getSchoolPath(school) {
+    return school.url.replace('=', '%3D').replace('(', '%28').replace(')', '%29');
+    ///research/{{countryCode}}/School%3D{{school.slug ? school.slug : school.name}}/{{school.salaryType ? school.salaryType : 'Salary'}}
+  }
 }

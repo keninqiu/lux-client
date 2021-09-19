@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Job } from 'src/app/interfaces/job.interface';
 import { School } from 'src/app/interfaces/school.interface';
+import { JobService } from 'src/app/services/job.service';
 import { SchoolService } from 'src/app/services/school.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class ContentComponent implements OnInit {
   job: Job;
   constructor(
     private route: ActivatedRoute,
-    private schoolServ: SchoolService
+    private schoolServ: SchoolService,
+    private jobServ: JobService
     ) { }
 
   ngOnInit(): void {
@@ -37,6 +39,13 @@ export class ContentComponent implements OnInit {
             this.school = school;
           }
         );
+      } else
+      if(this.typeName == 'Job') {
+        this.jobServ.getByCountryCodeAndSlug(this.countryCode, typeValue).subscribe(
+          (job:Job) => {
+            this.job = job;
+          }
+        );        
       }
     });
   }

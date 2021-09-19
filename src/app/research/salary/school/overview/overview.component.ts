@@ -21,6 +21,9 @@ export class SchoolOverviewComponent implements OnInit {
   }
 
   showCompensation() {
+    if(!this.school.compensation) {
+      return 0;
+    }
     if(this.salaryType == 'Salary') {
       return this.school.compensation.salary.avg;
     }

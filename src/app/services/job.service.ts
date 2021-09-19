@@ -16,11 +16,15 @@ export class JobService {
   }
 
   getAll(): Observable<Job[]> {
-    return this.api.getPrivate('job') as Observable<Job[]>;
+    return this.api.getPublic('job') as Observable<Job[]>;
   }
 
   get(id: string): Observable<Job> {
     return this.api.getPublic('job/' + id) as Observable<Job>;
+  }
+
+  getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Job> {
+    return this.api.getPublic('job/countryCode/' + countryCode + '/slug/' + slug) as Observable<Job>;
   }
 
   deleteMany(ids: string[]): Observable<any> {

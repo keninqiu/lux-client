@@ -30,7 +30,9 @@ export class SchoolByDimensionComponent implements OnInit {
   }
 
   getExperienceTotal() {
-    
+    if(!this.byDimension || !this.byDimension.experience) {
+      return 0;
+    }
     if(this.experienceTotal) {
       return this.experienceTotal;
     }
@@ -50,7 +52,7 @@ export class SchoolByDimensionComponent implements OnInit {
 
   getGenderPercentage(level: string) {
     this.byDimension = this.school.byDimension;
-
+    
     if(!this.byDimension || !this.byDimension.gender) {
       return 0;
     }
@@ -62,7 +64,9 @@ export class SchoolByDimensionComponent implements OnInit {
   }
 
   getGenderTotal() {
-    
+    if(!this.byDimension || !this.byDimension.gender) {
+      return 0;
+    }
     if(this.genderTotal) {
       return this.genderTotal;
     }

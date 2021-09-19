@@ -2,8 +2,8 @@
 
 <div class="rc-directory">
     <div class="subcats__links">
-        <a class="subcats__links__item" *ngFor="let school of schools" href="/research/{{countryCode}}/School%3D{{school.slug ? school.slug : school.name}}/{{school.salaryType ? school.salaryType : 'Salary'}}">
-            {{school.slug}}-{{school.name}}
+        <a class="subcats__links__item" *ngFor="let school of schools" href="{{getSchoolPath(school)}}">
+            {{school.name}}
         </a>
     </div>
 </div>

@@ -1,4 +1,4 @@
 <div class="page  research-center-web defaultv2">
-    <app-salary-job *ngIf="typeName=='Job'"></app-salary-job>
+    <app-salary-job *ngIf="job && typeName=='Job'" [job]="job"></app-salary-job>
     <app-salary-school *ngIf="school && typeName=='School'" [school]="school"></app-salary-school>
 </div>

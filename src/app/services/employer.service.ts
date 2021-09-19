@@ -23,6 +23,10 @@ export class EmployerService {
     return this.api.getPublic('employer/' + id) as Observable<Employer>;
   }
 
+  getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Employer> {
+    return this.api.getPublic('employer/countryCode/' + countryCode + '/slug/' + slug) as Observable<Employer>;
+  }
+
   deleteMany(ids: string[]): Observable<any> {
     return this.api.postPrivate('employer/deleteMany', ids);
   }

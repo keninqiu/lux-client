@@ -22,7 +22,9 @@ export class IndustryService {
   get(id: string): Observable<Industry> {
     return this.api.getPublic('industry/' + id) as Observable<Industry>;
   }
-
+  getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Industry> {
+    return this.api.getPublic('industry/countryCode/' + countryCode + '/slug/' + slug) as Observable<Industry>;
+  }
   deleteMany(ids: string[]): Observable<any> {
     return this.api.postPrivate('industry/deleteMany', ids);
   }

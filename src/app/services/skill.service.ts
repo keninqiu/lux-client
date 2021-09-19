@@ -23,6 +23,10 @@ export class SkillService {
     return this.api.getPublic('skill/' + id) as Observable<Skill>;
   }
 
+  getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Skill> {
+    return this.api.getPublic('skill/countryCode/' + countryCode + '/slug/' + slug) as Observable<Skill>;
+  }
+  
   deleteMany(ids: string[]): Observable<any> {
     return this.api.postPrivate('skill/deleteMany', ids);
   }

@@ -23,6 +23,10 @@ export class DegreeService {
     return this.api.getPublic('degree/' + id) as Observable<Degree>;
   }
 
+  getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Degree> {
+    return this.api.getPublic('degree/countryCode/' + countryCode + '/slug/' + slug) as Observable<Degree>;
+  }
+
   deleteMany(ids: string[]): Observable<any> {
     return this.api.postPrivate('degree/deleteMany', ids);
   }

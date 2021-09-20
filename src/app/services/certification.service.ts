@@ -19,6 +19,11 @@ export class CertificationService {
     return this.api.getPublic('certification') as Observable<Certification[]>;
   }
 
+  getAllByCountryCodeAndCategorySlug(countryCode: string, categorySlug: string): Observable<Certification[]> {
+    console.log('categorySlug====', categorySlug);
+    return this.api.getPublic('certification/countryCode/' + countryCode + '/categorySlug/' + categorySlug) as Observable<Certification[]>;
+  }
+
   get(id: string): Observable<Certification> {
     return this.api.getPublic('certification/' + id) as Observable<Certification>;
   }

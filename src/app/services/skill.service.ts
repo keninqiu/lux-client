@@ -19,6 +19,11 @@ export class SkillService {
     return this.api.getPrivate('skill') as Observable<Skill[]>;
   }
 
+  getAllByCountryCodeAndCategorySlug(countryCode: string, categorySlug: string): Observable<Skill[]> {
+    console.log('categorySlug====', categorySlug);
+    return this.api.getPublic('skill/countryCode/' + countryCode + '/categorySlug/' + categorySlug) as Observable<Skill[]>;
+  }
+
   get(id: string): Observable<Skill> {
     return this.api.getPublic('skill/' + id) as Observable<Skill>;
   }
@@ -26,7 +31,7 @@ export class SkillService {
   getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Skill> {
     return this.api.getPublic('skill/countryCode/' + countryCode + '/slug/' + slug) as Observable<Skill>;
   }
-  
+
   deleteMany(ids: string[]): Observable<any> {
     return this.api.postPrivate('skill/deleteMany', ids);
   }

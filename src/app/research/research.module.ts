@@ -19,15 +19,16 @@ import { ResearchSchoolsAndDegreesComponent } from './research-schools-and-degre
 import { GetCareerTipsAndAdviceComponent } from './get-career-tips-and-advice/get-career-tips-and-advice.component';
 import { BrowseByStatesComponent } from './browse-by-states/browse-by-states.component';
 import { WhatAmIWorthComponent } from './what-am-i-worth/what-am-i-worth.component';
-import { BrowseCompaniesByIndustryComponent } from './browse-companies-by-industry/browse-companies-by-industry.component';
+import { BrowseCompaniesByIndustryComponent } from './employer/browse-companies-by-industry/browse-companies-by-industry.component';
 import { RelatedArticlesComponent } from './related-articles/related-articles.component';
 import { CompensationBestPracticesComponent } from './compensation-best-practices/compensation-best-practices.component';
 import { PopularSearchesComponent } from './popular-searches/popular-searches.component';
-import { BrowseDegreesByFieldOfStudyComponent } from './browse-degrees-by-field-of-study/browse-degrees-by-field-of-study.component';
-import { BrowseCertificationsByIndustryComponent } from './browse-certifications-by-industry/browse-certifications-by-industry.component';
-import { BrowseSkillsByCategoryComponent } from './browse-skills-by-category/browse-skills-by-category.component';
-import { BrowseIndustriesByCategoryComponent } from './browse-industries-by-category/browse-industries-by-category.component';
-import { BrowseSchoolsByCategoryComponent } from './browse-schools-by-category/browse-schools-by-category.component';
+import { BrowseDegreesByFieldOfStudyComponent } from './degree/browse-degrees-by-field-of-study/browse-degrees-by-field-of-study.component';
+import { BrowseCertificationsByIndustryComponent } from './certification/browse-certifications-by-industry/browse-certifications-by-industry.component';
+import { BrowseSkillsByCategoryComponent } from './skill/browse-skills-by-category/browse-skills-by-category.component';
+import { BrowseIndustriesByCategoryComponent } from './industry/browse-industries-by-category/browse-industries-by-category.component';
+import { BrowseSchoolsByCategoryComponent } from './school/browse-schools-by-category/browse-schools-by-category.component';
+import { BrowseJobsByCategoryComponent } from './job/browse-jobs-by-category/browse-jobs-by-category.component';
 
 import { CountriesComponent } from './countries/countries.component';
 import { PopularCountriesComponent } from './countries/popular/popular.component';
@@ -40,9 +41,10 @@ import { EmployersComponent } from './country/employers/employers.component';
 import { SchoolsDegreesComponent } from './country/schools-degrees/schools-degrees.component';
 import { StatesComponent } from './country/states/states.component';
 import { CategorySchoolsComponent } from './category-schools/category-schools.component';
-import { BreadcrumbComponent } from './category-schools/breadcrumb/breadcrumb.component';
+import { CategoryJobsComponent } from './category-jobs/category-jobs.component';
+import { CategoryBreadcrumbComponent } from './catetory-breadcrumb/category-breadcrumb.component';
 import { PopularSchoolsComponent } from './category-schools/popular-schools/popular-schools.component';
-
+import { CateogryPopularJobsComponent } from './category-jobs/popular-jobs/popular-jobs.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,7 @@ import { PopularSchoolsComponent } from './category-schools/popular-schools/popu
     BrowseByStatesComponent, 
     WhatAmIWorthComponent, 
     BrowseCompaniesByIndustryComponent, 
+    BrowseJobsByCategoryComponent,
     RelatedArticlesComponent, 
     CompensationBestPracticesComponent, 
     PopularSearchesComponent, 
@@ -75,7 +78,18 @@ import { PopularSchoolsComponent } from './category-schools/popular-schools/popu
     BrowseIndustriesByCategoryComponent, 
     BrowseSchoolsByCategoryComponent, 
     CountriesComponent, 
-    CountryComponent, BreadcrumbsComponent, CategoriesComponent, PopularJobsComponent, EmployersComponent, SchoolsDegreesComponent, StatesComponent, CategorySchoolsComponent, BreadcrumbComponent, PopularSchoolsComponent
+    CountryComponent, 
+    BreadcrumbsComponent, 
+    CategoriesComponent, 
+    PopularJobsComponent, 
+    EmployersComponent, 
+    SchoolsDegreesComponent, 
+    StatesComponent, 
+    CategorySchoolsComponent, 
+    CategoryJobsComponent, 
+    CategoryBreadcrumbComponent,
+    PopularSchoolsComponent,
+    CateogryPopularJobsComponent
   ],
   imports: [
     ResearchRoutingModule,

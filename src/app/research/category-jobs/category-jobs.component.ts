@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Country } from 'src/app/interfaces/country.interface';
-import { School } from 'src/app/interfaces/school.interface';
+import { Job } from 'src/app/interfaces/job.interface';
+import { CategoryService } from 'src/app/services/category.service';
 import { CountryService } from 'src/app/services/country.service';
-import { SchoolService } from 'src/app/services/school.service';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
-  selector: 'app-category-schools',
-  templateUrl: './category-schools.component.html',
-  styleUrls: ['./category-schools.component.scss']
+  selector: 'app-category-jobs',
+  templateUrl: './category-jobs.component.html',
+  styleUrls: ['./category-jobs.component.scss']
 })
-export class CategorySchoolsComponent implements OnInit {
+export class CategoryJobsComponent implements OnInit {
   countryCode: string;
   categorySlug: string;
   categoryName: string;
   country: Country;
-  schools: School[];
+  jobs: Job[];
   constructor(
     private route: ActivatedRoute, 
-    private schoolServ: SchoolService,
-    private countryServ: CountryService
+    private jobServ: JobService,
+    private countryServ: CountryService,
+    private categoryServ: CategoryService
     ) { }
 
   ngOnInit(): void {
@@ -32,11 +34,13 @@ export class CategorySchoolsComponent implements OnInit {
           this.country = country;
         }
       );
+      
       this.categoryName = this.categorySlug.split('-').join(' ');
-      this.schoolServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
-        (schools: School[]) => {
-          this.schools = schools;
-          console.log('schools=', schools);
+
+      this.jobServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
+        (jobs: Job[]) => {
+          this.jobs = jobs;
+          console.log('jobs=', jobs);
         }
       );
 

@@ -19,6 +19,11 @@ export class DegreeService {
     return this.api.getPublic('degree') as Observable<Degree[]>;
   }
 
+  getAllByCountryCodeAndCategorySlug(countryCode: string, categorySlug: string): Observable<Degree[]> {
+    console.log('categorySlug====', categorySlug);
+    return this.api.getPublic('degree/countryCode/' + countryCode + '/categorySlug/' + categorySlug) as Observable<Degree[]>;
+  }
+
   get(id: string): Observable<Degree> {
     return this.api.getPublic('degree/' + id) as Observable<Degree>;
   }

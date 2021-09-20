@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Country } from 'src/app/interfaces/country.interface';
-import { School } from 'src/app/interfaces/school.interface';
+import { Certification } from 'src/app/interfaces/certification.interface';
 import { CountryService } from 'src/app/services/country.service';
-import { SchoolService } from 'src/app/services/school.service';
+import { CertificationService } from 'src/app/services/certification.service';
 
 @Component({
-  selector: 'app-category-schools',
-  templateUrl: './category-schools.component.html',
-  styleUrls: ['./category-schools.component.scss']
+  selector: 'app-category-certifications',
+  templateUrl: './category-certifications.component.html',
+  styleUrls: ['./category-certifications.component.scss']
 })
-export class CategorySchoolsComponent implements OnInit {
+export class CategoryCertificationsComponent implements OnInit {
   countryCode: string;
   categorySlug: string;
   categoryName: string;
   country: Country;
-  schools: School[];
+  certifications: Certification[];
   constructor(
     private route: ActivatedRoute, 
-    private schoolServ: SchoolService,
+    private certificationServ: CertificationService,
     private countryServ: CountryService
     ) { }
 
@@ -33,10 +33,10 @@ export class CategorySchoolsComponent implements OnInit {
         }
       );
       this.categoryName = this.categorySlug.split('-').join(' ');
-      this.schoolServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
-        (schools: School[]) => {
-          this.schools = schools;
-          console.log('schools=', schools);
+      this.certificationServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
+        (certifications: Certification[]) => {
+          this.certifications = certifications;
+          console.log('certifications=', certifications);
         }
       );
 

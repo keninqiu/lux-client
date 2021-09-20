@@ -11,13 +11,21 @@ import { SchoolComponent } from './school/school.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryComponent } from './country/country.component';
 import { CategorySchoolsComponent } from './category-schools/category-schools.component';
+import { CategoryJobsComponent } from './category-jobs/category-jobs.component';
 
 const routes: Routes = [
   { path: '', component: ResearchComponent },
   { path: 'Country', component: CountriesComponent },
   { path: ':countryCode/School/:categorySlug', component: CategorySchoolsComponent },
+  { path: ':countryCode/Job/:categorySlug', component: CategoryJobsComponent },
   { path: ':countryCode/Salary', component: CountryComponent },
   { path: ':countryCode/School', component: SchoolComponent },
+  { path: ':countryCode/Job', component: JobComponent },
+  { path: ':countryCode/Certification', component: CertificationComponent },
+  { path: ':countryCode/Skill', component: SkillComponent },
+  { path: ':countryCode/Employer', component: EmployerComponent },
+  { path: ':countryCode/Industry', component: IndustryComponent },
+  { path: ':countryCode/Degree', component: DegreeComponent },
   {
     path: ':countryCode/:type/:salaryType', loadChildren: () => import('./salary/salary.module').then(m => m.SalaryModule)
   },

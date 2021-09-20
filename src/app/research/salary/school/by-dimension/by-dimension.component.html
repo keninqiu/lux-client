@@ -28,16 +28,16 @@
         </div>
         <div class="gender additional-stats__half-section">
             <h2 class="page-subtitle">性别细分</h2>
-            <div class="gender__data">
+            <div class="gender__data" *ngIf="byDimension.gender">
                 <div class="gender__item">
                     <div class="gender__label">女性</div>
                     <div class="gender__value">{{getGenderPercentage('female')}}<!-- -->%</div>
-                    <div class="gender__range gender__range--salary">平均薪资待遇: <!-- -->$40k - $111k</div>
+                    <div class="gender__range gender__range--salary">平均薪资待遇: <!-- -->${{byDimension.gender.female.min}} - ${{byDimension.gender.female.max}}</div>
                 </div>
                 <div class="gender__item">
                     <div class="gender__label">男性</div>
                     <div class="gender__value">{{getGenderPercentage('male')}}<!-- -->%</div>
-                    <div class="gender__range gender__range--salary">平均薪资待遇: <!-- -->$49k - $141k</div>
+                    <div class="gender__range gender__range--salary">平均薪资待遇: <!-- -->${{byDimension.gender.male.min}} - ${{byDimension.gender.male.min}}</div>
                 </div>
             </div>
             <div class="gender__blurb">

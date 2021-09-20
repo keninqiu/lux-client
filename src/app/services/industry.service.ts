@@ -19,6 +19,11 @@ export class IndustryService {
     return this.api.getPrivate('industry') as Observable<Industry[]>;
   }
 
+  getAllByCountryCodeAndCategorySlug(countryCode: string, categorySlug: string): Observable<Industry[]> {
+    console.log('categorySlug====', categorySlug);
+    return this.api.getPublic('industry/countryCode/' + countryCode + '/categorySlug/' + categorySlug) as Observable<Industry[]>;
+  }
+
   get(id: string): Observable<Industry> {
     return this.api.getPublic('industry/' + id) as Observable<Industry>;
   }

@@ -1,0 +1,9 @@
+<h1 class="subcats__subtitle">{{categoryName}}的热门工作</h1>
+
+<div class="rc-directory">
+    <div class="subcats__links">
+        <a class="subcats__links__item" *ngFor="let job of jobs" href="{{getJobPath(job)}}">
+            {{job.name}}
+        </a>
+    </div>
+</div>

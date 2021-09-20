@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Job } from 'src/app/interfaces/job.interface';
 
 @Component({
   selector: 'app-job-sub-nav',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class JobSubNavComponent implements OnInit {
-
+  @Input() job: Job;
   constructor() { }
 
   ngOnInit(): void {

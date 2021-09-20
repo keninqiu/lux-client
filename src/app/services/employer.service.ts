@@ -23,6 +23,11 @@ export class EmployerService {
     return this.api.getPublic('employer/' + id) as Observable<Employer>;
   }
 
+  getAllByCountryCodeAndCategorySlug(countryCode: string, categorySlug: string): Observable<Employer[]> {
+    console.log('categorySlug====', categorySlug);
+    return this.api.getPublic('employer/countryCode/' + countryCode + '/categorySlug/' + categorySlug) as Observable<Employer[]>;
+  }
+
   getByCountryCodeAndSlug(countryCode: string, slug: string): Observable<Employer> {
     return this.api.getPublic('employer/countryCode/' + countryCode + '/slug/' + slug) as Observable<Employer>;
   }

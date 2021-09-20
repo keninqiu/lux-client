@@ -1,0 +1,9 @@
+<h1 class="subcats__subtitle">{{categoryName}}的热门证书</h1>
+
+<div class="rc-directory">
+    <div class="subcats__links">
+        <a class="subcats__links__item" *ngFor="let certification of certifications" href="{{getCertificationPath(certification)}}">
+            {{certification.name}}
+        </a>
+    </div>
+</div>

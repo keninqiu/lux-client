@@ -1,0 +1,9 @@
+<h1 class="subcats__subtitle">{{categoryName}}的热门行业</h1>
+
+<div class="rc-directory">
+    <div class="subcats__links">
+        <a class="subcats__links__item" *ngFor="let industry of industries" href="{{getIndustryPath(industry)}}">
+            {{industry.name}}
+        </a>
+    </div>
+</div>

@@ -12,12 +12,22 @@ import { CountriesComponent } from './countries/countries.component';
 import { CountryComponent } from './country/country.component';
 import { CategorySchoolsComponent } from './category-schools/category-schools.component';
 import { CategoryJobsComponent } from './category-jobs/category-jobs.component';
+import { CategoryEmployersComponent } from './category-employers/category-employers.component';
+import { CategorySkillsComponent } from './category-skills/category-skills.component';
+import { CategoryCertificationsComponent } from './category-certifications/category-certifications.component';
+import { CategoryDegreesComponent } from './category-degrees/category-degrees.component';
+import { CategoryIndustriesComponent } from './category-industries/category-industries.component';
 
 const routes: Routes = [
   { path: '', component: ResearchComponent },
   { path: 'Country', component: CountriesComponent },
   { path: ':countryCode/School/:categorySlug', component: CategorySchoolsComponent },
   { path: ':countryCode/Job/:categorySlug', component: CategoryJobsComponent },
+  { path: ':countryCode/Employer/:categorySlug', component: CategoryEmployersComponent },
+  { path: ':countryCode/Skill/:categorySlug', component: CategorySkillsComponent },
+  { path: ':countryCode/Certification/:categorySlug', component: CategoryCertificationsComponent },
+  { path: ':countryCode/Degree/:categorySlug', component: CategoryDegreesComponent },
+  { path: ':countryCode/Industry/:categorySlug', component: CategoryIndustriesComponent },
   { path: ':countryCode/Salary', component: CountryComponent },
   { path: ':countryCode/School', component: SchoolComponent },
   { path: ':countryCode/Job', component: JobComponent },

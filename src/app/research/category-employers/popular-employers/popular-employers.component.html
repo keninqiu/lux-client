@@ -1,0 +1,9 @@
+<h1 class="subcats__subtitle">{{categoryName}}的热门公司</h1>
+
+<div class="rc-directory">
+    <div class="subcats__links">
+        <a class="subcats__links__item" *ngFor="let employer of employers" href="{{getEmployerPath(employer)}}">
+            {{employer.name}}
+        </a>
+    </div>
+</div>

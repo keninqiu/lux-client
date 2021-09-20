@@ -1,0 +1,16 @@
+<app-menu></app-menu>
+<app-search-salary 
+[title]="'按工作搜索薪资待遇'"
+[selectedCategory]="'工作'"
+[placeholder]="'输入工作'"
+></app-search-salary>
+<div class="page  rc-directory">
+    <div class="content one-col">
+        <div class="maincontent">
+            <app-category-breadcrumb [categoryType]="'Job'" [categoryName]="categoryName" [country]="country"></app-category-breadcrumb>
+            <app-category-popular-degrees [degrees]="degrees" [categoryName]="categoryName" [countryCode]="countryCode"></app-category-popular-degrees>
+        </div>
+    </div>
+</div>
+<app-what-am-i-worth></app-what-am-i-worth>
+<app-footer></app-footer>

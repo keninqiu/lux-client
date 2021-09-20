@@ -45,6 +45,18 @@ import { CategoryJobsComponent } from './category-jobs/category-jobs.component';
 import { CategoryBreadcrumbComponent } from './catetory-breadcrumb/category-breadcrumb.component';
 import { PopularSchoolsComponent } from './category-schools/popular-schools/popular-schools.component';
 import { CateogryPopularJobsComponent } from './category-jobs/popular-jobs/popular-jobs.component';
+import { CategoryEmployersComponent } from './category-employers/category-employers.component';
+import { CateogryPopularEmployersComponent } from './category-employers/popular-employers/popular-employers.component';
+import { CategorySkillsComponent } from './category-skills/category-skills.component';
+import { CateogryPopularSkillsComponent } from './category-skills/popular-skills/popular-skills.component';
+import { CategoryCertificationsComponent } from './category-certifications/category-certifications.component';
+import { CateogryPopularCertificationsComponent } from './category-certifications/popular-certifications/popular-certifications.component';
+
+import { CategoryIndustriesComponent } from './category-industries/category-industries.component';
+import { CateogryPopularIndustriesComponent } from './category-industries/popular-industries/popular-industries.component';
+
+import { CategoryDegreesComponent } from './category-degrees/category-degrees.component';
+import { CateogryPopularDegreesComponent } from './category-degrees/popular-degrees/popular-degrees.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +101,17 @@ import { CateogryPopularJobsComponent } from './category-jobs/popular-jobs/popul
     CategoryJobsComponent, 
     CategoryBreadcrumbComponent,
     PopularSchoolsComponent,
-    CateogryPopularJobsComponent
+    CateogryPopularJobsComponent,
+    CategoryEmployersComponent,
+    CateogryPopularEmployersComponent,
+    CategorySkillsComponent,
+    CateogryPopularSkillsComponent,
+    CategoryCertificationsComponent,
+    CateogryPopularCertificationsComponent,
+    CategoryIndustriesComponent,
+    CateogryPopularIndustriesComponent,
+    CategoryDegreesComponent,
+    CateogryPopularDegreesComponent
   ],
   imports: [
     ResearchRoutingModule,

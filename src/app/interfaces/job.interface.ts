@@ -2,6 +2,7 @@ import { Entity } from './entity.interface';
 export interface Job extends Entity {
     name: string,
     category: string,
+    url: string,
     salaryType: string,
     slug: string,
     currencyCode: string,    
@@ -75,6 +76,12 @@ export interface Job extends Entity {
             profileCount: number              
         }
     },  
+    ratings: {
+        overall: {
+            profileCount: number,
+            score: number
+        }
+    },
     byDimension: {
         experience: {
             entryLevel: {

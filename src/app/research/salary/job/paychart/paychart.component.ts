@@ -51,4 +51,10 @@ export class PaychartComponent implements OnInit {
     return this.job.compensation[compensationType][type];
   }
 
+
+
+
+
+
+
 }

@@ -1,1 +1,82 @@
-<section class="page-section"><div class="jobstats"><h2 class="page-subtitle">Job Satisfaction for <!-- -->Software Developer</h2><div class="jobstats__reviews"><div class="job-rating"><div class="job-rating__description"><div class="job-rating--score">3.8<!-- --> out of 5</div><div class="job-rating__row"><div class="rating " title="4"><div class="rating__background"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div><div class="rating__fill" style="width:80%"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div></div><span class="job-rating--profile-count">(<!-- -->3,185<!-- -->)</span></div><div class="job-rating--satisfaction">Highly<!-- --> Satisfied</div></div><a data-instant="true" class="job-rating__link" href="/research/US/Job=Software_Developer/Reviews"><span class="job-rating--review-count">490</span><span class="job-rating--review-word">Reviews</span></a></div><div class="jobstats__review-blurb">Based on <!-- -->3,185<!-- --> responses, the job of <!-- -->Software Developer<!-- --> has received a job satisfaction rating of <!-- -->3.76<!-- --> out of 5. On average, <!-- -->Software Developer<!-- -->s are <!-- -->highly<!-- --> <!-- -->satisfied with their job.</div></div><div class="jobstats__data"><div class="gender additional-stats__half-section"><h2 class="page-subtitle">Gender Breakdown</h2><div class="gender__data"><div class="gender__item"><div class="gender__label">Male</div><div class="gender__value">84.3<!-- -->%</div></div><div class="gender__item"><div class="gender__label">Female</div><div class="gender__value">15.1<!-- -->%</div></div><div class="gender__item"><div class="gender__label">Prefer to self-define</div><div class="gender__value">0.6<!-- -->%</div></div></div><div class="gender__blurb">This data is based on <!-- -->9,933<!-- --> survey responses. Learn more about<!-- --> <a href="/data/gender-pay-gap?tk=genderwidget-ps-rc-job">the gender pay gap</a>.</div></div><div class="healthbenefits"><h2 class="page-subtitle">Common Health Benefits</h2><div class="healthbenefits__data"><div class="healthbenefits__item"><div class="healthbenefits__item-name">Medical</div><h2 class="healthbenefits__item-value">84<!-- -->%</h2></div><div class="healthbenefits__item"><div class="healthbenefits__item-name">Dental</div><h2 class="healthbenefits__item-value">73<!-- -->%</h2></div><div class="healthbenefits__item"><div class="healthbenefits__item-name">Vision</div><h2 class="healthbenefits__item-value">63<!-- -->%</h2></div><div class="healthbenefits__item"><div class="healthbenefits__item-name">None</div><h2 class="healthbenefits__item-value">16<!-- -->%</h2></div></div></div></div></div></section>
+<section class="page-section">
+    <div class="jobstats">
+        <h2 class="page-subtitle">{{job.name}}的工作满意度</h2>
+        <div class="jobstats__reviews">
+            <div class="job-rating">
+                <div class="job-rating__description">
+                    <div class="job-rating--score">{{job.ratings.overall.score}}<!-- --> 满分5分</div>
+                    <div class="job-rating__row">
+                        <div class="rating " title="4">
+                            <div class="rating__background">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                            <div class="rating__fill" style="width:80%">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                        </div>
+                        <span class="job-rating--profile-count">(<!-- -->{{job.ratings.overall.profileCount}}<!-- -->)</span>
+                    </div>
+                    <div class="job-rating--satisfaction">非常满意</div>
+                </div>
+                <a data-instant="true" class="job-rating__link" href="{{job.url}}/Reviews">
+                    <span class="job-rating--review-count">490</span>
+                    <span class="job-rating--review-word">评论</span>
+                </a>
+            </div>
+            <div class="jobstats__review-blurb">
+                根据{{job.ratings.overall.profileCount}}条回复，{{job.name}}的工作获得了 {{job.ratings.overall.score}} 分（满分 5 分）的工作满意度。平均而言，{{job.name}}对他们的工作非常满意。
+            </div>
+        </div>
+        <div class="jobstats__data">
+            <div class="gender additional-stats__half-section">
+                <h2 class="page-subtitle">性别细分</h2>
+                <div class="gender__data">
+                    <div class="gender__item">
+                        <div class="gender__label">男性</div>
+                        <div class="gender__value">{{getGenderPercentage('male')}}<!-- -->%</div>
+                    </div>
+                    <div class="gender__item">
+                        <div class="gender__label">女性</div>
+                        <div class="gender__value">{{getGenderPercentage('female')}}<!-- -->%</div>
+                    </div>
+                    <div class="gender__item">
+                        <div class="gender__label">自定义性别</div>
+                        <div class="gender__value">{{getGenderPercentage('selfDefine')}}<!-- -->%</div>
+                    </div>
+                </div>
+                <div class="gender__blurb">
+                    该统计数据基于{{getGenderTotal()}}份样本
+                </div>
+            </div>
+            <div class="healthbenefits">
+                <h2 class="page-subtitle">常见的健康福利</h2>
+                <div class="healthbenefits__data">
+                    <div class="healthbenefits__item">
+                        <div class="healthbenefits__item-name">药物保险</div>
+                        <h2 class="healthbenefits__item-value">{{getHealthBenefitPercentage('medical')}}<!-- -->%</h2>
+                    </div>
+                    <div class="healthbenefits__item">
+                        <div class="healthbenefits__item-name">牙医保险</div>
+                        <h2 class="healthbenefits__item-value">{{getHealthBenefitPercentage('dental')}}<!-- -->%</h2>
+                    </div>
+                    <div class="healthbenefits__item">
+                        <div class="healthbenefits__item-name">眼科保险</div>
+                        <h2 class="healthbenefits__item-value">{{getHealthBenefitPercentage('vision')}}<!-- -->%</h2>
+                    </div>
+                    <div class="healthbenefits__item">
+                        <div class="healthbenefits__item-name">无保险</div>
+                        <h2 class="healthbenefits__item-value">{{getHealthBenefitPercentage('none')}}<!-- -->%</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

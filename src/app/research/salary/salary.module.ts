@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../../layout/layout.module';
+import { ChartsModule } from 'ng2-charts';
 import { SalaryRoutingModule } from './salary-routing.module';
 import { SalaryComponent } from './salary.component';
 import { JobSubNavComponent } from './job/sub-nav/sub-nav.component';
@@ -47,9 +48,10 @@ import { AboutThisSchoolComponent } from './school/about-this-school/about-this-
       AboutThisSchoolComponent
     ],
     imports: [
-        SalaryRoutingModule,
+      SalaryRoutingModule,
       LayoutModule,
-      CommonModule
+      CommonModule,
+      ChartsModule
     ]
   })
   export class SalaryModule { }

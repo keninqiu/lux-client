@@ -1,4 +1,9 @@
 <div class="page  research-center-web defaultv2">
     <app-salary-job *ngIf="job && typeName=='Job'" [job]="job"></app-salary-job>
     <app-salary-school *ngIf="school && typeName=='School'" [school]="school"></app-salary-school>
+    <app-salary-employer *ngIf="employer && typeName=='Employer'" [employer]="employer"></app-salary-employer>
+    <app-salary-degree *ngIf="degree && typeName=='Degree'" [degree]="degree"></app-salary-degree>
+    <app-salary-certification *ngIf="certification && typeName=='Certification'" [certification]="certification"></app-salary-certification>
+    <app-salary-skill *ngIf="skill && typeName=='Skill'" [skill]="skill"></app-salary-skill>
+    <app-salary-industry *ngIf="industry && typeName=='Industry'" [industry]="industry"></app-salary-industry>
 </div>

@@ -22,6 +22,6 @@ export class CateogryPopularEmployersComponent implements OnInit {
   }
 
   getEmployerPath(employer) {
-    return employer.url.replace('=', '%3D').replace('(', '%28').replace(')', '%29');
+    return employer.url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29');
   }
 }

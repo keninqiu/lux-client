@@ -22,6 +22,6 @@ export class CateogryPopularJobsComponent implements OnInit {
   }
 
   getJobPath(job) {
-    return job.url.replace('=', '%3D').replace('(', '%28').replace(')', '%29');
+    return job.url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29');
   }
 }

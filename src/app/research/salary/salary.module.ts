@@ -16,7 +16,6 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { JobSatisfactionComponent } from './job/job-satisfaction/job-satisfaction.component';
 import { SchoolComponent } from './school/school.component';
 import { JobComponent } from './job/job.component';
-
 import { SchoolSubNavComponent } from './school/sub-nav/sub-nav.component';
 import { SchoolOverviewComponent } from './school/overview/overview.component';
 import { JobsBySalaryComponent } from './school/jobs-by-salary/jobs-by-salary.component';
@@ -24,6 +23,17 @@ import { SchoolsBySalaryComponent } from './school/schools-by-salary/schools-by-
 import { SchoolByDimensionComponent } from './school/by-dimension/by-dimension.component';
 import { PopularCompaniesComponent } from './school/popular-companies/popular-companies.component';
 import { AboutThisSchoolComponent } from './school/about-this-school/about-this-school.component';
+import { EmployerComponent } from './employer/employer.component';
+import { CertificationComponent } from './certification/certification.component';
+import { DegreeComponent } from './degree/degree.component';
+import { SkillComponent } from './skill/skill.component';
+import { IndustryComponent } from './industry/industry.component';
+import { EmployerSubNavComponent } from './employer/sub-nav/sub-nav.component';
+import { DegreeSubNavComponent } from './degree/sub-nav/sub-nav.component';
+import { CertificationSubNavComponent } from './certification/sub-nav/sub-nav.component';
+import { SkillSubNavComponent } from './skill/sub-nav/sub-nav.component';
+import { IndustrySubNavComponent } from './industry/sub-nav/sub-nav.component';
+
 @NgModule({
     declarations: [
       SalaryComponent, 
@@ -45,7 +55,17 @@ import { AboutThisSchoolComponent } from './school/about-this-school/about-this-
       SchoolsBySalaryComponent,
       SchoolByDimensionComponent,
       PopularCompaniesComponent,
-      AboutThisSchoolComponent
+      AboutThisSchoolComponent,
+      EmployerComponent,
+      CertificationComponent,
+      DegreeComponent,
+      SkillComponent,
+      IndustryComponent,
+      EmployerSubNavComponent,
+      DegreeSubNavComponent,
+      CertificationSubNavComponent,
+      SkillSubNavComponent,
+      IndustrySubNavComponent
     ],
     imports: [
       SalaryRoutingModule,

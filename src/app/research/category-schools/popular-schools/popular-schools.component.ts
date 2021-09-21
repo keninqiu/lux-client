@@ -22,6 +22,6 @@ export class PopularSchoolsComponent implements OnInit {
   }
 
   getSchoolPath(school) {
-    return school.url.replace('=', '%3D').replace('(', '%28').replace(')', '%29');
+    return school.url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29');
   }
 }

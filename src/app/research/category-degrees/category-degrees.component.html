@@ -1,13 +1,13 @@
 <app-menu></app-menu>
 <app-search-salary 
-[title]="'按工作搜索薪资待遇'"
-[selectedCategory]="'工作'"
-[placeholder]="'输入工作'"
+[title]="'按学位搜索薪资待遇'"
+[selectedCategory]="'学位'"
+[placeholder]="'输入学位'"
 ></app-search-salary>
 <div class="page  rc-directory">
     <div class="content one-col">
         <div class="maincontent">
-            <app-category-breadcrumb [categoryType]="'Job'" [categoryName]="categoryName" [country]="country"></app-category-breadcrumb>
+            <app-category-breadcrumb [categoryType]="'Degree'" [categoryName]="categoryName" [country]="country"></app-category-breadcrumb>
             <app-category-popular-degrees [degrees]="degrees" [categoryName]="categoryName" [countryCode]="countryCode"></app-category-popular-degrees>
         </div>
     </div>

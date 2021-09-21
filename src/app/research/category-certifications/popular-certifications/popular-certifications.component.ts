@@ -22,6 +22,6 @@ export class CateogryPopularCertificationsComponent implements OnInit {
   }
 
   getCertificationPath(certification) {
-    return certification.url.replace('=', '%3D').replace('(', '%28').replace(')', '%29');
+    return certification.url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29');
   }
 }

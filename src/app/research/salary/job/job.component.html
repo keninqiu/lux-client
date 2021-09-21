@@ -2,14 +2,16 @@
     <app-job-sub-nav [job]="job"></app-job-sub-nav>
     <div class="page">
         <div class="content">
-            <app-paychart></app-paychart>
+            <app-paychart [job]="job"></app-paychart>
             <app-market-worth></app-market-worth>
-            <app-explore></app-explore>
-            <app-featured-content></app-featured-content>
-            <app-pay-by-experience-level></app-pay-by-experience-level>
+            <!--
+            <app-explore [job]="job"></app-explore>
+            <app-featured-content [job]="job"></app-featured-content>
+            -->
+            <app-pay-by-experience-level [job]="job"></app-pay-by-experience-level>
             <app-what-do></app-what-do>
             <app-how-it-works></app-how-it-works>
-            <app-job-satisfaction></app-job-satisfaction>
+            <app-job-satisfaction [job]="job"></app-job-satisfaction>
         </div>
     </div>
 </div>

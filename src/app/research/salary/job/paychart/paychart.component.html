@@ -2,14 +2,17 @@
     <div class="paycharts">
        <div class="paycharts__percentile">
           <div class="paycharts__percentile--text">
-             <span class="paycharts__value">$72,587</span>
-             <div class="Dropdown-root">
-                <div class="Dropdown-control" aria-haspopup="listbox">
-                   <div class="Dropdown-placeholder">/ year</div>
+             <span class="paycharts__value">${{showCompensation()}}</span>
+             <div class="Dropdown-root" [ngClass]="isOpen?'is-open':''">
+                <div class="Dropdown-control" aria-haspopup="listbox" (click)="toggleOpen()">
+                   <div class="Dropdown-placeholder">/ <span *ngIf="salaryType=='Salary'">年</span><span *ngIf="salaryType!='Salary'">时</span></div>
                    <div class="Dropdown-arrow-wrapper"><span class="Dropdown-arrow"></span></div>
                 </div>
+                <div class="Dropdown-menu" aria-expanded="true" *ngIf="isOpen" (click)="changeSalaryType()">
+                   <div class="Dropdown-option paycharts--toggle-link" role="option" aria-selected="false">/ <span *ngIf="salaryType=='Salary'">时</span><span *ngIf="salaryType!='Salary'">年</span></div>
+                </div>
              </div>
-             <br>Avg. Base <!-- --> Salary<!-- --> (<!-- -->USD<!-- -->)
+             <br>平均基本<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span><!-- --> (<!-- -->{{job.currencyCode}}<!-- -->)
           </div>
           <div id="percentile-chart-container">
              <div class="percentile-chart ">
@@ -30,7 +33,7 @@
                    <div class="percentile-chart__low-bar"></div>
                    <div class="percentile-chart__label">
                       <div>10%</div>
-                      <div>$51k</div>
+                      <div>${{getCompensation('min')}}</div>
                    </div>
                 </div>
                 <div class="percentile-chart__middle">
@@ -48,8 +51,8 @@
                    <div class="percentile-chart__label--median">
                       <div class="percentile-chart__label percentile-chart__label--quartile"></div>
                       <div class="percentile-chart__label">
-                         <div>MEDIAN</div>
-                         <div class="percentile-chart__median">$73k</div>
+                         <div>中位数</div>
+                         <div class="percentile-chart__median">${{getCompensation('avg')}}</div>
                       </div>
                       <div class="percentile-chart__label percentile-chart__label--quartile"></div>
                    </div>
@@ -58,7 +61,7 @@
                    <div class="percentile-chart__high-bar"></div>
                    <div class="percentile-chart__label">
                       <div>90%</div>
-                      <div>$106k</div>
+                      <div>${{getCompensation('max')}}</div>
                    </div>
                 </div>
                 <div class="percentile-chart__edge">
@@ -77,7 +80,7 @@
              </div>
           </div>
           <p class="paycharts__percentile--desc">
-             The average <!-- -->salary<!-- --> for <!-- -->a Software Developer<!-- --> is <!-- -->$72,587
+             {{job.name}}的平均<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span>是${{getCompensation('avg')}}
           </p>
        </div>
        <div class="paycharts__charttable">
@@ -86,114 +89,42 @@
                 <div class="tablerow">
                    <div class="tablerow__title-wrapper">
                       <div class="tablerow__title">
-                         Base Salary<span class="pxl-tooltip  " data-tip="Salary represents gross income before taxes and deductions. It does not include additional pay such as benefits, bonuses, profit sharing or commissions." data-for="Base Salary" currentitem="false"><span class="icon-reverse icon-circle"><i class="icon-info"></i></span></span>
-                         <div class="__react_component_tooltip tb0df2e2-cdee-4b29-90ef-14d6327eba9c place-right type-dark" id="Base Salary" data-id="tooltip">
-                            <style>
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c {
-                               color: #fff;
-                               background: #222;
-                               border: 1px solid transparent;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-top {
-                               margin-top: -10px;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-top::before {
-                               border-top: 8px solid transparent;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-top::after {
-                               border-left: 8px solid transparent;
-                               border-right: 8px solid transparent;
-                               bottom: -6px;
-                               left: 50%;
-                               margin-left: -8px;
-                               border-top-color: #222;
-                               border-top-style: solid;
-                               border-top-width: 6px;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-bottom {
-                               margin-top: 10px;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-bottom::before {
-                               border-bottom: 8px solid transparent;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-bottom::after {
-                               border-left: 8px solid transparent;
-                               border-right: 8px solid transparent;
-                               top: -6px;
-                               left: 50%;
-                               margin-left: -8px;
-                               border-bottom-color: #222;
-                               border-bottom-style: solid;
-                               border-bottom-width: 6px;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-left {
-                               margin-left: -10px;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-left::before {
-                               border-left: 8px solid transparent;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-left::after {
-                               border-top: 5px solid transparent;
-                               border-bottom: 5px solid transparent;
-                               right: -6px;
-                               top: 50%;
-                               margin-top: -4px;
-                               border-left-color: #222;
-                               border-left-style: solid;
-                               border-left-width: 6px;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-right {
-                               margin-left: 10px;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-right::before {
-                               border-right: 8px solid transparent;
-                               }
-                               .tb0df2e2-cdee-4b29-90ef-14d6327eba9c.place-right::after {
-                               border-top: 5px solid transparent;
-                               border-bottom: 5px solid transparent;
-                               left: -6px;
-                               top: 50%;
-                               margin-top: -4px;
-                               border-right-color: #222;
-                               border-right-style: solid;
-                               border-right-width: 6px;
-                               }
-                            </style>
-                         </div>
+                         基本<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span>
+                         <span class="pxl-tooltip  " data-tip="Salary represents gross income before taxes and deductions. It does not include additional pay such as benefits, bonuses, profit sharing or commissions." data-for="Base Salary" currentitem="false"><span class="icon-reverse icon-circle"><i class="icon-info"></i></span></span>
                       </div>
                       <div class="tablerow__detail"></div>
                    </div>
-                   <div class="tablerow__value">$51k - $106k</div>
+                   <div class="tablerow__value">${{getCompensation('min')}} - ${{getCompensation('max')}}</div>
                    <div class="tablerow__bar">
                       <div class="tablerow__bar-range" style="width:50%;margin-left:46%"></div>
                    </div>
                 </div>
                 <div class="tablerow">
                    <div class="tablerow__title-wrapper">
-                      <div class="tablerow__title">Bonus</div>
+                      <div class="tablerow__title">奖金</div>
                       <div class="tablerow__detail"></div>
                    </div>
-                   <div class="tablerow__value">$973 - $11k</div>
+                   <div class="tablerow__value">${{getOtherCompensation('bonus', 'min')}} - ${{getOtherCompensation('bonus', 'max')}}</div>
                    <div class="tablerow__bar">
                       <div class="tablerow__bar-range" style="width:9%;margin-left:0%"></div>
                    </div>
                 </div>
                 <div class="tablerow">
                    <div class="tablerow__title-wrapper">
-                      <div class="tablerow__title">Profit Sharing</div>
+                      <div class="tablerow__title">分红</div>
                       <div class="tablerow__detail"></div>
                    </div>
-                   <div class="tablerow__value">$566 - $10k</div>
+                   <div class="tablerow__value">${{getOtherCompensation('profitSharing', 'min')}} - ${{getOtherCompensation('profitSharing', 'max')}}</div>
                    <div class="tablerow__bar">
                       <div class="tablerow__bar-range" style="width:9%;margin-left:0%"></div>
                    </div>
                 </div>
                 <div class="tablerow">
                    <div class="tablerow__title-wrapper">
-                      <div class="tablerow__title">Commission</div>
+                      <div class="tablerow__title">提成</div>
                       <div class="tablerow__detail"></div>
                    </div>
-                   <div class="tablerow__value">$6k - $10k</div>
+                   <div class="tablerow__value">${{getOtherCompensation('commission', 'min')}} - ${{getOtherCompensation('commission', 'max')}}</div>
                    <div class="tablerow__bar">
                       <div class="tablerow__bar-range" style="width:5%;margin-left:4%"></div>
                    </div>
@@ -201,84 +132,11 @@
                 <div class="tablerow">
                    <div class="tablerow__title-wrapper">
                       <div class="tablerow__title">
-                         Total Pay<span class="pxl-tooltip  " data-tip="Total Pay combines base annual salary or hourly wage, bonuses, profit sharing, tips, commissions, overtime pay and other forms of cash earnings, as applicable for this job. It does not include equity (stock) compensation, cash value of retirement benefits, or the value of other non-cash benefits (e.g. healthcare)." data-for="Total Pay" currentitem="false"><span class="icon-reverse icon-circle"><i class="icon-info"></i></span></span>
-                         <div class="__react_component_tooltip t091b909-35b0-46e9-969b-20c5fd4ece7f place-right type-dark" id="Total Pay" data-id="tooltip">
-                            <style>
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f {
-                               color: #fff;
-                               background: #222;
-                               border: 1px solid transparent;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-top {
-                               margin-top: -10px;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-top::before {
-                               border-top: 8px solid transparent;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-top::after {
-                               border-left: 8px solid transparent;
-                               border-right: 8px solid transparent;
-                               bottom: -6px;
-                               left: 50%;
-                               margin-left: -8px;
-                               border-top-color: #222;
-                               border-top-style: solid;
-                               border-top-width: 6px;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-bottom {
-                               margin-top: 10px;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-bottom::before {
-                               border-bottom: 8px solid transparent;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-bottom::after {
-                               border-left: 8px solid transparent;
-                               border-right: 8px solid transparent;
-                               top: -6px;
-                               left: 50%;
-                               margin-left: -8px;
-                               border-bottom-color: #222;
-                               border-bottom-style: solid;
-                               border-bottom-width: 6px;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-left {
-                               margin-left: -10px;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-left::before {
-                               border-left: 8px solid transparent;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-left::after {
-                               border-top: 5px solid transparent;
-                               border-bottom: 5px solid transparent;
-                               right: -6px;
-                               top: 50%;
-                               margin-top: -4px;
-                               border-left-color: #222;
-                               border-left-style: solid;
-                               border-left-width: 6px;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-right {
-                               margin-left: 10px;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-right::before {
-                               border-right: 8px solid transparent;
-                               }
-                               .t091b909-35b0-46e9-969b-20c5fd4ece7f.place-right::after {
-                               border-top: 5px solid transparent;
-                               border-bottom: 5px solid transparent;
-                               left: -6px;
-                               top: 50%;
-                               margin-top: -4px;
-                               border-right-color: #222;
-                               border-right-style: solid;
-                               border-right-width: 6px;
-                               }
-                            </style>
-                         </div>
+                         总计<span class="pxl-tooltip  " data-tip="Total Pay combines base annual salary or hourly wage, bonuses, profit sharing, tips, commissions, overtime pay and other forms of cash earnings, as applicable for this job. It does not include equity (stock) compensation, cash value of retirement benefits, or the value of other non-cash benefits (e.g. healthcare)." data-for="Total Pay" currentitem="false"><span class="icon-reverse icon-circle"><i class="icon-info"></i></span></span>
                       </div>
                       <div class="tablerow__detail"></div>
                    </div>
-                   <div class="tablerow__value">$50k - $110k</div>
+                   <div class="tablerow__value">${{getOtherCompensation('total', 'min')}} - ${{getOtherCompensation('total', 'max')}}</div>
                    <div class="tablerow__bar">
                       <div class="tablerow__bar-range" style="width:55%;margin-left:45%"></div>
                    </div>
@@ -287,7 +145,7 @@
              <div class="charttable__bottom"></div>
           </div>
           <div class="paycharts__footer">
-             Based on 16,578 salary profiles <!-- -->(last updated<!-- --> <!-- -->Aug 11 2021<!-- -->)
+             基于{{getOtherCompensation('total', 'profileCount')}}份样本数据
           </div>
        </div>
     </div>

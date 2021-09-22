@@ -4,10 +4,10 @@
         <div class="content">
             <app-employer-overview [employer]="employer"></app-employer-overview>
             <app-market-worth></app-market-worth>
-            <app-employer-jobs-by-salary [employer]="employer"></app-employer-jobs-by-salary>
+            <app-shared-jobs-by-salary [entity]="employer"></app-shared-jobs-by-salary>
             <app-employer-company-reviews [employer]="employer"></app-employer-company-reviews>
             <app-shared-by-dimension [entity]="employer"></app-shared-by-dimension>
-            <app-employer-popular-degrees [employer]="employer"></app-employer-popular-degrees>
+            <app-shared-popular-degrees [entity]="employer"></app-shared-popular-degrees>
             <app-shared-related [entity]="employer" [typeName]="'公司'"></app-shared-related>
         </div>
     </div>

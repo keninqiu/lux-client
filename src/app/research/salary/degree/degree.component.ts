@@ -11,6 +11,7 @@ export class DegreeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('degree=', this.degree);
   }
 
 }

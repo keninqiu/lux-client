@@ -36,16 +36,17 @@ import { EmployerOverviewComponent } from './employer/overview/overview.componen
 import { EmployerCompanyReviewsComponent } from './employer/company-reviews/company-reviews.component';
 import { BenefitsComponent } from './employer/benefits/benefits.component';
 import { AboutComponent } from './employer/about/about.component';
-import { PopularDegreesComponent } from './employer/popular-degrees/popular-degrees.component';
+import { SharedPopularDegreesComponent } from './shared/popular-degrees/popular-degrees.component';
 import { JobListingComponent } from './employer/job-listing/job-listing.component';
 import { CompareEmployersComponent } from './employer/compare-employers/compare-employers.component';
-import { EmployerJobsBySalaryComponent } from './employer/jobs-by-salary/jobs-by-salary.component';
+import { SharedJobsBySalaryComponent } from './shared/jobs-by-salary/jobs-by-salary.component';
 import { SharedByDimensionComponent } from './shared/by-dimension/by-dimension.component';
 import { DegreeOverviewComponent } from './degree/overview/overview.component';
 import { CertificationOverviewComponent } from './certification/overview/overview.component';
 import { SkillOverviewComponent } from './skill/overview/overview.component';
 import { IndustryOverviewComponent } from './industry/overview/overview.component';
-
+import { RelatedDegreesComponent } from './degree/related-degrees/related-degrees.component';
+import { DegreeJobSatisfactionComponent } from './degree/job-satisfaction/job-satisfaction.component';
 @NgModule({
     declarations: [
       SalaryComponent, 
@@ -81,15 +82,17 @@ import { IndustryOverviewComponent } from './industry/overview/overview.componen
       EmployerCompanyReviewsComponent,
       BenefitsComponent,
       AboutComponent,
-      PopularDegreesComponent,
+      SharedPopularDegreesComponent,
       JobListingComponent,
       CompareEmployersComponent,
-      EmployerJobsBySalaryComponent,
+      SharedJobsBySalaryComponent,
       SharedByDimensionComponent,
       DegreeOverviewComponent,
       CertificationOverviewComponent,
       SkillOverviewComponent,
-      IndustryOverviewComponent
+      IndustryOverviewComponent,
+      RelatedDegreesComponent,
+      DegreeJobSatisfactionComponent
     ],
     imports: [
       SalaryRoutingModule,

@@ -2,12 +2,12 @@
 <section class="page-section">
     <div class="jobs-table">
        <h2 class="page-subtitle">
-          {{employer.name}}的工作的薪资范围
+          {{entity.name}}的工作的薪资范围
        </h2>
        <div class="jobs-table__blurb">
           <div class="expandable ">
              <p class="expandable__paragraph">
-                {{employer.name}}平均每年向员工支付 {{employer.compensation.salary.avg}} 美元。 {{employer.name}}的年薪从平均 {{employer.compensation.salary.min}} 美元到 {{employer.compensation.salary.max}} 美元不等。 {{employer.name}} 职位高级软件工程师/开发人员/程序员的员工收入最高，平均年薪为 105,758 美元，而提案协调员职位的员工收入最低，平均年薪为 55,111 美元。
+                {{entity.name}}平均每年向员工支付 {{entity.compensation.salary.avg}} 美元。 {{entity.name}}的年薪从平均 {{entity.compensation.salary.min}} 美元到 {{entity.compensation.salary.max}} 美元不等。 {{entity.name}} 职位高级软件工程师/开发人员/程序员的员工收入最高，平均年薪为 105,758 美元，而提案协调员职位的员工收入最低，平均年薪为 55,111 美元。
              </p>
           </div>
        </div>
@@ -28,7 +28,7 @@
                 </tr>
              </thead>
              <tbody>
-                <tr class="data-table__row" *ngFor="let item of employer.byDimension.salaryByJob">
+                <tr class="data-table__row" *ngFor="let item of entity.byDimension.salaryByJob">
                    <td class="data-table__cell">
                        <span class="data-table__title">工作:</span>
                        <span class="data-table__value">

@@ -1,0 +1,34 @@
+<section class="page-section">
+    <h2 class="defaultv2__space-bottom">
+       相关学位
+    </h2>
+    <p class="defaultv2__space-bottom">跟本学位相关的其他学位，以薪酬排名</p>
+    <div class="relatedentity defaultv2__relatedentity">
+       <a data-instant="true" class="relatedentity__card" *ngFor="let item of degree.related" href="/research/US/Degree=Bachelor_of_Arts_(BA)%2C_Asian_American_Studies/Salary">
+          <span class="relatedentity__card-title">{{item.name}}</span>
+          <p class="relatedentity__card-detail">
+             平均薪酬<!-- --> <!-- -->${{item.min}}<!-- --> <!-- -->— <!-- -->${{item.max}}
+          </p>
+       </a>
+
+    </div>
+    <!--
+    <div class="pagination relatedentity__pagination">
+       <a class="pagination__btn pagination__prev-btn pagination__btn--off">
+          <div class="pagination__btn--inner"><i class="icon-left-open"></i></div>
+       </a>
+       <a class="pagination__btn pagination__btn--active">
+          <div class="pagination__btn--inner">1</div>
+       </a>
+       <a class="pagination__btn">
+          <div class="pagination__btn--inner">2</div>
+       </a>
+       <a class="pagination__btn">
+          <div class="pagination__btn--inner">3</div>
+       </a>
+       <a class="pagination__btn pagination__next-btn">
+          <div class="pagination__btn--inner"><i class="icon-right-open"></i></div>
+       </a>
+    </div>
+    -->
+ </section>

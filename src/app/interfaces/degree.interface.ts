@@ -45,5 +45,11 @@ export interface Degree extends Entity {
             profileCount: number              
         }
     },
+    ratings: {
+        jobSatisfaction: {
+            profileCount: number,
+            score: number
+        },
+    },
     related: [] 
 }

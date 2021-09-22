@@ -1,8 +1,8 @@
 <section class="page-section">
     <h2 class="page-subtitle">
-        {{school.name}}毕业生就业的热门公司
+        {{entity.name}}毕业生就业的热门公司
     </h2>
-    <p class="defaultv2__space-bottom">{{school.name}}就业的热门公司的薪酬范围</p>
+    <p class="defaultv2__space-bottom">{{entity.name}}就业的热门公司的薪酬范围</p>
     <div class="carousel related-carousel related-companies-related-carousel" role="listbox">
         <div class="carousel__content" style="width: 606px;">
             <div class="carousel__arrow carousel__arrow--left carousel__arrow--invisible">
@@ -10,7 +10,7 @@
             </div>
             <div class="carousel__items-window">
                 <div class="carousel__items" style="transform: translate(1px);">
-                    <a data-instant="true" class="related-content-card" *ngFor="let item of school.byDimension.salaryByEmployer" href="{{getUrl(item.url)}}">
+                    <a data-instant="true" class="related-content-card" *ngFor="let item of getEmployers()" href="{{getUrl(item.url)}}">
                         <div class="related-content-card__image-container">
                             <div class="lazyload-wrapper ">
                                 <img class="conux-logo related-content-card__image-container__image" src="/assets/images/employer-placeholder.png" alt="{{item.name}}">

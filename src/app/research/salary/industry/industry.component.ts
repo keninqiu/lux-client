@@ -11,6 +11,7 @@ export class IndustryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('industry=', this.industry);
   }
 
 }

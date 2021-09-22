@@ -3,6 +3,11 @@
     <div class="page">
         <div class="content">
             <app-certification-overview [certification]="certification"></app-certification-overview>
+            <app-shared-jobs-by-salary [entity]="certification"></app-shared-jobs-by-salary>
+            <app-related-certifications [certification]="certification"></app-related-certifications>
+            <app-shared-by-dimension [entity]="certification"></app-shared-by-dimension>
+            <app-shared-job-satisfaction [entity]="certification"></app-shared-job-satisfaction>
+            <app-shared-popular-companies [entity]="certification"></app-shared-popular-companies>
         </div>
     </div>
 </div>

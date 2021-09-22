@@ -1,13 +1,13 @@
 <section class="page-section">
     <h2 class="defaultv2__space-bottom">
-       相关学位
+       相关证书
     </h2>
-    <p class="defaultv2__space-bottom">跟本学位相关的其他学位，以薪酬排名</p>
+    <p class="defaultv2__space-bottom">跟本证书相关的其他证书</p>
     <div class="relatedentity defaultv2__relatedentity">
-       <a data-instant="true" class="relatedentity__card" *ngFor="let item of degree.related" href="getUrl(item.url)">
+       <a data-instant="true" class="relatedentity__card" *ngFor="let item of certification.related" href="getUrl(item.url)">
           <span class="relatedentity__card-title">{{item.name}}</span>
           <p class="relatedentity__card-detail">
-             平均薪酬<!-- --> <!-- -->${{item.min}}<!-- --> <!-- -->— <!-- -->${{item.max}}
+            平均薪酬<!-- --> <!-- -->${{item.min}}<!-- --> <!-- -->— <!-- -->${{item.max}}
           </p>
        </a>
 

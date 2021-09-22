@@ -1,14 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Degree } from 'src/app/interfaces/degree.interface';
+import { Certification } from 'src/app/interfaces/certification.interface';
 
 @Component({
-  selector: 'app-related-degrees',
-  templateUrl: './related-degrees.component.html',
-  styleUrls: ['./related-degrees.component.scss', 
+  selector: 'app-related-certifications',
+  templateUrl: './related-certifications.component.html',
+  styleUrls: ['./related-certifications.component.scss', 
   '../../../../../assets/css/salary/ed9a8129e06be29a7ddb.css']
 })
-export class RelatedDegreesComponent implements OnInit {
-  @Input() degree: Degree;
+export class RelatedCertificationsComponent implements OnInit {
+  @Input() certification: Certification;
   constructor() { }
 
   ngOnInit(): void {

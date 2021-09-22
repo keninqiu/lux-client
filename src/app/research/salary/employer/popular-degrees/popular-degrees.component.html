@@ -1,0 +1,14 @@
+<section class="page-section">
+    <h2 class="employerv2__space-bottom">热门学位</h2>
+    <div class="section-description">
+       <!-- -->{{employer.name}}<!-- --> 热门学位的薪酬范围
+    </div>
+    <div class="relatedentity employerv2__popular-employers">
+       <a data-instant="true" class="relatedentity__card" *ngFor="let item of employer.byDimension.salaryByDegree" href="getUrl(item.url)">
+          <span class="relatedentity__card-title">{{item.name}}</span>
+          <p class="relatedentity__card-detail">
+             平均 <!-- -->薪酬<!-- --> <!-- -->${{item.min}}<!-- --> <!-- -->— <!-- -->${{item.max}}
+          </p>
+       </a>
+    </div>
+ </section>

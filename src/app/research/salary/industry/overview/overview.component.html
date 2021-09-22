@@ -1,0 +1,26 @@
+<section class="page-section page-section--first">
+    <div class="employer-overview">
+       <div class="employer-overview__logo">
+           <img class="conux-logo " src="/assets/images/employer-placeholder.png" alt="{{industry.name}}">
+        </div>
+       <div class="employer-overview__pay">
+          <div class="employer-overview__pay-container">
+             <span class="employer-overview__value">${{showCompensation()}}</span>
+             <div class="pxl-dropdown employer-overview__dropdown  " [ngClass]="isOpen ? 'open' : ''">
+                <button class="pxl-btn dropdown__btn pxl-dropdown__toggle" (click)="toggleOpen()" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    / <span *ngIf="salaryType=='Salary'">年</span><span *ngIf="salaryType!='Salary'">时</span>
+                </button>
+                <div class="pxl-dropdown__menu" aria-labelledby="" (click)="changeSalaryType()">
+                    <a title="显示{{salaryType == 'Salary' ? '年薪' : '时薪'}}">/ <span *ngIf="salaryType!='Salary'">年薪</span><span *ngIf="salaryType=='Salary'">时薪</span></a>
+                </div>
+             </div>
+          </div>
+          <span class="employer-overview__text">平均基本<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span><!-- --> (<!-- -->{{industry.currencyCode}}<!-- -->)</span>
+       </div>
+       <div class="employer-overview__bonus">
+          <div class="employer-overview__value">${{industry.compensation.bonus.avg}}</div>
+          <span class="employer-overview__text"><a href="/research/US/Employer=The_Walt_Disney_Company/Bonus">平均奖金</a></span>
+       </div>
+
+    </div>
+ </section>

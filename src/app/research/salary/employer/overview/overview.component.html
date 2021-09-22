@@ -1,0 +1,34 @@
+<section class="page-section page-section--first">
+    <div class="employer-overview">
+       <div class="employer-overview__logo">
+           <img class="conux-logo " src="/assets/images/employer-placeholder.png" alt="{{employer.name}}">
+        </div>
+       <div class="employer-overview__pay">
+          <div class="employer-overview__pay-container">
+             <span class="employer-overview__value">${{showCompensation()}}</span>
+             <div class="pxl-dropdown employer-overview__dropdown  " [ngClass]="isOpen ? 'open' : ''">
+                <button class="pxl-btn dropdown__btn pxl-dropdown__toggle" (click)="toggleOpen()" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    / <span *ngIf="salaryType=='Salary'">年</span><span *ngIf="salaryType!='Salary'">时</span>
+                </button>
+                <div class="pxl-dropdown__menu" aria-labelledby="" (click)="changeSalaryType()">
+                    <a title="显示{{salaryType == 'Salary' ? '年薪' : '时薪'}}">/ <span *ngIf="salaryType!='Salary'">年薪</span><span *ngIf="salaryType=='Salary'">时薪</span></a>
+                </div>
+             </div>
+          </div>
+          <span class="employer-overview__text">平均基本<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span><!-- --> (<!-- -->{{employer.currencyCode}}<!-- -->)</span>
+       </div>
+       <div class="employer-overview__bonus">
+          <div class="employer-overview__value">${{employer.compensation.bonus.avg}}</div>
+          <span class="employer-overview__text"><a href="/research/US/Employer=The_Walt_Disney_Company/Bonus">平均奖金</a></span>
+       </div>
+       <div class="employer-overview__divider"></div>
+       <div class="employer-overview__rating">
+          <div class="rating " title="{{employer.ratings.overall.score}}">
+             <div class="rating__background"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+             <div class="rating__fill" style="width:{{employer.ratings.overall.score/5*100}}%"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+          </div>
+          <span class="employer-overview__rating-score">{{employer.ratings.overall.score}}</span>
+          <div class="employer-overview__text"><a href="/research/US/Employer=The_Walt_Disney_Company/Reviews">评论</a></div>
+       </div>
+    </div>
+ </section>

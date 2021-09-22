@@ -1,26 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { School } from 'src/app/interfaces/school.interface';
-
 @Component({
-  selector: 'app-school-by-dimension',
+  selector: 'app-shared-by-dimension',
   templateUrl: './by-dimension.component.html',
   styleUrls: [
-    './by-dimension.component.scss',
-    '../../../../../assets/css/salary/a4f25d4089272f5a54e9.css'
+    './by-dimension.component.scss', 
+    '../../../../../assets/css/salary/ed9a8129e06be29a7ddb.css'
   ]
 })
-export class SchoolByDimensionComponent implements OnInit {
-  @Input() school: School;
+export class SharedByDimensionComponent implements OnInit {
+  @Input() entity: any;
   byDimension: any;
   experienceTotal: number;
   genderTotal: number;
   constructor() { }
 
   ngOnInit(): void {
+    this.byDimension = this.entity.byDimension;
   }
 
   getExperiencePercentage(level: string) {
-    this.byDimension = this.school.byDimension;
+    
     if(!this.byDimension || !this.byDimension.experience) {
       return 0;
     }
@@ -51,8 +50,6 @@ export class SchoolByDimensionComponent implements OnInit {
   }
 
   getGenderPercentage(level: string) {
-    this.byDimension = this.school.byDimension;
-    
     if(!this.byDimension || !this.byDimension.gender) {
       return 0;
     }

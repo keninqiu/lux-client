@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Degree } from 'src/app/interfaces/degree.interface';
 
 @Component({
   selector: 'app-salary-degree',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./degree.component.scss']
 })
 export class DegreeComponent implements OnInit {
-
+  @Input() degree: Degree;
   constructor() { }
 
   ngOnInit(): void {

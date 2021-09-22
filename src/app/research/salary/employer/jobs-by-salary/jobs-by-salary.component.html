@@ -1,0 +1,126 @@
+
+<section class="page-section">
+    <div class="jobs-table">
+       <h2 class="page-subtitle">
+          {{employer.name}}的工作的薪资范围
+       </h2>
+       <div class="jobs-table__blurb">
+          <div class="expandable ">
+             <p class="expandable__paragraph">
+                {{employer.name}}平均每年向员工支付 {{employer.compensation.salary.avg}} 美元。 {{employer.name}}的年薪从平均 {{employer.compensation.salary.min}} 美元到 {{employer.compensation.salary.max}} 美元不等。 {{employer.name}} 职位高级软件工程师/开发人员/程序员的员工收入最高，平均年薪为 105,758 美元，而提案协调员职位的员工收入最低，平均年薪为 55,111 美元。
+             </p>
+          </div>
+       </div>
+       <i class="jobs-table__icon icon-search"></i>
+       <div class="jobs-table__autocomplete-container">
+          <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-jobs-table__search" aria-expanded="false" class="react-autosuggest__container">
+             <input type="text" value="" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-jobs-table__search" class="pxl-form-control jobs-table__search" tabindex="0" id="jobs-table__search" placeholder="Search by job title">
+             <div id="react-autowhatever-jobs-table__search" role="listbox" class="react-autosuggest__suggestions-container"></div>
+          </div>
+       </div>
+       <div class="jobs-table__container">
+          <table class="data-table">
+             <thead>
+                <tr>
+                   <th class=" data-table__header">工作</th>
+                   <th class=" data-table__header">范围</th>
+                   <th class=" data-table__header">平均值</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr class="data-table__row" *ngFor="let item of employer.byDimension.salaryByJob">
+                   <td class="data-table__cell">
+                       <span class="data-table__title">工作:</span>
+                       <span class="data-table__value">
+                           <a href="{{getUrl(item.url)}}" data-instant="true">
+                            {{item.name}}
+                           </a>
+                       </span>
+                   </td>
+                   <td class="data-table__cell  ">
+                       <span class="data-table__title">范围:</span>
+                       <span class="data-table__value">${{item.min}} - ${{item.max}}</span>
+                   </td>
+                   <td class="data-table__cell  ">
+                       <span class="data-table__title">平均值:</span>
+                       <span class="data-table__value">${{item.avg}}</span>
+                   </td>
+                </tr>
+                <!--
+                <tr class="data-table__row">
+                   <td class="data-table__cell  "><span class="data-table__title">Job Title:</span><span class="data-table__value"><a href="/research/US/Job=Software_Engineer/Salary/a5be17d2/The-Walt-Disney-Company" data-instant="true">Software Engineer</a></span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Range:</span><span class="data-table__value">$76k - $135k</span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Average:</span><span class="data-table__value">$102,648</span></td>
+                </tr>
+                <tr class="data-table__row">
+                   <td class="data-table__cell  "><span class="data-table__title">Job Title:</span><span class="data-table__value"><a href="/research/US/Job=Senior_Software_Engineer/Salary/968c76ba/The-Walt-Disney-Company" data-instant="true">Senior Software Engineer</a></span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Range:</span><span class="data-table__value">$102k - $171k</span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Average:</span><span class="data-table__value">$134,400</span></td>
+                </tr>
+                <tr class="data-table__row">
+                   <td class="data-table__cell  "><span class="data-table__title">Job Title:</span><span class="data-table__value"><a href="/research/US/Job=Finance_Manager/Salary/b00ee5bb/The-Walt-Disney-Company" data-instant="true">Finance Manager</a></span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Range:</span><span class="data-table__value">$59k - $128k</span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Average:</span><span class="data-table__value">$95,613</span></td>
+                </tr>
+                <tr class="data-table__row">
+                   <td class="data-table__cell  "><span class="data-table__title">Job Title:</span><span class="data-table__value"><a href="/research/US/Job=Data_Analyst/Salary/8fccdb1c/The-Walt-Disney-Company" data-instant="true">Data Analyst</a></span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Range:</span><span class="data-table__value">$49k - $96k</span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Average:</span><span class="data-table__value">$68,749</span></td>
+                </tr>
+                <tr class="data-table__row">
+                   <td class="data-table__cell  "><span class="data-table__title">Job Title:</span><span class="data-table__value"><a href="/research/US/Job=Executive_Assistant/Salary/083e2d51/The-Walt-Disney-Company" data-instant="true">Executive Assistant</a></span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Range:</span><span class="data-table__value">$40k - $84k</span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Average:</span><span class="data-table__value">$58,275</span></td>
+                </tr>
+                <tr class="data-table__row">
+                   <td class="data-table__cell  "><span class="data-table__title">Job Title:</span><span class="data-table__value"><a href="/research/US/Job=Financial_Analyst/Salary/7a9247ce/The-Walt-Disney-Company" data-instant="true">Financial Analyst</a></span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Range:</span><span class="data-table__value">$47k - $88k</span></td>
+                   <td class="data-table__cell  "><span class="data-table__title">Average:</span><span class="data-table__value">$63,886</span></td>
+                </tr>
+                -->
+             </tbody>
+          </table>
+<!--
+          <div class="charttable__pagination">
+             <div class="pagination ">
+                <a class="pagination__btn pagination__prev-btn pagination__btn--off">
+                   <div class="pagination__btn--inner"><i class="icon-left-open"></i></div>
+                </a>
+                <a class="pagination__btn pagination__btn--active">
+                   <div class="pagination__btn--inner">1</div>
+                </a>
+                <a class="pagination__btn" href="/research/US/Employer=The_Walt_Disney_Company/Salary/Page-2">
+                   <div class="pagination__btn--inner">2</div>
+                </a>
+                <a class="pagination__btn" href="/research/US/Employer=The_Walt_Disney_Company/Salary/Page-3">
+                   <div class="pagination__btn--inner">3</div>
+                </a>
+                <a class="pagination__btn pagination__ellipsis pagination__btn--off">
+                   <div class="pagination__btn--inner">…</div>
+                </a>
+                <a class="pagination__btn" href="/research/US/Employer=The_Walt_Disney_Company/Salary/Page-53">
+                   <div class="pagination__btn--inner">53</div>
+                </a>
+                <a class="pagination__btn pagination__next-btn" href="/research/US/Employer=The_Walt_Disney_Company/Salary/Page-2">
+                   <div class="pagination__btn--inner"><i class="icon-right-open"></i></div>
+                </a>
+             </div>
+          </div>
+        -->
+       </div>
+       <!--
+       <div class="charttable__footer">
+          <div class="charttable__footer-item">
+             Currency: USD
+             <div class="charttable__footer-divider">•</div>
+          </div>
+          <div class="charttable__footer-item">
+             Updated: Sep 01 2021
+             <div class="charttable__footer-divider">•</div>
+          </div>
+          <div class="charttable__footer-item">Individuals Reporting: 735</div>
+       </div>
+    -->
+    </div>
+ </section>
+ 

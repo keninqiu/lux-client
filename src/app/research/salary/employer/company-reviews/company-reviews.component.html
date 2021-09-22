@@ -1,0 +1,65 @@
+<section class="page-section">
+    <h2 class="employerv2__space-bottom">
+       {{employer.name}}的评分
+    </h2>
+    <div class="ratings">
+       <div class="ratings__ratings-container">
+          <div class="ratings__section-title">总体满意度</div>
+          <div class="ratings__overall">
+             <div class="ratings__overall-text">
+                {{employer.ratings.overall.score}}<!-- --> (满分5分)
+             </div>
+             <div class="rating " title="3.4">
+                <div class="rating__background"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                <div class="rating__fill" style="width:{{employer.ratings.overall.score*100/5}}%"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+             </div>
+             <span class="ratings__number"></span>
+          </div>
+          <div class="ratings__others">
+             <div class="ratings__section-title">评分</div>
+             <div class="ratings__rating">
+                <div class="ratings__rating-title">欣赏</div>
+                <div class="rating " title="{{employer.ratings.appreciation.score}}">
+                   <div class="rating__background"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                   <div class="rating__fill" style="width:70%"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                </div>
+                <span class="ratings__number ratings__number--bold">{{employer.ratings.appreciation.score}}</span>
+             </div>
+             <div class="ratings__rating">
+                <div class="ratings__rating-title">公司形象</div>
+                <div class="rating " title="{{employer.ratings.companyOutlook.score}}">
+                   <div class="rating__background"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                   <div class="rating__fill" style="width:76%"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                </div>
+                <span class="ratings__number ratings__number--bold">{{employer.ratings.companyOutlook.score}}</span>
+             </div>
+             <div class="ratings__rating">
+                <div class="ratings__rating-title">公平薪酬</div>
+                <div class="rating " title="{{employer.ratings.fairPay.score}}">
+                   <div class="rating__background"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                   <div class="rating__fill" style="width:50%"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                </div>
+                <span class="ratings__number ratings__number--bold">{{employer.ratings.fairPay.score}}</span>
+             </div>
+             <div class="ratings__rating">
+                <div class="ratings__rating-title">学习和发展机会</div>
+                <div class="rating " title="{{employer.ratings.learningandDevelopment.score}}">
+                   <div class="rating__background"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                   <div class="rating__fill" style="width:62%"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+                </div>
+                <span class="ratings__number ratings__number--bold">{{employer.ratings.learningandDevelopment.score}}</span>
+             </div>
+          </div>
+       </div>
+       <div class="ratings__reviews-container">
+          <div class="ratings__review" *ngFor="let review of employer.reviews">
+             <div class="ratings__review-jobtitle">
+                {{review.jobTitle}}<!-- -->:
+             </div>
+          </div>
+          <!--
+          <a data-instant="true" href="/research/US/Employer=ICF_International/Reviews" class="ratings__see-more">Read More Reviews</a>
+          -->
+       </div>
+    </div>
+ </section>

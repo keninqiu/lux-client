@@ -19,8 +19,7 @@ import { JobComponent } from './job/job.component';
 import { SchoolSubNavComponent } from './school/sub-nav/sub-nav.component';
 import { SchoolOverviewComponent } from './school/overview/overview.component';
 import { JobsBySalaryComponent } from './school/jobs-by-salary/jobs-by-salary.component';
-import { SchoolsBySalaryComponent } from './school/schools-by-salary/schools-by-salary.component';
-import { SchoolByDimensionComponent } from './school/by-dimension/by-dimension.component';
+import { SharedRelatedComponent } from './shared/related/related.component';
 import { PopularCompaniesComponent } from './school/popular-companies/popular-companies.component';
 import { AboutThisSchoolComponent } from './school/about-this-school/about-this-school.component';
 import { EmployerComponent } from './employer/employer.component';
@@ -33,6 +32,19 @@ import { DegreeSubNavComponent } from './degree/sub-nav/sub-nav.component';
 import { CertificationSubNavComponent } from './certification/sub-nav/sub-nav.component';
 import { SkillSubNavComponent } from './skill/sub-nav/sub-nav.component';
 import { IndustrySubNavComponent } from './industry/sub-nav/sub-nav.component';
+import { EmployerOverviewComponent } from './employer/overview/overview.component';
+import { EmployerCompanyReviewsComponent } from './employer/company-reviews/company-reviews.component';
+import { BenefitsComponent } from './employer/benefits/benefits.component';
+import { AboutComponent } from './employer/about/about.component';
+import { PopularDegreesComponent } from './employer/popular-degrees/popular-degrees.component';
+import { JobListingComponent } from './employer/job-listing/job-listing.component';
+import { CompareEmployersComponent } from './employer/compare-employers/compare-employers.component';
+import { EmployerJobsBySalaryComponent } from './employer/jobs-by-salary/jobs-by-salary.component';
+import { SharedByDimensionComponent } from './shared/by-dimension/by-dimension.component';
+import { DegreeOverviewComponent } from './degree/overview/overview.component';
+import { CertificationOverviewComponent } from './certification/overview/overview.component';
+import { SkillOverviewComponent } from './skill/overview/overview.component';
+import { IndustryOverviewComponent } from './industry/overview/overview.component';
 
 @NgModule({
     declarations: [
@@ -52,8 +64,7 @@ import { IndustrySubNavComponent } from './industry/sub-nav/sub-nav.component';
       SchoolSubNavComponent,
       SchoolOverviewComponent,
       JobsBySalaryComponent,
-      SchoolsBySalaryComponent,
-      SchoolByDimensionComponent,
+      SharedRelatedComponent,
       PopularCompaniesComponent,
       AboutThisSchoolComponent,
       EmployerComponent,
@@ -65,7 +76,20 @@ import { IndustrySubNavComponent } from './industry/sub-nav/sub-nav.component';
       DegreeSubNavComponent,
       CertificationSubNavComponent,
       SkillSubNavComponent,
-      IndustrySubNavComponent
+      IndustrySubNavComponent,
+      EmployerOverviewComponent,
+      EmployerCompanyReviewsComponent,
+      BenefitsComponent,
+      AboutComponent,
+      PopularDegreesComponent,
+      JobListingComponent,
+      CompareEmployersComponent,
+      EmployerJobsBySalaryComponent,
+      SharedByDimensionComponent,
+      DegreeOverviewComponent,
+      CertificationOverviewComponent,
+      SkillOverviewComponent,
+      IndustryOverviewComponent
     ],
     imports: [
       SalaryRoutingModule,

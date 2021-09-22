@@ -1,1 +1,8 @@
-<p>degree works!</p>
+<div *ngIf="degree">
+    <app-degree-sub-nav [degree]="degree"></app-degree-sub-nav>
+    <div class="page">
+        <div class="content">
+            <app-degree-overview [degree]="degree"></app-degree-overview>
+        </div>
+    </div>
+</div>

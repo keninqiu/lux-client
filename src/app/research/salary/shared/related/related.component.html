@@ -1,6 +1,6 @@
 <section class="page-section">
-    <h2 class="defaultv2__space-bottom">相关学校</h2>
-    <p class="defaultv2__space-bottom">跟{{school.name}}同类的学校, 以薪资待遇排名</p>
+    <h2 class="defaultv2__space-bottom">相关{{typeName}}</h2>
+    <p class="defaultv2__space-bottom">跟{{entity.name}}同类的{{typeName}}, 以薪资待遇排名</p>
     <div class="carousel related-carousel defaultv2-related-carousel" role="listbox">
         <div class="carousel__content" style="width: 606px;">
             <div class="carousel__arrow carousel__arrow--left carousel__arrow--invisible">
@@ -8,7 +8,7 @@
             </div>
             <div class="carousel__items-window">
                 <div class="carousel__items" style="transform: translate(1px);">
-                    <a data-instant="true" class="related-content-card" *ngFor="let item of school.related" href="{{getUrl(item.url)}}s">
+                    <a data-instant="true" class="related-content-card" *ngFor="let item of entity.related" href="{{getUrl(item.url)}}s">
                         <div class="related-content-card__image-container">
                             <div class="lazyload-wrapper ">
                                 <img class="conux-logo related-content-card__image-container__image" src="/assets/images/school-placeholder.png" alt="{{item.name}}">

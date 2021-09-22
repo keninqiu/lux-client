@@ -39,7 +39,9 @@ const routes: Routes = [
   {
     path: ':countryCode/:type/:salaryType', loadChildren: () => import('./salary/salary.module').then(m => m.SalaryModule)
   },
-  
+  {
+    path: ':countryCode/:type/:salaryType/:parentId/:parentName', loadChildren: () => import('./salary/salary.module').then(m => m.SalaryModule)
+  },  
   { path: 'job', component: JobComponent },
   { path: 'employer', component: EmployerComponent },
   { path: 'degree', component: DegreeComponent },

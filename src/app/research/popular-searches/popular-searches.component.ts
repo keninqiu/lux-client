@@ -28,7 +28,7 @@ export class PopularSearchesComponent implements OnInit {
     this.popularServ.getByCountryCodeAndType(this.countryCode, this.type).subscribe(
       (popular: Popular) => {
         console.log('popular===', popular);
-        if(popular && popular.rawData) {
+        if(popular && popular.rawData && popular.rawData.props && popular.rawData.props.pageProps && popular.rawData.props.pageProps.pageData) {
           this.items = popular.rawData.props.pageProps.pageData.items;
           this.secondaryItems = popular.rawData.props.pageProps.pageData.secondaryItems;
         }

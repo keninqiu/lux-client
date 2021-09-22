@@ -43,15 +43,10 @@ export class PopularSearchesComponent implements OnInit {
       const index2 = url.indexOf('/Salary') > 0 ? url.indexOf('/Salary') : url.indexOf('/Hourly_Rate');
       const slug = url.substring(index1 + typeString.length, index2);
       const newSlug = encodeURIComponent(slug).replace('(','%28').replace(')','%29');
-      if(url.indexOf('Morgan_Chas') >= 0) {
-        console.log('url=', url);
-        console.log('slug=', slug);
-      }
+
 
       url = url.replace('=', '%3D').replace(slug, newSlug);
-      if(url.indexOf('Morgan_Chas') >= 0) {
-        console.log('newurl=', url);
-      }
+
       return url;
     }
     const lastIndex = url.lastIndexOf('/');

@@ -17,6 +17,7 @@ import { JobService } from './services/job.service';
 import { SchoolService } from './services/school.service';
 import { SkillService } from './services/skill.service';
 import { CategoryService } from './services/category.service';
+import { PopularService } from './services/popular.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CategoryService } from './services/category.service';
     JobService,
     SchoolService,
     SkillService,
-    CategoryService
+    CategoryService,
+    PopularService
   ],
   bootstrap: [AppComponent]
 })

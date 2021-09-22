@@ -11,6 +11,7 @@ export class SkillComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('skill=', this.skill);
   }
 
 }

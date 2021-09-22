@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { Category } from 'src/app/interfaces/category.interface';
 import { CategoryService } from 'src/app/services/category.service';
 
@@ -14,19 +13,16 @@ import { CategoryService } from 'src/app/services/category.service';
   ]
 })
 export class BrowseJobsByCategoryComponent implements OnInit {
-  countryCode: string;
+  @Input() countryCode: string;
   categories: Category[];
-  constructor(private route: ActivatedRoute, private categoryServ: CategoryService) { }
+  constructor(private categoryServ: CategoryService) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe( paramMap => {
-      this.countryCode = paramMap.get('countryCode');
-      this.categoryServ.getAllByCountryCodeAndType(this.countryCode, 'Job').subscribe(
-        (categories: Category[]) => {
-          this.categories = categories;
-        }
-      );
-    });
+    this.categoryServ.getAllByCountryCodeAndType(this.countryCode, 'Job').subscribe(
+      (categories: Category[]) => {
+        this.categories = categories;
+      }
+    );
   }
 
 }

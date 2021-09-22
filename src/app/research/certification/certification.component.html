@@ -7,11 +7,13 @@
 <div class="page  rc-directory">
     <div class="content one-col">
         <div class="maincontent">
-            <app-browse-certifications-by-industry></app-browse-certifications-by-industry>
+            <app-browse-certifications-by-industry [countryCode]="countryCode"></app-browse-certifications-by-industry>
+            <!--
             <app-find-your-market-worth></app-find-your-market-worth>
             <app-related-articles></app-related-articles>
             <app-compensation-best-practices></app-compensation-best-practices>
-            <app-popular-searches></app-popular-searches>
+            -->
+            <app-popular-searches [countryCode]="countryCode" [type]="'Certification'"></app-popular-searches>
         </div>
     </div>
 </div>

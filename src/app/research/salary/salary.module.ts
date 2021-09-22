@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../../layout/layout.module';
+import { SharedModule } from '../../shared/shared.module';
 import { ChartsModule } from 'ng2-charts';
 import { SalaryRoutingModule } from './salary-routing.module';
 import { SalaryComponent } from './salary.component';
 import { JobSubNavComponent } from './job/sub-nav/sub-nav.component';
 import { ContentComponent } from './content/content.component';
 import { PaychartComponent } from './job/paychart/paychart.component';
-import { MarketWorthComponent } from './market-worth/market-worth.component';
 import { ExploreComponent } from './job/explore/explore.component';
 import { FeaturedContentComponent } from './job/featured-content/featured-content.component';
 import { PayByExperienceLevelComponent } from './job/pay-by-experience-level/pay-by-experience-level.component';
@@ -55,7 +55,6 @@ import { RelatedCertificationsComponent } from './certification/related-certific
       JobSubNavComponent, 
       ContentComponent, 
       PaychartComponent, 
-      MarketWorthComponent, 
       ExploreComponent, 
       FeaturedContentComponent, 
       PayByExperienceLevelComponent, 
@@ -100,6 +99,7 @@ import { RelatedCertificationsComponent } from './certification/related-certific
     ],
     imports: [
       SalaryRoutingModule,
+      SharedModule,
       LayoutModule,
       CommonModule,
       ChartsModule

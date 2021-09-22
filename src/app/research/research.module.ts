@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../layout/layout.module';
+import { SharedModule } from '../shared/shared.module';
 import { ResearchRoutingModule } from './research-routing.module';
 import { ResearchComponent } from './research.component';
 import { EmployerComponent } from './employer/employer.component';
@@ -18,7 +19,6 @@ import { LearnAboutEmployersComponent } from './learn-about-employers/learn-abou
 import { ResearchSchoolsAndDegreesComponent } from './research-schools-and-degrees/research-schools-and-degrees.component';
 import { GetCareerTipsAndAdviceComponent } from './get-career-tips-and-advice/get-career-tips-and-advice.component';
 import { BrowseByStatesComponent } from './browse-by-states/browse-by-states.component';
-import { WhatAmIWorthComponent } from './what-am-i-worth/what-am-i-worth.component';
 import { BrowseCompaniesByIndustryComponent } from './employer/browse-companies-by-industry/browse-companies-by-industry.component';
 import { RelatedArticlesComponent } from './related-articles/related-articles.component';
 import { CompensationBestPracticesComponent } from './compensation-best-practices/compensation-best-practices.component';
@@ -78,7 +78,6 @@ import { CateogryPopularDegreesComponent } from './category-degrees/popular-degr
     ResearchSchoolsAndDegreesComponent, 
     GetCareerTipsAndAdviceComponent, 
     BrowseByStatesComponent, 
-    WhatAmIWorthComponent, 
     BrowseCompaniesByIndustryComponent, 
     BrowseJobsByCategoryComponent,
     RelatedArticlesComponent, 
@@ -115,6 +114,7 @@ import { CateogryPopularDegreesComponent } from './category-degrees/popular-degr
   ],
   imports: [
     ResearchRoutingModule,
+    SharedModule,
     LayoutModule,
     CommonModule
   ]

@@ -7,11 +7,14 @@
 <div class="page  rc-directory">
     <div class="content one-col">
         <div class="maincontent">
-            <app-browse-companies-by-industry></app-browse-companies-by-industry>
+            <app-browse-companies-by-industry [countryCode]="countryCode"></app-browse-companies-by-industry>
+            <app-market-worth></app-market-worth>
             <app-find-your-market-worth></app-find-your-market-worth>
+            <!--
             <app-related-articles></app-related-articles>
+            -->
             <app-compensation-best-practices></app-compensation-best-practices>
-            <app-popular-searches></app-popular-searches>
+            <app-popular-searches [countryCode]="countryCode" [type]="'Employer'"></app-popular-searches>
         </div>
     </div>
 </div>

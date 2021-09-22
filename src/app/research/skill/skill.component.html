@@ -7,11 +7,13 @@
 <div class="page  rc-directory">
     <div class="content one-col">
         <div class="maincontent">
-            <app-browse-skills-by-category></app-browse-skills-by-category>
+            <app-browse-skills-by-category [countryCode]="countryCode"></app-browse-skills-by-category>
+            <!--
             <app-find-your-market-worth></app-find-your-market-worth>
             <app-related-articles></app-related-articles>
             <app-compensation-best-practices></app-compensation-best-practices>
-            <app-popular-searches></app-popular-searches>
+            -->
+            <app-popular-searches [countryCode]="countryCode" [type]="'Skill'"></app-popular-searches>
         </div>
     </div>
 </div>

@@ -16,7 +16,7 @@ export class SharedRelatedComponent implements OnInit {
   ngOnInit(): void {
   }
   getUrl(url) {
-    return encodeURIComponent(url);
+    return encodeURIComponent(url).replace('(','%28').replace(')','%29');
     //return url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('&', '%26');;
   }
 }

@@ -17,7 +17,7 @@ export class JobsBySalaryComponent implements OnInit {
   }
 
   getUrl(url) {
-    return encodeURIComponent(url);
+    return encodeURIComponent(url).replace('(','%28').replace(')','%29');
     //return url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29').replaceAll('&', '%26');;
   }
 }

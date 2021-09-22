@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-industry',
@@ -12,9 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndustryComponent implements OnInit {
 
-  constructor() { }
+  countryCode: string;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( paramMap => {
+      this.countryCode = paramMap.get('countryCode');
+    });
   }
-
 }

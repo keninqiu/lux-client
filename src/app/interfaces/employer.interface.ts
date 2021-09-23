@@ -5,6 +5,7 @@ export interface Employer extends Entity {
     category: Category,
     salaryType: string,
     slug: string,
+    url: string,
     currencyCode: string,
     compensation: {
         bonus: {

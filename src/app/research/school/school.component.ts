@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-school',
   templateUrl: './school.component.html',
@@ -10,9 +12,13 @@ import { Component, OnInit, Input } from '@angular/core';
   ]
 })
 export class SchoolComponent implements OnInit {
-  constructor() { }
+  countryCode: string;
+  constructor(private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( paramMap => {
+      this.countryCode = paramMap.get('countryCode');
+    });
   }
 
 }

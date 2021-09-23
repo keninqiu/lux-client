@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+       <div class="col-md-12">
+          <div class="">
+             <form id="rcSearchBar" action="/rcsearch.aspx" method="get" name="upwiz">
+                <div class="well">
+                   <div class="row">
+                      <div id="rcSearchDropDown" class="col-md-3">
+                         <div class="btn-group dropdown-block">
+                            <a data-toggle="dropdown" class="btn btn-default btn-block dropdown-toggle" id="rcSearchDropDownBtn">
+                               <span id="rcSearchDropDownText" class="pull-left">All</span>
+                               <div class="pull-right"><span class="caret"></span></div>
+                               <div class="clearfix"></div>
+                            </a>
+                            <ul class="dropdown-menu rcSearchDDList">
+                               <li title="All" data-val=""><a href="#">All</a></li>
+                               <li title="Jobs" data-val="Job"><a href="#">Jobs</a></li>
+                               <li title="Employers" data-val="Employer Name"><a href="#">Employers</a></li>
+                               <li title="Schools" data-val="School Name"><a href="#">Schools</a></li>
+                               <li title="Degrees" data-val="Degree/Major Subject"><a href="#">Degrees</a></li>
+                            </ul>
+                         </div>
+                         <input id="categoryDropdown" type="hidden" name="category" value="">
+                         <span class="hidden-lg hidden-md">&nbsp;</span>
+                      </div>
+                      <div class="col-md-6">
+                         <input name="str" type="text" class="form-control searchInput ui-autocomplete-input" autocomplete="off" maxlength="100" placeholder="Enter a Job Title, Employer Name, or School Name"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible">10 results are available, use up and down arrow keys to navigate.</span>
+                         <span class="hidden-lg hidden-md">&nbsp;</span>
+                      </div>
+                      <div class="col-md-3">
+                         <button class="btn btn-primary btn-block">Search</button>
+                      </div>
+                      <input type="hidden" id="CountryName" name="CountryName" value="United States">
+                      <input type="hidden" name="SourceId" value="Job">
+                   </div>
+                </div>
+             </form>
+             <div style="clear: both;"></div>
+          </div>
+       </div>
+    </div>
+ </div>

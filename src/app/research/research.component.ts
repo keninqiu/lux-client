@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ResearchComponent implements OnInit {
-
+  countryCode = 'US';
   constructor() { }
 
   ngOnInit(): void {

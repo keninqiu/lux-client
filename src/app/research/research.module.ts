@@ -57,6 +57,7 @@ import { CateogryPopularIndustriesComponent } from './category-industries/popula
 
 import { CategoryDegreesComponent } from './category-degrees/category-degrees.component';
 import { CateogryPopularDegreesComponent } from './category-degrees/popular-degrees/popular-degrees.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { CateogryPopularDegreesComponent } from './category-degrees/popular-degr
     CategoryIndustriesComponent,
     CateogryPopularIndustriesComponent,
     CategoryDegreesComponent,
-    CateogryPopularDegreesComponent
+    CateogryPopularDegreesComponent,
+    SearchResultComponent
   ],
   imports: [
     ResearchRoutingModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Category } from 'src/app/interfaces/category.interface';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-skill',
@@ -13,11 +15,26 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SkillComponent implements OnInit {
   countryCode: string;
-  constructor(private route: ActivatedRoute) { }
+  categories: Category[];
+  items: any;
+  secondaryItems: any;
+
+  constructor(private route: ActivatedRoute, private categoryServ: CategoryService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( paramMap => {
       this.countryCode = paramMap.get('countryCode');
+
+      this.categoryServ.getAllByCountryCodeAndType(this.countryCode, 'Skill').subscribe(
+        (categories: Category[]) => {
+          if(categories && categories.length > 0) {
+            this.categories = categories;
+            this.items = categories.filter(item => item.popular == 2);
+            this.secondaryItems = categories.filter(item => item.popular == 1);
+          }
+
+        }
+      );
     });
   }
 

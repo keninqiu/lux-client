@@ -21,7 +21,7 @@ export class CateogryPopularSkillsComponent implements OnInit {
 
   }
 
-  getSkillPath(employer) {
-    return employer.url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29');
+  getSkillPath(skill) {
+    return skill.url.replaceAll('=', '%3D').replaceAll('(', '%28').replaceAll(')', '%29');
   }
 }

@@ -18,6 +18,7 @@ import { SchoolService } from './services/school.service';
 import { SkillService } from './services/skill.service';
 import { CategoryService } from './services/category.service';
 import { PopularService } from './services/popular.service';
+import { HomepageService } from './services/homepage.service';
 import { AllService } from './services/all.service';
 
 @NgModule({
@@ -44,6 +45,7 @@ import { AllService } from './services/all.service';
     SkillService,
     CategoryService,
     PopularService,
+    HomepageService,
     AllService
   ],
   bootstrap: [AppComponent]

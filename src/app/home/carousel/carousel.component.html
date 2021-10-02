@@ -6,11 +6,11 @@
 
     <div class="hero-grid">
         <div class="col1 flex flex-col md:justify-center pl-4 md:pl-10 lg:pl-14 md:relative">
-            <div class="gsap slide active" id="slide1" [ngClass]="slideIndex == 0 ? 'show' : 'hide'">
-                <h1 class="heroHeadline mb-6 leading-tight">薪酬是一个<br> <span class="text-yellow">强大的</span> 东西</h1>
-                <p class="lg:text-lg mb-12 font-light leading-normal content">通过相关的、经过验证的薪酬数据和行业领先的人工智能驱动的薪酬软件，获得洞察力和信心，从而获得正确的薪酬。</p>
-                <a href="https://www.payscale.com/price-a-job?tk=hp-hero-carousel" class="cta blue-cta" aria-label="Click here to access the Price a Job tool. This link opens another page in a new tab.">
-                    Price a job <div class="pl-2 md:pl-8">
+            <div class="gsap slide active" [ngClass]="slideIndex == i ? 'show' : 'hide'" *ngFor="let carousel of carousels; let i = index">
+                <h1 class="heroHeadline mb-6 leading-tight">{{carousel.title}}</h1>
+                <p class="lg:text-lg mb-12 font-light leading-normal content">{{carousel.subtitle}}</p>
+                <a href="{{carousel.actionLink}}" class="cta blue-cta">
+                    {{carousel.actionText}} <div class="pl-2 md:pl-8">
                         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
                             <g id="cta-circle-g" transform="translate(-242)">
                                 <path class="cta-circle" d="M22.5,0A22.5,22.5,0,1,1,0,22.5,22.5,22.5,0,0,1,22.5,0Z" transform="translate(242)"></path>
@@ -24,26 +24,9 @@
 
                 </a>
             </div>
-            <div class="invisible gsap a6_hide slide" id="slide2" [ngClass]="slideIndex == 1 ? 'show' : 'hide'">
-                <h1 class="heroHeadline mb-6  leading-tight">遵循 2021 年薪酬的最佳实践</h1>
-                <p class="lg:text-lg mb-8 font-light leading-normal content">带着刚刚发布的关于加薪、薪酬管理、沟通和透明度的最佳战略和实践的见解，迎接 2021 年。</p>
-                <a href="https://www.payscale.com/cbpr" class="cta blue-cta" aria-label="Click here to read the Compensation Best Practices Report for 2021. This link opens another page in a new tab.">
-                    Read the report <div class="pl-2 md:pl-8">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
-                            <g id="cta-circle-g" transform="translate(-242)">
-                                <path class="cta-circle" d="M22.5,0A22.5,22.5,0,1,1,0,22.5,22.5,22.5,0,0,1,22.5,0Z" transform="translate(242)"></path>
-                                <g class="cta-arrow" transform="translate(257.57 15.785)">
-                                    <path transform="translate(-7.5 -11.285)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                                    <path d="M18,7.5l6.715,6.715L18,20.93" transform="translate(-11.285 -7.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                                </g>
-                            </g>
-                        </svg>
-                    </div>
-                </a>
-            </div>
+
             <div class="nav absolute bottom-5 lg:bottom-16 xlg:bottom-20  flex">
-                <div class="slidenav mr-4" id="heroNav_1" (click)="changeSlideIndex(0)" [ngClass]="slideIndex == 0 ? 'active' : ''"></div>
-                <div class="slidenav mr-4" id="heroNav_2" (click)="changeSlideIndex(1)" [ngClass]="slideIndex == 1 ? 'active' : ''"></div>
+                <div class="slidenav mr-4" *ngFor="let carousel of carousels; let i = index" (click)="changeSlideIndex(i)" [ngClass]="slideIndex == i ? 'active' : ''"></div>
             </div>
         </div>
         <div class="col2">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
@@ -9,7 +9,7 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
   styleUrls: ['./change.component.scss']
 })
 export class ChangeComponent implements OnInit {
-
+  @Input() change: any;
   constructor() { }
 
   ngOnInit(): void {

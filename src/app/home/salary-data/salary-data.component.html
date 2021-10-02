@@ -2,13 +2,13 @@
     <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
        <div class="first-column pb-6 py-16 lg:py-24 trig max-w-lg" style="transform: translate(0px, 0px); opacity: 1;">
           <h5 class="text-3xl lg:text-5xl pb-6 ">
-            使用透明的薪资数据做出清晰、自信的决策
+            {{salary.title}}
           </h5>
           <p class="lg:text-lg  pb-8 text-gray-darkest">
-            我们致力于通过提供对各个来源保持真实和透明的可靠薪酬市场数据来确保薪酬准确性。
+            {{salary.subtitle}}
           </p>
-          <a href="https://www.payscale.com/hr/data-offerings?src=homepage_new" aria-label="Click here to read more about how PayScale sources its data. This link opens another page in a new tab." class="cta purple-cta mb-8 lg:mb-0">
-             查看更多信息
+          <a href="{{salary.actionLink}}" aria-label="Click here to read more about how PayScale sources its data. This link opens another page in a new tab." class="cta purple-cta mb-8 lg:mb-0">
+             {{salary.actionText}}
              <div class="pl-2 md:pl-8">
                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
                    <g id="cta-circle-g" transform="translate(-242)">
@@ -23,44 +23,21 @@
           </a>
        </div>
        <div aria-label="Half pill-shaped object with gradient fill changes colors during scrolling." class="second-column pb-2 lg:py-24 lg:-ml-14 lg:-mr-8 lg:pl-32 pl-40 -ml-32 max-w-xl text-white relative grid items-center justify-center trig" style="transform: translate(0px, 0px); opacity: 1;">
-          <div class="absolute gradient-bg w-full top-0 left-0" [ngStyle]="{'background-position-x': (slideIndex * 100.0 / 3) + '%'}"></div>
-          <div class="carouselslide" [ngClass]="slideIndex == 0 ? 'active' : 'inactive'">
+          <div class="absolute gradient-bg w-full top-0 left-0" [ngStyle]="{'background-position-x': (slideIndex * 100.0 / salary.details.length) + '%'}"></div>
+          <div class="carouselslide" *ngFor="let detail of salary.details; let i = index" [ngClass]="slideIndex == i ? 'active' : 'inactive'">
              <div class="text-6xl lg:text-8xl">
-                &gt;300
+                {{detail.title}}
              </div>
              <div class="text-xl md:text-3xl pb-4">
-               传统调查合作伙伴
+               {{detail.subtitle}}
              </div>
              <p class="md:text-lg">
-               轻松将您自己的调查加载到 Lux 解决方案中，并访问来自数百个第三方发布商的 10,000 多个相关薪酬调查。
+               {{detail.content}}
              </p>
           </div>
-          <div class="carouselslide" [ngClass]="slideIndex == 1 ? 'active' : 'inactive'">
-             <div class="text-6xl lg:text-8xl">
-                5.5K
-             </div>
-             <div class="text-xl md:text-3xl pb-4">
-               雇主提供的定价工作
-             </div>
-             <p class="md:text-lg">
-               访问每季度更新的 HRIS 调查数据，这些数据来自 2,000 多个参与 Lux 的客户，这些客户代表了 40 个行业的超过 200 万名员工，而且还在不断增加。
-             </p>
-          </div>
-          <div class="carouselslide" [ngClass]="slideIndex == 2 ? 'active' : 'inactive'">
-             <div class="text-6xl lg:text-8xl">
-                350K
-             </div>
-             <div class="text-xl md:text-3xl pb-4">
-               每月新的在线工资资料
-             </div>
-             <p class="md:text-lg">
-               通过来自每月超过 800 万访问者的每日来源、持续验证的在线调查资料，您可以在任何地方获得最新的薪酬数据。
-             </p>
-          </div>
+
           <div class="slide-nav pt-6">
-              <button [ngClass]="slideIndex == 0 ? 'active' : ''" (click)="changeSlideIndex(0)"></button>
-              <button [ngClass]="slideIndex == 1 ? 'active' : ''" (click)="changeSlideIndex(1)"></button>
-              <button [ngClass]="slideIndex == 2 ? 'active' : ''" (click)="changeSlideIndex(2)"></button>
+              <button *ngFor="let detail of salary.details; let i = index" [ngClass]="slideIndex == i ? 'active' : ''" (click)="changeSlideIndex(i)"></button>
             </div>
        </div>
     </div>

@@ -4,14 +4,14 @@
 
             <div class="my-8 trig" style="transform: translate(0px, 0px); opacity: 1;">
                 <h2 class="text-5xl mb-8 ">
-                    Lux 是同类中最好的
+                   {{best.title}}
                 </h2>
                 <p class="text-lg w-full  mb-12">
-                    Lux 薪酬数据、服务和软件因其领先地位、易用性和快速实施而屡获殊荣，这归功于我们透明的流程和我们对数据完整性的承诺。
+                    {{best.subtitle}}
                 </p>
 
-                <a href="https://www.payscale.com/about" class=" cta white-cta" aria-label="Click here to read more PayScale accolades and learn about the company. This link opens another page in a new tab.">
-                    了解更多
+                <a href="{{best.actionLink}}" class=" cta white-cta">
+                    {{best.actionText}}
                     <div class="pl-2 md:pl-8">
                         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
                             <g id="cta-circle-g" transform="translate(-242)">

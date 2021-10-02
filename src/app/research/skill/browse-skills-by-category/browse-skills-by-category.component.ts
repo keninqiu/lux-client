@@ -15,15 +15,10 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class BrowseSkillsByCategoryComponent implements OnInit {
 
-  @Input() countryCode: string;
-  categories: Category[];
-  constructor(private route: ActivatedRoute, private categoryServ: CategoryService) { }
+  @Input() categories: Category[];
+  constructor() { }
 
   ngOnInit(): void {
-    this.categoryServ.getAllByCountryCodeAndType(this.countryCode, 'Skill').subscribe(
-      (categories: Category[]) => {
-        this.categories = categories;
-      }
-    );
+
   }
 }

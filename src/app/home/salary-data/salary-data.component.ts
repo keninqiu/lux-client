@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-salary-data',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./salary-data.component.scss']
 })
 export class SalaryDataComponent implements OnInit {
+  @Input() salary: any;
   slideIndex: number;
   interval: any;
   constructor() { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-adv',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adv.component.scss']
 })
 export class AdvComponent implements OnInit {
-
+  @Input() adv: any;
   constructor() { }
 
   ngOnInit(): void {

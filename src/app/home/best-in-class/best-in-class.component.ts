@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-best-in-class',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./best-in-class.component.scss']
 })
 export class BestInClassComponent implements OnInit {
-
+  @Input() best: any;
   constructor() { }
 
   ngOnInit(): void {

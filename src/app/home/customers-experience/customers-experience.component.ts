@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-customers-experience',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customers-experience.component.scss']
 })
 export class CustomersExperienceComponent implements OnInit {
-
+  @Input() experience: any;
   constructor() { }
 
   ngOnInit(): void {

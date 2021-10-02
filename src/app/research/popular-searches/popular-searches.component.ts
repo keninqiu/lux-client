@@ -20,11 +20,12 @@ export class PopularSearchesComponent implements OnInit {
   @Input() type: string;
   @Input() countryCode: string;
   showMore: boolean;
-  items: PopularItem[];
-  secondaryItems: PopularItem[];
+  @Input() items: PopularItem[];
+  @Input() secondaryItems: PopularItem[];
   constructor(private popularServ: PopularService) { }
 
   ngOnInit(): void {
+    /*
     this.popularServ.getByCountryCodeAndType(this.countryCode, this.type).subscribe(
       (popular: Popular) => {
         console.log('popular===', popular);
@@ -35,6 +36,7 @@ export class PopularSearchesComponent implements OnInit {
         
       }
     );
+    */
   }
   getUrl(url) {
     if(url.indexOf('/Salary') > 0 || url.indexOf('/Hourly_Rate') > 0 ) {

@@ -4,13 +4,6 @@ import { LayoutModule } from '../layout/layout.module';
 import { SharedModule } from '../shared/shared.module';
 import { ResearchRoutingModule } from './research-routing.module';
 import { ResearchComponent } from './research.component';
-import { EmployerComponent } from './employer/employer.component';
-import { JobComponent } from './job/job.component';
-import { DegreeComponent } from './degree/degree.component';
-import { CertificationComponent } from './certification/certification.component';
-import { SkillComponent } from './skill/skill.component';
-import { IndustryComponent } from './industry/industry.component';
-import { SchoolComponent } from './school/school.component';
 import { SearchSalaryComponent } from './search-salary/search-salary.component';
 import { BrowseAllCategoriesComponent } from './browse-all-categories/browse-all-categories.component';
 import { FindYourMarketWorthComponent } from './find-your-market-worth/find-your-market-worth.component';
@@ -19,16 +12,8 @@ import { LearnAboutEmployersComponent } from './learn-about-employers/learn-abou
 import { ResearchSchoolsAndDegreesComponent } from './research-schools-and-degrees/research-schools-and-degrees.component';
 import { GetCareerTipsAndAdviceComponent } from './get-career-tips-and-advice/get-career-tips-and-advice.component';
 import { BrowseByStatesComponent } from './browse-by-states/browse-by-states.component';
-import { BrowseCompaniesByIndustryComponent } from './employer/browse-companies-by-industry/browse-companies-by-industry.component';
 import { RelatedArticlesComponent } from './related-articles/related-articles.component';
 import { CompensationBestPracticesComponent } from './compensation-best-practices/compensation-best-practices.component';
-import { PopularSearchesComponent } from './popular-searches/popular-searches.component';
-import { BrowseDegreesByFieldOfStudyComponent } from './degree/browse-degrees-by-field-of-study/browse-degrees-by-field-of-study.component';
-import { BrowseCertificationsByIndustryComponent } from './certification/browse-certifications-by-industry/browse-certifications-by-industry.component';
-import { BrowseSkillsByCategoryComponent } from './skill/browse-skills-by-category/browse-skills-by-category.component';
-import { BrowseIndustriesByCategoryComponent } from './industry/browse-industries-by-category/browse-industries-by-category.component';
-import { BrowseSchoolsByCategoryComponent } from './school/browse-schools-by-category/browse-schools-by-category.component';
-import { BrowseJobsByCategoryComponent } from './job/browse-jobs-by-category/browse-jobs-by-category.component';
 
 import { CountriesComponent } from './countries/countries.component';
 import { PopularCountriesComponent } from './countries/popular/popular.component';
@@ -59,18 +44,12 @@ import { CategoryDegreesComponent } from './category-degrees/category-degrees.co
 import { CateogryPopularDegreesComponent } from './category-degrees/popular-degrees/popular-degrees.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 
+import { CountryCategoryModule } from './country-category/country-category.module';
 @NgModule({
   declarations: [
     PopularCountriesComponent,
     BrowseCountriesComponent,
     ResearchComponent, 
-    EmployerComponent, 
-    JobComponent, 
-    DegreeComponent, 
-    CertificationComponent, 
-    SkillComponent, 
-    IndustryComponent, 
-    SchoolComponent, 
     SearchSalaryComponent, 
     BrowseAllCategoriesComponent, 
     FindYourMarketWorthComponent, 
@@ -78,17 +57,9 @@ import { SearchResultComponent } from './search-result/search-result.component';
     LearnAboutEmployersComponent, 
     ResearchSchoolsAndDegreesComponent, 
     GetCareerTipsAndAdviceComponent, 
-    BrowseByStatesComponent, 
-    BrowseCompaniesByIndustryComponent, 
-    BrowseJobsByCategoryComponent,
+    BrowseByStatesComponent,
     RelatedArticlesComponent, 
-    CompensationBestPracticesComponent, 
-    PopularSearchesComponent, 
-    BrowseDegreesByFieldOfStudyComponent, 
-    BrowseCertificationsByIndustryComponent, 
-    BrowseSkillsByCategoryComponent, 
-    BrowseIndustriesByCategoryComponent, 
-    BrowseSchoolsByCategoryComponent, 
+    CompensationBestPracticesComponent,
     CountriesComponent, 
     CountryComponent, 
     BreadcrumbsComponent, 
@@ -116,6 +87,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
   ],
   imports: [
     ResearchRoutingModule,
+    CountryCategoryModule,
     SharedModule,
     LayoutModule,
     CommonModule

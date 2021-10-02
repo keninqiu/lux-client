@@ -7,38 +7,37 @@ interface PopularItem {
   url: string;
 }
 @Component({
-  selector: 'app-popular-searches',
-  templateUrl: './popular-searches.component.html',
+  selector: 'app-popular',
+  templateUrl: './popular.component.html',
   styleUrls: [
-    './popular-searches.component.scss',
-    '../../../assets/css/research/b6cbeee7ac13b649876b.css', 
-    '../../../assets/css/research/c6918d55796febf9ef19.css', 
-    '../../../assets/css/research/d0672ccc0254cae98d85.css'   
+    './popular.component.scss',
+    '../../../../assets/css/research/b6cbeee7ac13b649876b.css', 
+    '../../../../assets/css/research/c6918d55796febf9ef19.css', 
+    '../../../../assets/css/research/d0672ccc0254cae98d85.css'   
   ]
 })
-export class PopularSearchesComponent implements OnInit {
-  @Input() type: string;
+export class PopularComponent implements OnInit {
   @Input() countryCode: string;
+  @Input() type: string;
   showMore: boolean;
-  @Input() items: PopularItem[];
-  @Input() secondaryItems: PopularItem[];
+  items: PopularItem[];
+  secondaryItems: PopularItem[];
   constructor(private popularServ: PopularService) { }
 
   ngOnInit(): void {
-    /*
+    console.log('gogog');
     this.popularServ.getByCountryCodeAndType(this.countryCode, this.type).subscribe(
-      (popular: Popular) => {
-        console.log('popular===', popular);
-        if(popular && popular.rawData && popular.rawData.props && popular.rawData.props.pageProps && popular.rawData.props.pageProps.pageData) {
-          this.items = popular.rawData.props.pageProps.pageData.items;
-          this.secondaryItems = popular.rawData.props.pageProps.pageData.secondaryItems;
-        }
+      (data: any) => {
+        console.log('data===', data);
+        this.items = data.items;
+        this.secondaryItems = data.secondaryItems;
         
       }
     );
-    */
+    
   }
   getUrl(url) {
+    
     if(url.indexOf('/Salary') > 0 || url.indexOf('/Hourly_Rate') > 0 ) {
       const typeString = '/' + this.type + '=';
       const index1 = url.indexOf(typeString);
@@ -54,6 +53,7 @@ export class PopularSearchesComponent implements OnInit {
     const lastIndex = url.lastIndexOf('/');
     const slug = url.substring(lastIndex + 1);
     return '/research/' + this.countryCode + '/' + this.type + '/' + slug;
+
  }  
  toggleShowMore() {
    this.showMore = !this.showMore;

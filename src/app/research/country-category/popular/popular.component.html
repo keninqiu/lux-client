@@ -2,10 +2,10 @@
     <h2 class="links__title">热门搜索</h2>
     <div class="links__container" [ngStyle]="{'height': showMore ? '1362px' : '364px'}">
        <div class="links__container--collapsed">
-           <a class="links__item" *ngFor="let item of items" href="{{getUrl(item.url)}}">{{item.text}}</a>
+           <a class="links__item" *ngFor="let item of items" href="{{getUrl(item.url)}}">{{item.zh ? item.zh : item.text}}</a>
        </div>
        <div class="links__container--expanded">
-           <a class="links__item" *ngFor="let item of secondaryItems" href="{{getUrl(item.url)}}">{{item.text}}</a>
+           <a class="links__item" *ngFor="let item of secondaryItems" href="{{getUrl(item.url)}}">{{item.zh ? item.zh : item.text}}</a>
        </div>
     </div>
     <div class="links__toggle"><a (click)="toggleShowMore()">查看{{showMore ? '更少' : '更多'}}</a></div>

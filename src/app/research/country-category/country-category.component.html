@@ -1,24 +1,29 @@
+<!--
 <app-menu></app-menu>
 <app-search-salary 
-[type]="'Skill'"
+[type]="type"
 [countryCode]="countryCode"
 [title]="'按技能搜索薪资待遇'"
 [placeholder]="'输入技能'"
 ></app-search-salary>
-fff
+-->
 <div class="page  rc-directory">
     <div class="content one-col">
         <div class="maincontent">
-            <app-browse-skills-by-category [categories]="categories"></app-browse-skills-by-category>
+            <app-browse [categories]="categories"></app-browse>
             <!--
             <app-find-your-market-worth></app-find-your-market-worth>
             <app-related-articles></app-related-articles>
             <app-compensation-best-practices></app-compensation-best-practices>
             -->
-            <app-popular-searches [countryCode]="countryCode" [type]="'Skill'" [items]="items" [secondaryItems]="secondaryItems"></app-popular-searches>
+
+            <app-popular [countryCode]="countryCode" [type]="type"></app-popular>
+
         </div>
     </div>
 </div>
 
+<!--
 <app-what-am-i-worth></app-what-am-i-worth>
 <app-footer></app-footer>
+-->

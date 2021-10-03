@@ -27,6 +27,7 @@ const routes: Routes = [
       { path: ':countryCode/Certification/:categorySlug', component: CategoryCertificationsComponent },
       { path: ':countryCode/Degree/:categorySlug', component: CategoryDegreesComponent },
       { path: ':countryCode/Industry/:categorySlug', component: CategoryIndustriesComponent },
+      { path: ':countryCode/Salary', component: CountryComponent },
       { path: ':countryCode/:type', component: CountryCategoryComponent },
       /*
       { path: ':countryCode/School', component: SchoolComponent },

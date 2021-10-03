@@ -5,7 +5,7 @@ import { Skill } from 'src/app/interfaces/skill.interface';
 import { CategoryService } from 'src/app/services/category.service';
 import { CountryService } from 'src/app/services/country.service';
 import { SkillService } from 'src/app/services/skill.service';
-
+import { Category } from 'src/app/interfaces/category.interface';
 @Component({
   selector: 'app-category-skills',
   templateUrl: './category-skills.component.html',
@@ -29,13 +29,14 @@ export class CategorySkillsComponent implements OnInit {
     this.route.paramMap.subscribe( paramMap => {
       this.countryCode = paramMap.get('countryCode');
       this.categorySlug = paramMap.get('categorySlug');
-      this.countryServ.getByCode(this.countryCode).subscribe(
-        (country: Country) => {
-          this.country = country;
+      this.categoryServ.getByCountryCodeTypeAndSlug(this.countryCode, 'Skill', this.categorySlug).subscribe(
+        (category: Category) => {
+          this.categoryName = category.namet ? category.namet.zh : category.name;
+          if(category.country) {
+            this.country = category.country;
+          }
         }
       );
-      
-      this.categoryName = this.categorySlug.split('-').join(' ');
 
       this.skillServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
         (skills: Skill[]) => {

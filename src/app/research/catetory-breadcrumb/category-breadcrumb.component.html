@@ -1,13 +1,13 @@
 <div class="subcats__bread-crumbs" *ngIf="country">
     <div class="breadcrumbs ">
         <div class="breadcrumbs__item">
-            <a href="/research/Country">Countries</a>
+            <a href="/research/Country">国家</a>
         </div>
         <div class="breadcrumbs__item">
-            <a href="/research/{{country.code}}/Salary">{{country.name}}</a>
+            <a href="/research/{{country.code}}/Salary">{{country.namet ? country.namet.zh : country.name}}</a>
         </div>
         <div class="breadcrumbs__item">
-            <a href="/research/{{country.code}}/{{categoryType}}">{{categoryType}}</a>
+            <a href="/research/{{country.code}}/{{categoryType}}">{{getTypeText()}}</a>
         </div>
         <div class="breadcrumbs__item">{{categoryName}}</div>
     </div>

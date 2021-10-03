@@ -14,11 +14,16 @@ import { CategoryService } from 'src/app/services/category.service';
   ]
 })
 export class BrowseComponent implements OnInit {
-
+  @Input() title: string;
   @Input() categories: Category[];
+  @Input() type: string;
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+
+  toLowerCase(type: string) {
+    return type.toLowerCase();
   }
 }

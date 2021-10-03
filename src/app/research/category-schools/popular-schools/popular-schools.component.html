@@ -3,7 +3,7 @@
 <div class="rc-directory">
     <div class="subcats__links">
         <a class="subcats__links__item" *ngFor="let school of schools" href="{{getSchoolPath(school)}}">
-            {{school.name}}
+            {{school.namet ? school.namet.zh : school.name}}
         </a>
     </div>
 </div>

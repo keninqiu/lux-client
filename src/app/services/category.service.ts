@@ -27,6 +27,10 @@ export class CategoryService {
     return this.api.getPublic('category/countryCode/' + countryCode +'/type/' + type) as Observable<Category[]>;
   }
 
+  getByCountryCodeTypeAndSlug(countryCode: string, type: string, slug: string): Observable<Category> {
+    return this.api.getPublic('category/countryCode/' + countryCode +'/type/' + type + '/slug/' + slug) as Observable<Category>;
+  }
+
   get(id: string): Observable<Category> {
     return this.api.getPublic('category/' + id) as Observable<Category>;
   }

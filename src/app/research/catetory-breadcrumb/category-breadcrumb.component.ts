@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Country } from 'src/app/interfaces/country.interface';
-
+import { UtilService } from 'src/app/services/util.service';
 @Component({
   selector: 'app-category-breadcrumb',
   templateUrl: './category-breadcrumb.component.html',
@@ -15,9 +15,14 @@ export class CategoryBreadcrumbComponent implements OnInit {
   @Input() country: Country;
   @Input() categoryType: string;
   @Input() categoryName: string;
-  constructor() { }
+  constructor(
+    private utilServ: UtilService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  getTypeText() {
+    return this.utilServ.getTypeName(this.categoryType);
+  }
 }

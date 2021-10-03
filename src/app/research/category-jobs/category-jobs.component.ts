@@ -5,7 +5,7 @@ import { Job } from 'src/app/interfaces/job.interface';
 import { CategoryService } from 'src/app/services/category.service';
 import { CountryService } from 'src/app/services/country.service';
 import { JobService } from 'src/app/services/job.service';
-
+import { Category } from 'src/app/interfaces/category.interface';
 @Component({
   selector: 'app-category-jobs',
   templateUrl: './category-jobs.component.html',
@@ -29,6 +29,7 @@ export class CategoryJobsComponent implements OnInit {
     this.route.paramMap.subscribe( paramMap => {
       this.countryCode = paramMap.get('countryCode');
       this.categorySlug = paramMap.get('categorySlug');
+      /*
       this.countryServ.getByCode(this.countryCode).subscribe(
         (country: Country) => {
           this.country = country;
@@ -36,6 +37,16 @@ export class CategoryJobsComponent implements OnInit {
       );
       
       this.categoryName = this.categorySlug.split('-').join(' ');
+      */
+
+      this.categoryServ.getByCountryCodeTypeAndSlug(this.countryCode, 'Job', this.categorySlug).subscribe(
+        (category: Category) => {
+          this.categoryName = category.namet ? category.namet.zh : category.name;
+          if(category.country) {
+            this.country = category.country;
+          }
+        }
+      );
 
       this.jobServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
         (jobs: Job[]) => {

@@ -3,7 +3,7 @@
 <div class="rc-directory">
     <div class="subcats__links">
         <a class="subcats__links__item" *ngFor="let certification of certifications" href="{{getCertificationPath(certification)}}">
-            {{certification.name}}
+            {{certification.namet ? certification.namet.zh : certification.name}}
         </a>
     </div>
 </div>

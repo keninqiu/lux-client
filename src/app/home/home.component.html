@@ -1,11 +1,11 @@
 <div class="main-container">
     <app-menu></app-menu>
-    <app-adv [adv]="adv"></app-adv>
-    <app-carousel [carousels]="carousels"></app-carousel>
-    <app-change [change]="change"></app-change>
-    <app-salary-data [salary]="salary"></app-salary-data>
-    <app-customers-experience [experience]="experience"></app-customers-experience>
-    <app-best-in-class [best]="best"></app-best-in-class>
+    <app-adv *ngIf="adv" [adv]="adv"></app-adv>
+    <app-carousel *ngIf="carousels" [carousels]="carousels"></app-carousel>
+    <app-change *ngIf="change" [change]="change"></app-change>
+    <app-salary-data *ngIf="salary"  [salary]="salary"></app-salary-data>
+    <app-customers-experience *ngIf="experience"  [experience]="experience"></app-customers-experience>
+    <app-best-in-class *ngIf="best" [best]="best"></app-best-in-class>
 
     <app-chatbot></app-chatbot>
    

@@ -4,6 +4,8 @@ import { Country } from 'src/app/interfaces/country.interface';
 import { Certification } from 'src/app/interfaces/certification.interface';
 import { CountryService } from 'src/app/services/country.service';
 import { CertificationService } from 'src/app/services/certification.service';
+import { CategoryService } from 'src/app/services/category.service';
+import { Category } from 'src/app/interfaces/category.interface';
 
 @Component({
   selector: 'app-category-certifications',
@@ -19,7 +21,8 @@ export class CategoryCertificationsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute, 
     private certificationServ: CertificationService,
-    private countryServ: CountryService
+    private countryServ: CountryService,
+    private categoryServ: CategoryService
     ) { }
 
   ngOnInit(): void {
@@ -27,12 +30,14 @@ export class CategoryCertificationsComponent implements OnInit {
     this.route.paramMap.subscribe( paramMap => {
       this.countryCode = paramMap.get('countryCode');
       this.categorySlug = paramMap.get('categorySlug');
-      this.countryServ.getByCode(this.countryCode).subscribe(
-        (country: Country) => {
-          this.country = country;
+      this.categoryServ.getByCountryCodeTypeAndSlug(this.countryCode, 'Certification', this.categorySlug).subscribe(
+        (category: Category) => {
+          this.categoryName = category.namet ? category.namet.zh : category.name;
+          if(category.country) {
+            this.country = category.country;
+          }
         }
       );
-      this.categoryName = this.categorySlug.split('-').join(' ');
       this.certificationServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
         (certifications: Certification[]) => {
           this.certifications = certifications;

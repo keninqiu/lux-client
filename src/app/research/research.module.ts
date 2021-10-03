@@ -4,7 +4,7 @@ import { LayoutModule } from '../layout/layout.module';
 import { SharedModule } from '../shared/shared.module';
 import { ResearchRoutingModule } from './research-routing.module';
 import { ResearchComponent } from './research.component';
-import { SearchSalaryComponent } from './search-salary/search-salary.component';
+
 import { BrowseAllCategoriesComponent } from './browse-all-categories/browse-all-categories.component';
 import { FindYourMarketWorthComponent } from './find-your-market-worth/find-your-market-worth.component';
 import { BrowsePopularJobsComponent } from './browse-popular-jobs/browse-popular-jobs.component';
@@ -42,7 +42,6 @@ import { CateogryPopularIndustriesComponent } from './category-industries/popula
 
 import { CategoryDegreesComponent } from './category-degrees/category-degrees.component';
 import { CateogryPopularDegreesComponent } from './category-degrees/popular-degrees/popular-degrees.component';
-import { SearchResultComponent } from './search-result/search-result.component';
 
 import { CountryCategoryModule } from './country-category/country-category.module';
 @NgModule({
@@ -50,7 +49,6 @@ import { CountryCategoryModule } from './country-category/country-category.modul
     PopularCountriesComponent,
     BrowseCountriesComponent,
     ResearchComponent, 
-    SearchSalaryComponent, 
     BrowseAllCategoriesComponent, 
     FindYourMarketWorthComponent, 
     BrowsePopularJobsComponent, 
@@ -83,7 +81,6 @@ import { CountryCategoryModule } from './country-category/country-category.modul
     CateogryPopularIndustriesComponent,
     CategoryDegreesComponent,
     CateogryPopularDegreesComponent,
-    SearchResultComponent
   ],
   imports: [
     ResearchRoutingModule,

@@ -5,6 +5,7 @@ import { Industry } from 'src/app/interfaces/industry.interface';
 import { CategoryService } from 'src/app/services/category.service';
 import { CountryService } from 'src/app/services/country.service';
 import { IndustryService } from 'src/app/services/industry.service';
+import { Category } from 'src/app/interfaces/category.interface';
 
 @Component({
   selector: 'app-category-industries',
@@ -29,13 +30,14 @@ export class CategoryIndustriesComponent implements OnInit {
     this.route.paramMap.subscribe( paramMap => {
       this.countryCode = paramMap.get('countryCode');
       this.categorySlug = paramMap.get('categorySlug');
-      this.countryServ.getByCode(this.countryCode).subscribe(
-        (country: Country) => {
-          this.country = country;
+      this.categoryServ.getByCountryCodeTypeAndSlug(this.countryCode, 'Industry', this.categorySlug).subscribe(
+        (category: Category) => {
+          this.categoryName = category.namet ? category.namet.zh : category.name;
+          if(category.country) {
+            this.country = category.country;
+          }
         }
       );
-      
-      this.categoryName = this.categorySlug.split('-').join(' ');
 
       this.industryServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(
         (industries: Industry[]) => {

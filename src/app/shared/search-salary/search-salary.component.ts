@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AllService } from 'src/app/services/all.service';
-
+import { UtilService} from '../../services/util.service';
 interface Suggestion {
   name: string;
   url: string;
@@ -24,7 +24,7 @@ export class SearchSalaryComponent implements OnInit {
   @Input() countryCode: string;
   suggestions: Suggestion[];
   constructor(
-
+    private utilServ: UtilService,
     private router: Router,
     private allServ: AllService
   ) { }
@@ -42,28 +42,7 @@ export class SearchSalaryComponent implements OnInit {
   }
 
   showTypeName() {
-    if (this.type == 'School') {
-      return '学校';
-    } else
-    if (this.type == 'Job') {
-      return '工作';
-    } else
-    if (this.type == 'Employer') {
-      return '公司';
-    } else
-    if (this.type == 'School') {
-      return '学校';
-    } else
-    if (this.type == 'Industry') {
-      return '行业';
-    } else
-    if (this.type == 'Skill') {
-      return '技能';
-    } else
-    if (this.type == 'Certification') {
-      return '证书';
-    }
-    return '全部';
+    return this.utilServ.getTypeName(this.type);
   }
 
   changeType(type: string) {

@@ -3,7 +3,7 @@
 <div class="rc-directory">
     <div class="subcats__links">
         <a class="subcats__links__item" *ngFor="let degree of degrees" href="{{getDegreePath(degree)}}">
-            {{degree.name}}
+            {{degree.namet ? degree.namet.zh : degree.name}}
         </a>
     </div>
 </div>

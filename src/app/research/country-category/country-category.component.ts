@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/interfaces/category.interface';
 import { CategoryService } from 'src/app/services/category.service';
-
+import { UtilService } from 'src/app/services/util.service';
 @Component({
   selector: 'app-country-category',
   templateUrl: './country-category.component.html',
@@ -18,7 +18,14 @@ export class CountryCategoryComponent implements OnInit {
   type: string;
   categories: Category[];
 
-  constructor(private route: ActivatedRoute, private categoryServ: CategoryService) { }
+  constructor(
+    private utilServ: UtilService,
+    private route: ActivatedRoute, 
+    private categoryServ: CategoryService) { }
+
+  getTypeText() {
+    return this.utilServ.getTypeName(this.type);
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( paramMap => {

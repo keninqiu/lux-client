@@ -3,7 +3,7 @@
 <div class="rc-directory">
     <div class="subcats__links">
         <a class="subcats__links__item" *ngFor="let employer of employers" href="{{getEmployerPath(employer)}}">
-            {{employer.name}}
+            {{employer.namet ? employer.namet.zh : employer.name}}
         </a>
     </div>
 </div>

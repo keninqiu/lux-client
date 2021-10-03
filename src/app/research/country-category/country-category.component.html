@@ -1,16 +1,17 @@
 <!--
 <app-menu></app-menu>
+-->
 <app-search-salary 
 [type]="type"
 [countryCode]="countryCode"
-[title]="'按技能搜索薪资待遇'"
-[placeholder]="'输入技能'"
+[title]="'按' + getTypeText() + '搜索薪资待遇'"
+[placeholder]="'输入' + getTypeText()"
 ></app-search-salary>
--->
+
 <div class="page  rc-directory">
     <div class="content one-col">
         <div class="maincontent">
-            <app-browse [categories]="categories"></app-browse>
+            <app-browse [type]="type" [categories]="categories" [title]="'分类浏览' + getTypeText()"></app-browse>
             <!--
             <app-find-your-market-worth></app-find-your-market-worth>
             <app-related-articles></app-related-articles>

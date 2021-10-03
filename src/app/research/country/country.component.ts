@@ -19,8 +19,9 @@ export class CountryComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    console.log('nbegin');
     this.route.paramMap.subscribe((params : ParamMap)=> {  
-      this.code=params.get('code');  
+      this.code=params.get('countryCode');  
       this.countryServ.getByCode(this.code).subscribe(
         (country: Country) => {
           this.country = country;

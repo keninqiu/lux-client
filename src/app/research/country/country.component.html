@@ -2,15 +2,18 @@
 [title]="'按国家搜索薪资待遇'"
 [placeholder]="'输入国家'"
 ></app-search-salary>
-<div class="page rc-directory">
-    <div class="content one-col">
-        <div class="maincontent">
-            <app-breadcrumbs [country]="country"></app-breadcrumbs>
-            <app-categories></app-categories>
-            <app-market-worth></app-market-worth>
-            <app-popular-jobs></app-popular-jobs>
-            <app-schools-degrees></app-schools-degrees>
-            <app-states></app-states>
-        </div>
-    </div>
-</div>
+<app-main-container>
+    <app-breadcrumbs *ngIf="country" [country]="country"></app-breadcrumbs>
+    <app-categories></app-categories>
+    <app-market-worth></app-market-worth>
+    <app-list-card 
+    [title]="'浏览热门工作'" 
+    [description]="'深入了解最全面的薪资数据库。 此外，查看详细的工作描述并获取有关工作满意度、工作人口统计、常见工作技能以及薪酬如何随时间和地点变化的信息。'"
+    [items]="items"
+    >
+
+    </app-list-card>
+    <app-popular-jobs></app-popular-jobs>
+    <app-schools-degrees></app-schools-degrees>
+    <app-states></app-states>
+</app-main-container>

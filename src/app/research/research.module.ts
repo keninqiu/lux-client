@@ -17,7 +17,6 @@ import { CompensationBestPracticesComponent } from './compensation-best-practice
 
 import { CountriesComponent } from './countries/countries.component';
 import { PopularCountriesComponent } from './countries/popular/popular.component';
-import { BrowseCountriesComponent } from './countries/browse/browse.component';
 import { CountryComponent } from './country/country.component';
 import { BreadcrumbsComponent } from './country/breadcrumbs/breadcrumbs.component';
 import { CategoriesComponent } from './country/categories/categories.component';
@@ -44,10 +43,10 @@ import { CategoryDegreesComponent } from './category-degrees/category-degrees.co
 import { CateogryPopularDegreesComponent } from './category-degrees/popular-degrees/popular-degrees.component';
 
 import { CountryCategoryModule } from './country-category/country-category.module';
+
 @NgModule({
   declarations: [
     PopularCountriesComponent,
-    BrowseCountriesComponent,
     ResearchComponent, 
     BrowseAllCategoriesComponent, 
     FindYourMarketWorthComponent, 

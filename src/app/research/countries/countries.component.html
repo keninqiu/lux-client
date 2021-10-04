@@ -2,12 +2,8 @@
 [title]="'按国家搜索薪资待遇'"
 [placeholder]="'输入国家'"
 ></app-search-salary>
-<div class="page rc-directory">
-    <div class="content one-col">
-        <div class="maincontent">
-            <app-popular-countries></app-popular-countries>
-            <app-market-worth></app-market-worth>
-            <app-browse-countries></app-browse-countries>
-        </div>
-    </div>
-</div>
+<app-main-container>
+    <app-popular-countries></app-popular-countries>
+    <app-market-worth></app-market-worth>
+    <app-list-simple [title]="'按国家浏览'" [items]="items"></app-list-simple>
+</app-main-container>

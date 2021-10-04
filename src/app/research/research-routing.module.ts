@@ -29,15 +29,7 @@ const routes: Routes = [
       { path: ':countryCode/Industry/:categorySlug', component: CategoryIndustriesComponent },
       { path: ':countryCode/Salary', component: CountryComponent },
       { path: ':countryCode/:type', component: CountryCategoryComponent },
-      /*
-      { path: ':countryCode/School', component: SchoolComponent },
-      { path: ':countryCode/Job', component: JobComponent },
-      { path: ':countryCode/Certification', component: CertificationComponent },
-      { path: ':countryCode/Skill', component: SkillComponent },
-      { path: ':countryCode/Employer', component: EmployerComponent },
-      { path: ':countryCode/Industry', component: IndustryComponent },
-      { path: ':countryCode/Degree', component: DegreeComponent },
-      */
+
       {
         path: ':countryCode/:type/:salaryType', loadChildren: () => import('./salary/salary.module').then(m => m.SalaryModule)
       },

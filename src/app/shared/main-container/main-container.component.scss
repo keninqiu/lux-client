@@ -1,0 +1,40 @@
+.content {
+    display: -moz-box;
+    display: flex;
+    padding: 30px 15px;
+    width: 100%;
+}
+
+.content {
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+}
+
+@media (min-width: 576px) {
+    .content {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .content {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .content {
+        max-width: 960px;
+    }
+}
+
+.page {
+    -moz-box-align: center;
+    align-items: center;
+    display: -moz-box;
+    display: flex;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+}

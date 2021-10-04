@@ -1,0 +1,39 @@
+.location--top-spaced {
+    margin-top: 10px;
+}
+
+.location__row {
+    display: -moz-box;
+    display: flex;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    flex-flow: row wrap;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+}
+
+.location__col {
+    flex-basis: 33.3%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .location__col {
+        flex-basis: 50%;
+    }   
+}
+
+
+@media (max-width: 768px) {
+    .location__col--full {
+        flex-basis: 100%;
+    }
+}
+
+a {
+    color: #2d67b9;
+    cursor: pointer;
+    text-decoration: none;
+}
+

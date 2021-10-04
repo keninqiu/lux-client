@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 import { Country } from 'src/app/interfaces/country.interface';
 import { ParamMap } from '@angular/router';
 import { CountryService } from 'src/app/services/country.service';
@@ -13,6 +12,7 @@ import { CountryService } from 'src/app/services/country.service';
 export class CountryComponent implements OnInit {
   code: string;
   country: Country;
+  items = [];
   constructor(
     private route: ActivatedRoute,
     private countryServ: CountryService

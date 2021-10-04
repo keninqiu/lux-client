@@ -8,6 +8,7 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { ListSimpleComponent } from './list/simple/simple.component';
 import { PageSectionComponent } from './page-section/page-section.component';
 import { ListCardComponent } from './list/card/card.component';
+import { ListCardLogoComponent } from './list/card-logo/card-logo.component';
 
 const components = [
   MarketWorthComponent,
@@ -17,7 +18,8 @@ const components = [
   MainContainerComponent,
   ListSimpleComponent,
   PageSectionComponent,
-  ListCardComponent
+  ListCardComponent,
+  ListCardLogoComponent
 ];
 
 @NgModule({

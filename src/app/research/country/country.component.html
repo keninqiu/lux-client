@@ -7,13 +7,27 @@
     <app-categories></app-categories>
     <app-market-worth></app-market-worth>
     <app-list-card 
+    *ngIf="jobItems"
     [title]="'浏览热门工作'" 
     [description]="'深入了解最全面的薪资数据库。 此外，查看详细的工作描述并获取有关工作满意度、工作人口统计、常见工作技能以及薪酬如何随时间和地点变化的信息。'"
-    [items]="items"
+    [items]="jobItems"
     >
-
     </app-list-card>
-    <app-popular-jobs></app-popular-jobs>
-    <app-schools-degrees></app-schools-degrees>
-    <app-states></app-states>
+    <app-list-card-logo 
+    *ngIf="employerItems"
+    [title]="'了解公司'"
+    [description]="'在你参加工作面试之前，做你的功课。 了解不同雇主的薪酬、员工的满意度以及在那里工作的真实感受。'"
+    [items]="employerItems">
+    </app-list-card-logo>
+
+    <app-page-section 
+    [title]="'了解学校和学位'" 
+    [description]="'无论您是选择学校、学位，还是只是对母校感到好奇，我们都会按大学或专业向您展示职业成果。'"></app-page-section>
+
+    <app-list-card-logo 
+    *ngIf="schoolItems"
+    [title]="'热门学校的薪资范围'"
+    [items]="schoolItems">
+    </app-list-card-logo>
+
 </app-main-container>

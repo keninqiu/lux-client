@@ -20,10 +20,6 @@ import { PopularCountriesComponent } from './countries/popular/popular.component
 import { CountryComponent } from './country/country.component';
 import { BreadcrumbsComponent } from './country/breadcrumbs/breadcrumbs.component';
 import { CategoriesComponent } from './country/categories/categories.component';
-import { PopularJobsComponent } from './country/popular-jobs/popular-jobs.component';
-import { EmployersComponent } from './country/employers/employers.component';
-import { SchoolsDegreesComponent } from './country/schools-degrees/schools-degrees.component';
-import { StatesComponent } from './country/states/states.component';
 import { CategorySchoolsComponent } from './category-schools/category-schools.component';
 import { CategoryJobsComponent } from './category-jobs/category-jobs.component';
 import { CategoryBreadcrumbComponent } from './catetory-breadcrumb/category-breadcrumb.component';
@@ -61,10 +57,6 @@ import { CountryCategoryModule } from './country-category/country-category.modul
     CountryComponent, 
     BreadcrumbsComponent, 
     CategoriesComponent, 
-    PopularJobsComponent, 
-    EmployersComponent, 
-    SchoolsDegreesComponent, 
-    StatesComponent, 
     CategorySchoolsComponent, 
     CategoryJobsComponent, 
     CategoryBreadcrumbComponent,

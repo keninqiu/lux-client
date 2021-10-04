@@ -1,0 +1,17 @@
+<app-page-section [title]="title" [description]="description">
+   <div class="location__row location__country-card--related-sizing">
+      <a data-instant="true" *ngFor="let item of items" class="related-content-card" href="{{item.url}}">
+         <div class="related-content-card__image-container">
+            <div class="lazyload-wrapper ">
+               <img class="conux-logo related-content-card__image-container__image" src="{{item.image}}" alt="image holder">
+            </div>
+         </div>
+         <div class="related-content-card__title">{{item.title}}</div>
+         <div class="related-content-card__subtitle">
+            <div class="location--employer-type">{{item.subtitle}}</div>
+            <div>{{item.content}}</div>
+         </div>
+      </a>
+
+   </div>
+</app-page-section>

@@ -12,19 +12,103 @@ import { CountryService } from 'src/app/services/country.service';
 export class CountryComponent implements OnInit {
   code: string;
   country: Country;
-  items = [];
+  jobItems: any;
+  employerItems: any;
+  schoolItems: any;
+
   constructor(
     private route: ActivatedRoute,
     private countryServ: CountryService
     ) { }
 
   ngOnInit(): void {
-    console.log('nbegin');
     this.route.paramMap.subscribe((params : ParamMap)=> {  
       this.code=params.get('countryCode');  
       this.countryServ.getByCode(this.code).subscribe(
         (country: Country) => {
           this.country = country;
+          const byDimension = country.byDimension;
+          if(byDimension) {
+            if(byDimension.salaryByJob && byDimension.salaryByJob.length > 0) {
+              this.jobItems = byDimension.salaryByJob.map(
+                (item: any) => {
+                  return {
+                    title: item.job && item.job.namet ? item.job.namet.zh : item.name,
+                    content: '平均年薪：' + (item.min && item.max) ? (item.min + '-' + item.max) : item.avg,
+                    url: item.url
+                  }
+                }
+              )
+            } else 
+            if(byDimension.hourlyRateByJob && byDimension.hourlyRateByJob.length > 0) {
+              this.jobItems = byDimension.hourlyRateByJob.map(
+                (item: any) => {
+                  return {
+                    title: item.job && item.job.namet ? item.job.namet.zh : item.name,
+                    content: '平均时薪：' + (item.min && item.max) ? (item.min + '-' + item.max) : item.avg,
+                    url: item.url
+                  }
+                }
+              )
+            }
+
+            if(byDimension.salaryByEmployer && byDimension.salaryByEmployer.length > 0) {
+              this.employerItems = byDimension.salaryByEmployer.map(
+                (item: any) => {
+                  return {
+                    title: item.employer && item.employer.namet ? item.employer.namet.zh : item.name,
+                    subtitle: '平均年薪',
+                    content: (item.min && item.max) ? (item.min + '-' + item.max) : item.avg,
+                    image: '/assets/images/employer-placeholder.png',
+                    url: item.url
+                  }
+                }
+              )
+            } else 
+            if(byDimension.hourlyRateByEmployer && byDimension.hourlyRateByEmployer.length > 0) {
+              this.employerItems = byDimension.hourlyRateByEmployer.map(
+                (item: any) => {
+                  return {
+                    title: item.employer && item.employer.namet ? item.employer.namet.zh : item.name,
+                    subtitle: '平均时薪',
+                    content: (item.min && item.max) ? (item.min + '-' + item.max) : item.avg,
+                    image: '/assets/images/employer-placeholder.png',
+                    url: item.url
+                  }
+                }
+              )
+            }  
+            
+            
+            if(byDimension.salaryBySchool && byDimension.salaryBySchool.length > 0) {
+              this.schoolItems = byDimension.salaryBySchool.map(
+                (item: any) => {
+                  return {
+                    title: item.school && item.school.namet ? item.school.namet.zh : item.name,
+                    subtitle: '平均年薪',
+                    content: (item.min && item.max) ? (item.min + '-' + item.max) : item.avg,
+                    image: '/assets/images/school-placeholder.png',
+                    url: item.url
+                  }
+                }
+              )
+            } else 
+            if(byDimension.hourlyRateBySchool && byDimension.hourlyRateBySchool.length > 0) {
+              this.schoolItems = byDimension.hourlyRateBySchool.map(
+                (item: any) => {
+                  return {
+                    title: item.school && item.school.namet ? item.school.namet.zh : item.name,
+                    subtitle: '平均时薪',
+                    content: (item.min && item.max) ? (item.min + '-' + item.max) : item.avg,
+                    image: '/assets/images/school-placeholder.png',
+                    url: item.url
+                  }
+                }
+              )
+            } 
+
+          }
+
         }
       );
     });

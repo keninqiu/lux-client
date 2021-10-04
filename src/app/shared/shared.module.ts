@@ -9,6 +9,8 @@ import { ListSimpleComponent } from './list/simple/simple.component';
 import { PageSectionComponent } from './page-section/page-section.component';
 import { ListCardComponent } from './list/card/card.component';
 import { ListCardLogoComponent } from './list/card-logo/card-logo.component';
+import { ListTableComponent } from './list/table/table.component';
+import { ListCarouselComponent } from './list/carousel/carousel.component';
 
 const components = [
   MarketWorthComponent,
@@ -19,7 +21,9 @@ const components = [
   ListSimpleComponent,
   PageSectionComponent,
   ListCardComponent,
-  ListCardLogoComponent
+  ListCardLogoComponent,
+  ListTableComponent,
+  ListCarouselComponent
 ];
 
 @NgModule({

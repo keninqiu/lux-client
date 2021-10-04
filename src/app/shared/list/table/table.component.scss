@@ -1,0 +1,108 @@
+.jobs-table__container {
+    min-height: 450px;
+}
+
+.data-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.data-table__cell, .data-table__header {
+    border: none;
+    font-size: 14px;
+    list-style: none;
+    padding: 15px 10px;
+}
+
+.data-table__header {
+    background-color: #e9e9ec;
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+    .data-table__header {
+        display: table-cell;
+    }
+}
+
+@media (min-width: 768px) {
+    .data-table__cell, .data-table__header {
+        border: 1px solid #d9d9dd;
+    }
+}
+
+
+.data-table__header {
+    background-color: #fff;
+    border-color: #c3c3ca;
+    border-style: none none solid;
+    color: #464249;
+    font-size: 16px;
+    text-align: left;
+}
+
+.data-table__row {
+    border-top: 1px solid #d9d9dd;
+    display: block;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .data-table__row {
+        border: none;
+        display: table-row;
+    }
+}
+
+
+.data-table__cell {
+    list-style: none;
+    justify-content: flex-start;
+}
+
+.jobs-table .data-table__cell {
+    border-color: #e9e9ec;
+    border-style: solid none;
+    font-size: 16px;
+    width: 25%;
+}
+
+.jobs-table .data-table__cell:first-of-type {
+    width: 50%;
+}
+
+.data-table__title {
+    font-weight: 700;
+    padding-right: 5px;
+}
+
+@media (min-width: 768px) {
+    .data-table__title {
+        display: none;
+    }
+}
+
+.data-table__cell, .data-table__header {
+    border: none;
+    font-size: 14px;
+    list-style: none;
+    padding: 15px 10px;
+}
+
+@media (min-width: 768px) {
+    .data-table__value {
+        text-align: left;
+    }
+}
+
+.data-table__row {
+    border-top: 1px solid #d9d9dd;
+}
+
+a {
+    color: #2d67b9;
+    cursor: pointer;
+    text-decoration: none;
+}

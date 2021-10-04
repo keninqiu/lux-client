@@ -15,6 +15,7 @@ export class CountryComponent implements OnInit {
   jobItems: any;
   employerItems: any;
   schoolItems: any;
+  categoryItems: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,8 +23,42 @@ export class CountryComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+
     this.route.paramMap.subscribe((params : ParamMap)=> {  
       this.code=params.get('countryCode');  
+
+      this.categoryItems = [
+        {
+          text: '公司',
+          url: '/research/' + this.code + '/Employer'
+        },
+        {
+          text: '学位',
+          url: '/research/' + this.code + '/Degree'
+        },    
+        {
+          text: '工作',
+          url: '/research/' + this.code + '/Job'
+        },
+        {
+          text: '证书',
+          url: '/research/' + this.code + '/Certification'
+        },
+        {
+          text: '技能',
+          url: '/research/' + this.code + '/Skill'
+        },    
+        {
+          text: '行业',
+          url: '/research/' + this.code + '/Industry'
+        },      
+        {
+          text: '学校',
+          url: '/research/' + this.code + '/School'
+        }    
+      ];
+
+
       this.countryServ.getByCode(this.code).subscribe(
         (country: Country) => {
           this.country = country;

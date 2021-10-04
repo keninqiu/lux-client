@@ -4,7 +4,12 @@
 ></app-search-salary>
 <app-main-container>
     <app-breadcrumbs *ngIf="country" [country]="country"></app-breadcrumbs>
-    <app-categories></app-categories>
+
+    <app-list-simple 
+    *ngIf="categoryItems"
+    [title]="'查看所有类别'" 
+    [description]="'进行职业研究并找到特定工作、雇主、学校等的深入工资数据。 知道你在找什么吗？ 在上方开始搜索，浏览以发现'" 
+    [items]="categoryItems"></app-list-simple>
     <app-market-worth></app-market-worth>
     <app-list-card 
     *ngIf="jobItems"

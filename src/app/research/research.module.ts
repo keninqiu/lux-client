@@ -19,7 +19,6 @@ import { CountriesComponent } from './countries/countries.component';
 import { PopularCountriesComponent } from './countries/popular/popular.component';
 import { CountryComponent } from './country/country.component';
 import { BreadcrumbsComponent } from './country/breadcrumbs/breadcrumbs.component';
-import { CategoriesComponent } from './country/categories/categories.component';
 import { CategorySchoolsComponent } from './category-schools/category-schools.component';
 import { CategoryJobsComponent } from './category-jobs/category-jobs.component';
 import { CategoryBreadcrumbComponent } from './catetory-breadcrumb/category-breadcrumb.component';
@@ -56,7 +55,6 @@ import { CountryCategoryModule } from './country-category/country-category.modul
     CountriesComponent, 
     CountryComponent, 
     BreadcrumbsComponent, 
-    CategoriesComponent, 
     CategorySchoolsComponent, 
     CategoryJobsComponent, 
     CategoryBreadcrumbComponent,

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UtilService } from 'src/app/services/util.service';
 
 @Component({
   selector: 'app-list-carousel',
@@ -23,10 +24,8 @@ export class ListCarouselComponent{
       this.posIndicator = this.posIndicator - 20;
     }
 
+    constructor(private utilServ: UtilService) {}    
     getUrl(url: string) {
-      if(url.indexOf('/research/') !== 0) {
-        return url;
-      }
-      return encodeURIComponent(url).replace('(','%28').replace(')','%29');
+      return this.utilServ.getUrl(url);
     }
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UtilService } from 'src/app/services/util.service';
 
 @Component({
   selector: 'app-list-card',
@@ -12,7 +13,7 @@ export class ListCardComponent implements OnInit{
     @Input() description: string;
     @Input() items: any;
     itemsArray: any;
-    constructor() {
+    constructor(private utilServ: UtilService) {
 
     }
     ngOnInit() {
@@ -30,9 +31,6 @@ export class ListCardComponent implements OnInit{
     }
 
     getUrl(url: string) {
-      if(url.indexOf('/research/') !== 0) {
-        return url;
-      }
-      return encodeURIComponent(url).replace('(','%28').replace(')','%29');
+      return this.utilServ.getUrl(url);
     }
 }

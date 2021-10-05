@@ -1,6 +1,8 @@
 import { Entity } from './entity.interface';
+import { Translate } from './translate.interface';
 export interface Job extends Entity {
     name: string,
+    namet: Translate,
     category: string,
     url: string,
     salaryType: string,

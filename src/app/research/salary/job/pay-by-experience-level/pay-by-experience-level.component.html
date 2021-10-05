@@ -1,5 +1,5 @@
 <section class="page-section">
-    <h2 class="page-subtitle">What is the Pay by Experience Level for <!-- -->Software Developers<!-- -->?</h2>
+    <h2 class="page-subtitle">不同经验水平的{{(job.namet && job.namet.zh) ? job.namet.zh : job.name}}的平均薪酬是多少?</h2>
     <div class="pay-by-experience">
         <div class="pay-by-experience__charts">
             <div class="pay-by-experience__experience-chart-container">
@@ -125,7 +125,7 @@
                 <div class="delta-table pay-by-experience__delta-chart">
                     <div class="entry">
                         <div class="name">
-                            <a data-instant="true" href="/research/US/Job=Software_Developer/Salary/b40d08f6/Entry-Level">入门级</a>
+                            <a data-instant="true">入门级</a>
                         </div>
                         <div class="value"></div>
                         <div class="arrow">
@@ -134,7 +134,7 @@
                     </div>
                     <div class="entry">
                         <div class="name">
-                            <a data-instant="true" href="/research/US/Job=Software_Developer/Salary/b40d08f6/Early-Career">初级</a>
+                            <a data-instant="true">初级</a>
                         </div>
                         <div class="value"></div>
                         <div class="arrow">
@@ -143,7 +143,7 @@
                     </div>
                     <div class="entry">
                         <div class="name">
-                            <a data-instant="true" href="/research/US/Job=Software_Developer/Salary/ef69e904/Mid-Career">中级</a>
+                            <a data-instant="true">中级</a>
                         </div>
                         <div class="value"></div>
                         <div class="arrow">
@@ -152,7 +152,7 @@
                     </div>
                     <div class="entry">
                         <div class="name">
-                            <a data-instant="true" href="/research/US/Job=Software_Developer/Salary/2fa54cc9/Experienced">高级</a>
+                            <a data-instant="true">高级</a>
                         </div>
                         <div class="value"></div>
                         <div class="arrow">
@@ -161,7 +161,7 @@
                     </div>
                     <div class="entry">
                         <div class="name">
-                            <a data-instant="true" href="/research/US/Job=Software_Developer/Salary/961655f5/Late-Career">专家级</a>
+                            <a data-instant="true">专家级</a>
                         </div>
                         <div class="value"></div>
                         <div class="arrow">
@@ -173,8 +173,8 @@
         </div>
         <div class="expandable pay-by-experience__blurb">
             <p class="expandable__paragraph">
-                基于{{job.byDimension.experience.entryLevel.profileCount}}份薪酬样本数据，一名经验不足 1 年的入门级{{job.name}}预计可获得 {{job.byDimension.experience.entryLevel.avg}} 美元的平均总薪酬（包括小费、奖金和加班费）。 具有 1-4 年经验的早期职业软件开发人员的平均总薪酬为 {{job.byDimension.experience.earlyCareer.avg}} 美元，样本数为 12,244。
-                一个职业生涯中期{{job.name}}的5-9年的经验赚取基于{{job.byDimension.experience.midCareer.profileCount}}份样本的薪水为${{job.byDimension.experience.midCareer.avg}}。一位经验丰富的{{job.name}}与10-19年的经验赚取基于{{job.byDimension.experience.lateCareer.profileCount}}个样本数据的平均薪酬为${{job.byDimension.experience.lateCareer.avg}}。 在职业生涯后期（20 年及以上），员工的平均总薪酬为 {{job.byDimension.experience.experienced.avg}} 美元。
+                基于{{job.byDimension.experience.entryLevel.profileCount}}份薪酬样本数据，一名经验不足 1 年的入门级{{job.namet && job.namet.zh ? job.namet.zh : job.name}}预计可获得 {{job.byDimension.experience.entryLevel.avg}} 美元的平均总薪酬（包括小费、奖金和加班费）。 具有 1-4 年经验的早期职业软件开发人员的平均总薪酬为 {{job.byDimension.experience.earlyCareer.avg}} 美元，样本数为 12,244。
+                一个职业生涯中期{{job.namet && job.namet.zh ? job.namet.zh : job.name}}的5-9年的经验赚取基于{{job.byDimension.experience.midCareer.profileCount}}份样本的薪水为${{job.byDimension.experience.midCareer.avg}}。一位经验丰富的{{job.namet && job.namet.zh ? job.namet.zh : job.name}}与10-19年的经验赚取基于{{job.byDimension.experience.lateCareer.profileCount}}个样本数据的平均薪酬为${{job.byDimension.experience.lateCareer.avg}}。 在职业生涯后期（20 年及以上），员工的平均总薪酬为 {{job.byDimension.experience.experienced.avg}} 美元。
                 <!--
                 <span class="expandable__more"><span>  …Read more</span></span>
                 -->

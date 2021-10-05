@@ -1,6 +1,6 @@
 <app-page-section [title]="title" [description]="description" *ngIf="itemsArray">
     <div class="location__row" *ngFor="let arr of itemsArray">
-        <a class="location__item location__card location__card--job" *ngFor="let item of arr" href="{{item.url}}">
+        <a class="location__item location__card location__card--job" *ngFor="let item of arr" href="{{getUrl(item.url)}}">
             <div class="location--weighted">{{item.title}}</div>
             <div class="location__card--range-text">{{item.content}}</div>
         </a>

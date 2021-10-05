@@ -1,0 +1,172 @@
+.carousel, .carousel__content {
+    -moz-box-align: center;
+    align-items: center;
+}
+
+.carousel {
+    margin-bottom: 40px;
+}
+
+.carousel__content {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 605px;
+}
+
+.carousel__arrow {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.carousel__arrow--left {
+    margin-right: 15px;
+}
+
+.carousel__arrow span {
+    color: #d9d9dd;
+    cursor: pointer;
+    font-size: 48px;
+    -webkit-transition: color .1s ease-in-out;
+    -moz-transition: color .1s ease-in-out;
+    transition: color .1s ease-in-out;
+}
+
+.carousel__items-window {
+    -moz-box-flex: 1;
+    flex: 1 1;
+    overflow: hidden;
+}
+
+.carousel__items {
+    -moz-box-align: stretch;
+    align-items: stretch;
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    transition: -webkit-transform .5s ease-in-out;
+    -moz-transition: transform .5s ease-in-out,-moz-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out,-webkit-transform .5s ease-in-out,-moz-transform .5s ease-in-out;
+}
+
+.related-content-card {
+    border: 1px solid #e9e9ec;
+    border-radius: 3px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: initial;
+    cursor: pointer;
+    display: inline-block;
+    height: 145px;
+    min-width: 140px;
+    overflow: hidden;
+    padding: 15px 15px 40px;
+    text-align: center;
+    -webkit-transition: -webkit-box-shadow .1s;
+    transition: -webkit-box-shadow .1s;
+    -moz-transition: box-shadow .1s;
+    transition: box-shadow .1s;
+    transition: box-shadow .1s,-webkit-box-shadow .1s;
+    width: 140px;
+}
+
+.carousel__items>a, .carousel__items>div {
+    margin: 5px;
+}
+
+.related-content-card__image-container {
+    -moz-box-align: center;
+    align-items: center;
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    position: relative;
+}
+
+.related-content-card__image-container__image {
+    left: 0;
+    margin-bottom: 15px;
+    max-height: 70px;
+    max-width: 140px;
+    top: 0;
+}
+
+.related-content-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.related-content-card__subtitle {
+    color: #625d6a;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 5px;
+}
+
+a {
+    color: #2d67b9;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.carousel__indicator__window {
+    height: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100px;
+}
+
+.carousel__indicator__dots {
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    -webkit-transition: background-color .2s ease-in-out,-webkit-transform .2s ease-in-out;
+    transition: background-color .2s ease-in-out,-webkit-transform .2s ease-in-out;
+    -moz-transition: transform .2s ease-in-out,background-color .2s ease-in-out,-moz-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out,background-color .2s ease-in-out;
+    transition: transform .2s ease-in-out,background-color .2s ease-in-out,-webkit-transform .2s ease-in-out,-moz-transform .2s ease-in-out;
+}
+
+.carousel__indicator__dots {
+    -moz-box-align: center;
+    align-items: center;
+    display: -moz-box;
+    display: flex;
+}
+
+.carousel__indicator__dot__container {
+    height: 10px;
+    -moz-box-pack: center;
+    justify-content: center;
+    margin: 5px;
+    min-width: 10px;
+}
+
+.carousel__indicator__dot {
+    background-color: #e9e9ec;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 10px;
+    min-width: 10px;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.carousel__indicator__dot.selected {
+    background-color: #625d6a;
+    border-radius: 6px;
+    height: 12px;
+    min-width: 12px;
+}

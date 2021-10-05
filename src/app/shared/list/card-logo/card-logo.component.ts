@@ -7,13 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
     './card-logo.component.scss', 
   ]
 })
-export class ListCardLogoComponent implements OnInit{
+export class ListCardLogoComponent{
     @Input() title: string;
     @Input() description: string;
     @Input() items: any;
-    constructor() {
 
-    }
-    ngOnInit() {
+    getUrl(url: string) {
+      if(url.indexOf('/research/') !== 0) {
+        return url;
+      }
+      return encodeURIComponent(url).replace('(','%28').replace(')','%29');
     }
 }

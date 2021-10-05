@@ -31,9 +31,11 @@ export class CategorySkillsComponent implements OnInit {
       this.categorySlug = paramMap.get('categorySlug');
       this.categoryServ.getByCountryCodeTypeAndSlug(this.countryCode, 'Skill', this.categorySlug).subscribe(
         (category: Category) => {
-          this.categoryName = category.namet ? category.namet.zh : category.name;
-          if(category.country) {
-            this.country = category.country;
+          if(category) {
+            this.categoryName = category.namet ? category.namet.zh : category.name;
+            if(category.country) {
+              this.country = category.country;
+            }
           }
         }
       );

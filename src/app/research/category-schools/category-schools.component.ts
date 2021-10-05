@@ -31,10 +31,13 @@ export class CategorySchoolsComponent implements OnInit {
       this.categorySlug = paramMap.get('categorySlug');
       this.categoryServ.getByCountryCodeTypeAndSlug(this.countryCode, 'School', this.categorySlug).subscribe(
         (category: Category) => {
-          this.categoryName = category.namet ? category.namet.zh : category.name;
-          if(category.country) {
-            this.country = category.country;
+          if(category) {
+            this.categoryName = category.namet ? category.namet.zh : category.name;
+            if(category.country) {
+              this.country = category.country;
+            }
           }
+
         }
       );
       this.schoolServ.getAllByCountryCodeAndCategorySlug(this.countryCode, this.categorySlug).subscribe(

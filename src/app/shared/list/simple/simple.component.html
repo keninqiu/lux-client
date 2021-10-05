@@ -1,7 +1,7 @@
 <app-page-section [title]="title">
     <div class="location__row location--top-spaced" >
         <div class="location__col location__col--full" *ngFor="let item of items">
-            <a href="{{item.url}}">{{item.text}}</a>
+            <a href="{{getUrl(item.url)}}">{{item.text}}</a>
         </div>
     </div>
 </app-page-section>

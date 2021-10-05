@@ -27,6 +27,12 @@ export class ListCardComponent implements OnInit{
            }
            this.itemsArray.push(arr);
         }
-        console.log('this.itemsArray==', this.itemsArray);
+    }
+
+    getUrl(url: string) {
+      if(url.indexOf('/research/') !== 0) {
+        return url;
+      }
+      return encodeURIComponent(url).replace('(','%28').replace(')','%29');
     }
 }

@@ -33,9 +33,11 @@ export class CategoryEmployersComponent implements OnInit {
 
       this.categoryServ.getByCountryCodeTypeAndSlug(this.countryCode, 'Employer', this.categorySlug).subscribe(
         (category: Category) => {
-          this.categoryName = category.namet ? category.namet.zh : category.name;
-          if(category.country) {
-            this.country = category.country;
+          if(category) {
+            this.categoryName = category.namet ? category.namet.zh : category.name;
+            if(category.country) {
+              this.country = category.country;
+            }
           }
         }
       );

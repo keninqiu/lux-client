@@ -2,10 +2,20 @@
     <app-school-sub-nav [school]="school"></app-school-sub-nav>
     <app-school-overview [school]="school"></app-school-overview>
     <app-market-worth></app-market-worth>
-    <app-list-table></app-list-table>
-    <app-jobs-by-salary [school]="school"></app-jobs-by-salary>
-    <app-shared-related [entity]="school" [typeName]="'学校'"></app-shared-related>
+    <app-list-table 
+        [title]="(school.namet && school.namet.zh ? school.namet.zh : school.name) + '相关工作的薪酬待遇'"
+        [tableTitle]="'工作'"
+        [items]="jobItems"
+    ></app-list-table>
+    <app-list-carousel 
+    [title]="'相关学校的薪酬待遇'" 
+    [description]="'跟' + (school.namet && school.namet.zh ? school.namet.zh : school.name) + '同类的学校, 以薪资待遇排名'"
+    *ngIf="schoolItems" [items]="schoolItems"></app-list-carousel>
+
     <app-shared-by-dimension [entity]="school"></app-shared-by-dimension>
-    <app-shared-popular-companies [entity]="school"></app-shared-popular-companies>
+    <app-list-carousel 
+    [title]="'毕业生就业的热门公司'" 
+    [description]="(school.namet && school.namet.zh ? school.namet.zh : school.name) + '就业的热门公司的薪酬范围'"
+    *ngIf="employerItems" [items]="employerItems"></app-list-carousel>
     <app-about-this-school [school]="school"></app-about-this-school>
 </div>

@@ -3,6 +3,7 @@ import { Translate } from './translate.interface';
 export interface Job extends Entity {
     name: string,
     namet: Translate,
+    description: string,
     category: string,
     url: string,
     salaryType: string,

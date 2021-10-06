@@ -47,5 +47,9 @@ export interface Skill extends Entity {
             profileCount: number              
         }
     },
+    byDimension: {
+        salaryByJob: [],
+        hourlyRateByJob: []
+    },
     related: [] 
 }

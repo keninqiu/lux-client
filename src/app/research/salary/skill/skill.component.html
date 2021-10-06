@@ -4,6 +4,11 @@
         <div class="content">
             <app-skill-overview [skill]="skill"></app-skill-overview>
             <app-shared-jobs-by-salary [entity]="skill"></app-shared-jobs-by-salary>
+            <app-list-table 
+            [title]="(skill.namet && skill.namet.zh ? skill.namet.zh : skill.name) + '相关工作的薪酬待遇'"
+            [tableTitle]="'工作'"
+            [items]="jobItems"
+        ></app-list-table>    
         </div>
     </div>
 </div>

@@ -8,10 +8,41 @@ import { Skill } from 'src/app/interfaces/skill.interface';
 })
 export class SkillComponent implements OnInit {
   @Input() skill: Skill;
+  jobItems: any;
   constructor() { }
 
   ngOnInit(): void {
-    console.log('skill=', this.skill);
+    const byDimension = this.skill.byDimension;
+    const related = this.skill.related;
+    if(byDimension) {
+      if(byDimension.salaryByJob && byDimension.salaryByJob.length > 0) {
+        this.jobItems = byDimension.salaryByJob.map(
+          (item: any) => {
+            return {
+              title: item.job && item.job.namet ? item.job.namet.zh : item.name,
+              min: item.min,
+              max: item.max,
+              avg: item.avg,
+              url: item.url
+            }
+          }
+        );
+      } else 
+      if(byDimension.hourlyRateByJob && byDimension.hourlyRateByJob.length > 0) {
+        this.jobItems = byDimension.hourlyRateByJob.map(
+          (item: any) => {
+            return {
+              title: item.job && item.job.namet ? item.job.namet.zh : item.name,
+              min: item.min,
+              max: item.max,
+              avg: item.avg,
+              url: item.url
+            }
+          }
+        );
+      }
+
+    }
   }
 
 }

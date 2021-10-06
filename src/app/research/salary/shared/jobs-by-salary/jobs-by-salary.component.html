@@ -7,7 +7,7 @@
        <div class="jobs-table__blurb">
           <div class="expandable ">
              <p class="expandable__paragraph">
-                {{entity.name}}平均每年向员工支付 {{entity.compensation.salary.avg}} 美元。 {{entity.name}}的年薪从平均 {{entity.compensation.salary.min}} 美元到 {{entity.compensation.salary.max}} 美元不等。 {{entity.name}} 职位高级软件工程师/开发人员/程序员的员工收入最高，平均年薪为 105,758 美元，而提案协调员职位的员工收入最低，平均年薪为 55,111 美元。
+               {{entity.namet && entity.namet.zh ? entity.namet.zh : entity.name}}平均每年向员工支付 {{entity.compensation.salary.avg}} 美元。{{entity.namet && entity.namet.zh ? entity.namet.zh : entity.name}}的年薪从平均 {{entity.compensation.salary.min}} 美元到 {{entity.compensation.salary.max}} 美元不等。 {{entity.namet && entity.namet.zh ? entity.namet.zh : entity.name}} 职位员工收入最高的平均年薪为 105,758 美元，而员工收入最低的平均年薪为 55,111 美元。
              </p>
           </div>
        </div>

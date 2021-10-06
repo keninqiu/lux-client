@@ -80,7 +80,7 @@
              </div>
           </div>
           <p class="paycharts__percentile--desc">
-             {{job.name}}的平均<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span>是${{getCompensation('avg')}}
+             {{job.namet && job.namet.zh ? job.namet.zh : job.name}}的平均<span *ngIf="salaryType=='Salary'">年薪</span><span *ngIf="salaryType!='Salary'">时薪</span>是${{getCompensation('avg')}}
           </p>
        </div>
        <div class="paycharts__charttable">

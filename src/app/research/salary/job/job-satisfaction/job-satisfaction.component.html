@@ -1,6 +1,6 @@
 <section class="page-section">
     <div class="jobstats">
-        <h2 class="page-subtitle">{{job.name}}的工作满意度</h2>
+        <h2 class="page-subtitle">{{job.namet && job.namet.zh ? job.namet.zh : job.name}}的工作满意度</h2>
         <div class="jobstats__reviews">
             <div class="job-rating">
                 <div class="job-rating__description">
@@ -32,7 +32,7 @@
                 </a>
             </div>
             <div class="jobstats__review-blurb">
-                根据{{job.ratings.overall.profileCount}}条回复，{{job.name}}的工作获得了 {{job.ratings.overall.score}} 分（满分 5 分）的工作满意度。平均而言，{{job.name}}对他们的工作非常满意。
+                根据{{job.ratings.overall.profileCount}}条回复，{{job.namet && job.namet.zh ? job.namet.zh : job.name}}的工作获得了 {{job.ratings.overall.score}} 分（满分 5 分）的工作满意度。平均而言，{{job.namet && job.namet.zh ? job.namet.zh : job.name}}对他们的工作非常满意。
             </div>
         </div>
         <div class="jobstats__data">

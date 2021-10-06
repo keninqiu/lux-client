@@ -1,9 +1,9 @@
 <div class="page-section description">
-    <h2 class="page-subtitle">{{job.name}}的日常工作</h2>
+    <h2 class="page-subtitle">{{job.namet && job.namet.zh ? job.namet.zh : job.name}}的日常工作</h2>
     <div class="job-tasks-container">
         <div class="expandable ">
             <p class="expandable__paragraph">
-                {{job.narratives.description}}
+                {{job.namet && job.namet.desczh ? job.namet.desczh : job.narratives.description}}
             </p>
         </div>
     </div>

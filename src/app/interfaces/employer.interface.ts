@@ -1,7 +1,9 @@
 import { Category } from './category.interface';
 import { Entity } from './entity.interface';
+import { Translate } from './translate.interface';
 export interface Employer extends Entity {
     name: string,
+    namet: Translate,
     category: Category,
     salaryType: string,
     slug: string,
@@ -81,7 +83,10 @@ export interface Employer extends Entity {
     },
     byDimension: {
         salaryByJob: [],
-        salaryByDegree: []
-    }
+        hourlyRateByJob: [],
+        salaryByDegree: [],
+        hourlyRateByDegree: []
+    },
+    related: [],
     reviews: [],
 }

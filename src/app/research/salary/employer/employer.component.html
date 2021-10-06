@@ -5,10 +5,33 @@
             <app-employer-overview [employer]="employer"></app-employer-overview>
             <app-market-worth></app-market-worth>
             <app-shared-jobs-by-salary [entity]="employer"></app-shared-jobs-by-salary>
+            <app-list-table 
+            [title]="(employer.namet && employer.namet.zh ? employer.namet.zh : employer.name) + '相关工作的薪酬待遇'"
+            [tableTitle]="'工作'"
+            [items]="jobItems"
+        ></app-list-table>
+
+            
             <app-employer-company-reviews [employer]="employer"></app-employer-company-reviews>
             <app-shared-by-dimension [entity]="employer"></app-shared-by-dimension>
+
+            <app-list-card 
+            *ngIf="degreeItems"
+            [title]="'热门学位'" 
+            [description]="'热门学位的薪酬范围'"
+            [items]="degreeItems"
+            ></app-list-card>
+            <!--
             <app-shared-popular-degrees [entity]="employer"></app-shared-popular-degrees>
+            -->
+            <!--
             <app-shared-related [entity]="employer" [typeName]="'公司'"></app-shared-related>
+            -->
+
+            <app-list-carousel 
+            [title]="'相关公司的薪酬待遇'" 
+            [description]="'跟' + (employer.namet && employer.namet.zh ? employer.namet.zh : employer.name) + '同类的公司, 以薪资待遇排名'"
+            *ngIf="employerItems" [items]="employerItems"></app-list-carousel>           
         </div>
     </div>
 </div>

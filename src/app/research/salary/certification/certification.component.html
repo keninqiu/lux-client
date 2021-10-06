@@ -1,13 +1,31 @@
 <div *ngIf="certification">
     <app-certification-sub-nav [certification]="certification"></app-certification-sub-nav>
-    <div class="page">
-        <div class="content">
-            <app-certification-overview [certification]="certification"></app-certification-overview>
-            <app-shared-jobs-by-salary [entity]="certification"></app-shared-jobs-by-salary>
-            <app-related-certifications [certification]="certification"></app-related-certifications>
-            <app-shared-by-dimension [entity]="certification"></app-shared-by-dimension>
-            <app-shared-job-satisfaction [entity]="certification"></app-shared-job-satisfaction>
-            <app-shared-popular-companies [entity]="certification"></app-shared-popular-companies>
-        </div>
-    </div>
+    <app-certification-overview [certification]="certification"></app-certification-overview>
+    <app-shared-jobs-by-salary [entity]="certification"></app-shared-jobs-by-salary>
+
+    <app-list-table 
+    [title]="(certification.namet && certification.namet.zh ? certification.namet.zh : certification.name) + '相关工作的薪酬待遇'"
+    [tableTitle]="'工作'"
+    [items]="jobItems"
+></app-list-table>    
+    <!--
+    <app-related-certifications [certification]="certification"></app-related-certifications>
+    -->
+
+    <app-list-card 
+    *ngIf="certificationItems"
+    [title]="'相关证书'" 
+    [description]="'相关证书的薪酬范围'"
+    [items]="certificationItems"
+    ></app-list-card>
+
+    <app-shared-by-dimension [entity]="certification"></app-shared-by-dimension>
+    <app-shared-job-satisfaction [entity]="certification"></app-shared-job-satisfaction>
+    <!--
+    <app-shared-popular-companies [entity]="certification"></app-shared-popular-companies>
+    -->
+    <app-list-carousel 
+    [title]="'相关公司的薪酬待遇'" 
+    [description]="'跟' + (certification.namet && certification.namet.zh ? certification.namet.zh : certification.name) + '相关的公司, 以薪资待遇排名'"
+    *ngIf="employerItems" [items]="employerItems"></app-list-carousel>   
 </div>

@@ -1,8 +1,10 @@
 import { Entity } from './entity.interface';
 import { Category } from './category.interface';
+import { Translate } from './translate.interface';
 
 export interface Certification extends Entity {
     name: string,
+    namet: Translate,
     category: Category,
     salaryType: string,
     slug: string,
@@ -45,5 +47,11 @@ export interface Certification extends Entity {
             profileCount: number              
         }
     },
-    related: [] 
+    byDimension: {
+        salaryByJob: [],
+        hourlyRateByJob: [],
+        salaryByEmployer: [],
+        hourlyRateByEmployer: []
+    },
+    related: [],
 }

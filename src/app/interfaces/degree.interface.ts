@@ -1,8 +1,10 @@
 import { Category } from './category.interface';
 import { Entity } from './entity.interface';
+import { Translate } from './translate.interface';
 
 export interface Degree extends Entity {
     name: string,
+    namet: Translate,
     category: Category,
     salaryType: string,
     slug: string,

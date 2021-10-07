@@ -25,10 +25,14 @@ export class SharedByDimensionComponent implements OnInit {
     }
 
     const total = this.getExperienceTotal();
+    if(total == 0) {
+      return 0;
+    }
     return (this.byDimension.experience[level].profileCount * 100 / total).toFixed(1);
   }
 
   getExperienceTotal() {
+
     if(!this.byDimension || !this.byDimension.experience) {
       return 0;
     }

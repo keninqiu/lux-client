@@ -18,6 +18,6 @@ export class ContentComponent implements OnInit {
   }
 
   next() {
-    this.router.navigate(['/price-job/verify-email']);
+    this.router.navigate(['/survey/price-a-job']);
   }
 }

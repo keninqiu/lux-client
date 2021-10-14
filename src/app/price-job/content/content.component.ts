@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth2.service';
 
 @Component({
   selector: 'app-content',
@@ -12,12 +13,35 @@ import { Router } from '@angular/router';
 })
 export class ContentComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  employees: number;
+
+  constructor(
+    private authServ: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
   next() {
-    this.router.navigate(['/survey/price-a-job']);
+    const data = {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      password: this.password,
+      confirmPassword: this.password,
+      employer: {
+        employees: this.employees
+      }
+    };
+    this.authServ.signUp(data).subscribe(
+      (ret: any) => {
+        this.router.navigate(['/survey/price-a-job']);
+      }
+    );
+    
   }
 }

@@ -34,13 +34,27 @@
           </div>
           <div class="signup">
              <form class="fcidstform signup__form" __bizdiag="0" __biza="W___">
-                <div id="" class="pxl-form-group signup__field"><label class=" pxl-control-label" for="">邮箱</label><input class=" pxl-form-control" type="text" id="email" autocomplete="email" placeholder="you@example.com" tabindex="0" value=""></div>
-                <div id="" class="pxl-form-group signup__field"><label class=" pxl-control-label" for="">创建密码</label><input class=" pxl-form-control" type="password" id="password" autocomplete="new-password" tabindex="0" value=""></div>
-                <div id="" class="pxl-form-group signup__field"><label class=" pxl-control-label" for="">名</label><input class=" pxl-form-control" type="text" id="firstname" autocomplete="given-name" tabindex="0" value=""></div>
-                <div id="" class="pxl-form-group signup__field"><label class=" pxl-control-label" for="">姓</label><input class=" pxl-form-control" type="text" id="lastname" autocomplete="family-name" tabindex="0" value=""></div>
+                <div id="" class="pxl-form-group signup__field">
+                   <label class=" pxl-control-label" for="">邮箱</label>
+                   <input class=" pxl-form-control" type="text" id="email" autocomplete="email" placeholder="you@example.com"  name="email" [(ngModel)]="email">
+                </div>
+                <div id="" class="pxl-form-group signup__field">
+                   <label class=" pxl-control-label" for="">创建密码</label>
+                   <input class=" pxl-form-control" type="password" id="password" autocomplete="new-password" name="password" [(ngModel)]="password">
+                </div>
+                <div id="" class="pxl-form-group signup__field">
+                   <label class=" pxl-control-label" for="">名</label>
+                   <input class=" pxl-form-control" type="text" id="firstname" autocomplete="given-name" name="firstName" [(ngModel)]="firstName">
+                </div>
+                <div id="" class="pxl-form-group signup__field">
+                   <label class=" pxl-control-label" for="">姓</label>
+                   <input class=" pxl-form-control" type="text" id="lastname" autocomplete="family-name" name="lastName" [(ngModel)]="lastName">
+                </div>
                 <div id="" class="pxl-form-group signup__field">
                    <label class=" pxl-control-label" for="">雇员数量</label>
-                   <div class="pxl-input-number"><input class=" pxl-input-number__input pxl-form-control" type="number" id="numberOfEmployees" min="0" tabindex="0" value=""></div>
+                   <div class="pxl-input-number">
+                      <input class=" pxl-input-number__input pxl-form-control" type="number" name="employees" [(ngModel)]="employees">
+                   </div>
                 </div>
                 <button id="submit" type="button" class="signup__submit" (click)="next()">下一步: 为工作定价</button>
              </form>

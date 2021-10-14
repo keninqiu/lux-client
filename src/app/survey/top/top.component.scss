@@ -1,0 +1,18 @@
+.simple-header {
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9dd;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    padding: 15px;
+}
+
+.pxl-navbar__branding {
+    -webkit-transition: left,padding-left .8s ease;
+    transition: left,padding-left .8s ease;
+}
+
+.simple-header .pxl-navbar__logo * {
+    fill: #000;
+}

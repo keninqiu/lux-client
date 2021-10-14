@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-top',
   templateUrl: './top.component.html',
   styleUrls: [
-    './top.component.scss',
-    '../../../assets/css/market-worth/main.css'
+    './top.component.scss'
   ]
 })
 export class TopComponent implements OnInit {

@@ -57,15 +57,20 @@
              <label class="  pxl-control-label" for="Location">城市</label>
              <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Location" aria-expanded="false" class="react-autosuggest__container">
                 <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Location" class="pxl-form-control control--md" tabindex="0" id="Location" placeholder="" value="">
-                <div id="react-autowhatever-Location" role="listbox" class="react-autosuggest__suggestions-container"></div>
              </div>
           </div>
           <div id="" class="pxl-form-group  ">
              <div class="control--md">
-                <a class="" *ngIf="!editCountry" (click)="editCountry=true">加拿大</a>
+                <a class="" *ngIf="!editCountry" (click)="editCountry=true">{{countryName}}</a>
                 <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Country" aria-expanded="false" class="react-autosuggest__container">
-                   <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Country" class="pxl-form-control " [ngClass]="!editCountry ? 'pxl-hidden' : ''" id="Country" placeholder="" value="加拿大">
-                   <div id="react-autowhatever-Country" role="listbox" class="react-autosuggest__suggestions-container"></div>
+                   <input type="text" class="pxl-form-control " [ngClass]="!editCountry ? 'pxl-hidden' : ''" name="countryName" [(ngModel)]="countryName">
+                   <div id="react-autowhatever-Country" role="listbox" class="react-autosuggest__suggestions-container">
+                     <ul role="listbox" class="react-autosuggest__suggestions-list">
+                        <li role="option" id="react-autowhatever-Country--item-0" aria-selected="false" class="react-autosuggest__suggestion react-autosuggest__suggestion--first" (click)="selectCountry(country)" *ngFor="let country of countries">
+                           <span>{{country.namet.zh}}</span>
+                        </li>
+                     </ul>
+                  </div>
                 </div>
              </div>
           </div>

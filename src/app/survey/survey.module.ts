@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { LayoutModule } from '../layout/layout.module';
 import { SurveyRoutingModule } from './survey-routing.module';
 import { SurveyComponent } from './survey.component';
@@ -24,6 +25,7 @@ import { DetailsComponent } from './price-a-job/details/details.component';
   imports: [
     CommonModule,
     LayoutModule,
+    FormsModule,
     SurveyRoutingModule
   ]
 })

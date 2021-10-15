@@ -11,6 +11,10 @@ export class CountryService {
     return this.api.postPrivate('country', item) as Observable<Country>;
   }
 
+  getByName(name: string): Observable<Country[]> {
+    return this.api.getPublic('country/name/' + name) as Observable<Country[]>;
+  }
+
   update(id: string, item: Country): Observable<Country> {
     return this.api.putPrivate('country/' + id, item) as Observable<Country>;
   }

@@ -7,13 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   showMobileMenu:boolean;
+  activeTab: string;
   constructor() { }
 
   ngOnInit(): void {
+    this.activeTab = '';
     this.showMobileMenu = false;
   }
 
   toggleMenu() {
     this.showMobileMenu = !this.showMobileMenu;
+  }
+
+  toggleActiveTab(tabName: string) {
+    if(!this.activeTab) {
+      this.activeTab = tabName;
+    } else {
+      this.activeTab = '';
+    }
   }
 }

@@ -34,7 +34,7 @@
         </div>
         <div class="pxl-navbar__content">
            <ul class="pxl-navbar__nav">
-              <li id="personal-nav" class="pxl-navbar__nav-item ">
+              <li id="personal-nav" class="pxl-navbar__nav-item " (click)="toggleActiveTab('personal')" [ngClass]="activeTab=='personal' ? 'pxl-navbar__nav-item--active' : ''">
                  <div class="pxl-navbar__nav-item-content">
                     <a class="pxl-navbar__nav-link">用户中心</a>
                     <div class="pxl-navbar__nav-x"></div>
@@ -273,7 +273,7 @@
                  </div>
               </li>
               -->
-              <li id="data-nav" class="pxl-navbar__nav-item ">
+              <li id="data-nav" class="pxl-navbar__nav-item " (click)="toggleActiveTab('survey')" [ngClass]="activeTab=='survey' ? 'pxl-navbar__nav-item--active' : ''">
                  <div class="pxl-navbar__nav-item-content">
                     <a class="pxl-navbar__nav-link">薪酬研究</a>
                     <div class="pxl-navbar__nav-x"></div>

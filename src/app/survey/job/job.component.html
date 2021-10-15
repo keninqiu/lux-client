@@ -62,9 +62,9 @@
           </div>
           <div id="" class="pxl-form-group  ">
              <div class="control--md">
-                <a class="">加拿大</a>
+                <a class="" *ngIf="!editCountry" (click)="editCountry=true">加拿大</a>
                 <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Country" aria-expanded="false" class="react-autosuggest__container">
-                   <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Country" class="pxl-form-control pxl-hidden" id="Country" placeholder="" value="Canada">
+                   <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Country" class="pxl-form-control " [ngClass]="!editCountry ? 'pxl-hidden' : ''" id="Country" placeholder="" value="加拿大">
                    <div id="react-autowhatever-Country" role="listbox" class="react-autosuggest__suggestions-container"></div>
                 </div>
              </div>

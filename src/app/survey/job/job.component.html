@@ -1,51 +1,21 @@
 <div class="container-survey">
-    <div id="progress-bar-container-v1" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Your Pay</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
-    <div id="progress-bar-container-v2" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 3%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Education</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
     <div class="form-wrapper">
        <form enctype="application/json" id="surveyForm" novalidate="">
           <div class="survey__header">
              <h1>您的职位和位置</h1>
              <p>让我们从基本信息开始构建您的报告，例如您的职位、位置和经验。 Lux 收集了超过 5400 万人的薪资和职业数据，涵盖 16,000 个独特的职位。</p>
           </div>
-          <div id="" class="pxl-form-group  "><label class="  pxl-control-label" for="JobTitle">工作头衔</label><input class="control--md pxl-form-control" type="text" id="JobTitle" placeholder="" tabindex="0" value=""></div>
+          <div id="" class="pxl-form-group  ">
+             <label class="  pxl-control-label" for="JobTitle">工作头衔</label>
+             <input class="control--md pxl-form-control" type="text" name="JobTitle" [(ngModel)]="name">
+             <div id="react-autowhatever-Location" role="listbox" class="react-autosuggest__suggestions-container react-autosuggest__suggestions-container--open">
+               <ul role="listbox" class="react-autosuggest__suggestions-list">
+                  <li role="option" id="react-autowhatever-Location--item-0" aria-selected="false" (click)="selectJob(job)" *ngFor="let job of jobs" class="react-autosuggest__suggestion react-autosuggest__suggestion--first" data-suggestion-index="0">
+                     <span>{{job.namet ? job.namet.zh : job.name}}</span>
+                 </li>
+              </ul>
+            </div>
+          </div>
           <div id="" class="pxl-form-group  ">
              <label class="  pxl-control-label" for="YearsExperience">工作年限</label>
              <div class="pxl-input-number">
@@ -56,7 +26,14 @@
           <div id="" class="pxl-form-group  ">
              <label class="  pxl-control-label" for="Location">城市</label>
              <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Location" aria-expanded="false" class="react-autosuggest__container">
-                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Location" class="pxl-form-control control--md" tabindex="0" id="Location" placeholder="" value="">
+                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Location" class="pxl-form-control control--md" tabindex="0" name="Location" [(ngModel)]="cityName">
+                <div id="react-autowhatever-Location" role="listbox" class="react-autosuggest__suggestions-container react-autosuggest__suggestions-container--open">
+                   <ul role="listbox" class="react-autosuggest__suggestions-list">
+                      <li role="option" id="react-autowhatever-Location--item-0" aria-selected="false" (click)="selectCity(city)" *ngFor="let city of cities" class="react-autosuggest__suggestion react-autosuggest__suggestion--first" data-suggestion-index="0">
+                         <span>{{city.namet.zh}}, {{city.state.namet.zh}}</span>
+                     </li>
+                  </ul>
+                </div>
              </div>
           </div>
           <div id="" class="pxl-form-group  ">

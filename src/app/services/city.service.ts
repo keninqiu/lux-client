@@ -15,6 +15,10 @@ export class CityService {
     return this.api.putPrivate('city/' + id, item) as Observable<City>;
   }
 
+  getByName(countryName: string, cityName: string) {
+    return this.api.getPublic('city/name/' + countryName + '/' + cityName) as Observable<City[]>;
+  }
+
   getAll(): Observable<City[]> {
     return this.api.getPrivate('city') as Observable<City[]>;
   }

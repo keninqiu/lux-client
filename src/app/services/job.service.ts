@@ -19,6 +19,10 @@ export class JobService {
     return this.api.getPublic('job') as Observable<Job[]>;
   }
 
+  getByName(countryName: string, name: string) {
+    return this.api.getPublic('job/name/' + countryName + '/' + name) as Observable<Job[]>;
+  }
+
   getAllByCountryCodeAndCategorySlug(countryCode: string, categorySlug: string): Observable<Job[]> {
     console.log('categorySlug====', categorySlug);
     return this.api.getPublic('job/countryCode/' + countryCode + '/categorySlug/' + categorySlug) as Observable<Job[]>;

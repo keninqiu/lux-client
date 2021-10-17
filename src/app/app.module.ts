@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth2.service';
+import { AuthGuard } from './services/auth-guard.service';
 import { CountryService } from './services/country.service';
 import { StateService } from './services/state.service';
 import { CityService } from './services/city.service';
@@ -34,6 +35,7 @@ import { AllService } from './services/all.service';
   providers: [
     ApiService,
     AuthService,
+    AuthGuard,
     CountryService,
     StateService,
     CityService,

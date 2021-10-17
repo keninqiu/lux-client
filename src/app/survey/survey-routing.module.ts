@@ -12,10 +12,12 @@ import { OptionalResearchQuestionsComponent } from './optional-research-question
 import { ReportComponent } from './report/report.component';
 import { PriceAJobComponent } from './price-a-job/price-a-job.component';
 import { DetailsComponent } from './price-a-job/details/details.component';
+import { AuthGuard } from '../services/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '', component: SurveyComponent,
+    canActivate: [AuthGuard],
     children: [
       {path: 'choose', component: ChooseComponent},
       {path: 'job', component: JobComponent},

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth2.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth2.service';
   ]
 })
 export class ContentComponent implements OnInit {
-
+  return: string;
   email: string;
   password: string;
   firstName: string;
@@ -21,9 +21,16 @@ export class ContentComponent implements OnInit {
 
   constructor(
     private authServ: AuthService,
+    private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
+    this.employees = 0;
+    this.route.queryParamMap.subscribe((params: any) => {
+      console.log(params); // { orderby: "price" }
+      this.return = params.params.return;
+      console.log('this.return=', this.return);
+    });
   }
 
   next() {
@@ -39,7 +46,10 @@ export class ContentComponent implements OnInit {
     };
     this.authServ.signUp(data).subscribe(
       (ret: any) => {
-        this.router.navigate(['/survey/price-a-job']);
+        this.authServ.isLoggedIn = true;
+        let retUrl = this.return ? this.return : '/survey/price-a-job';
+
+        this.router.navigate([retUrl]);
       }
     );
     

@@ -10,6 +10,7 @@ interface SignedUp {
 
 @Injectable()
 export class AuthService {
+  isLoggedIn: boolean;
   constructor(private api: ApiService) { }
 
   login(loginParams: Login): Observable<Tokens> {

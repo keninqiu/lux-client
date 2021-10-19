@@ -6,7 +6,8 @@ import { Job } from 'src/app/interfaces/job.interface';
 import { CityService } from 'src/app/services/city.service';
 import { CountryService } from 'src/app/services/country.service';
 import { JobService } from 'src/app/services/job.service';
-
+import { SurveyService } from 'src/app/services/survey.service';
+import { AlertService } from '../../_alert';
 @Component({
   selector: 'app-job',
   templateUrl: './job.component.html',
@@ -16,6 +17,7 @@ import { JobService } from 'src/app/services/job.service';
 })
 export class JobComponent implements OnInit {
   id: string;
+  years: number;
   countries: Country[];
   cities: City[];
   jobs: Job[];
@@ -87,7 +89,9 @@ export class JobComponent implements OnInit {
 
   editCountry: boolean;
   constructor(
+    protected alertService: AlertService,
     private jobServ: JobService,
+    private surveyServ: SurveyService,
     private cityServ: CityService,
     private countryServ: CountryService,
     private route: ActivatedRoute,
@@ -98,15 +102,29 @@ export class JobComponent implements OnInit {
     this.editCountry = false;
     this.route.paramMap.subscribe( paramMap => {
       this.id = paramMap.get('id');
-
     });
   }
 
   next() {
+    console.log('next');
     if(!this.city || !this.job) {
+      console.log('no');
+      this.alertService.error('无效的工作或城市');
       return;
     }
-    this.router.navigate(['/survey/' + this.id + 'compensation']);
+    const data = {
+      job: this.job._id,
+      years: this.years,
+      city: this.city._id
+    }
+
+    this.surveyServ.update(this.id, data).subscribe(
+      (ret: any) => {
+        console.log('ret for updated=', ret);
+        this.router.navigate(['/survey/' + this.id + '/compensation']);
+      }
+    );
+    
   }
 
 

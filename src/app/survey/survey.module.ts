@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AlertModule } from './../_alert';
 import { FormsModule } from '@angular/forms';
 import { LayoutModule } from '../layout/layout.module';
 import { SurveyRoutingModule } from './survey-routing.module';
@@ -21,10 +22,25 @@ import { DetailsComponent } from './price-a-job/details/details.component';
 
 
 @NgModule({
-  declarations: [SurveyComponent, TopComponent, ChooseComponent, BottomComponent, JobComponent, CompensationComponent, SpecialConsiderationsComponent, EmployerComponent, BenefitsComponent, EducationComponent, OptionalResearchQuestionsComponent, ReportComponent, PriceAJobComponent, DetailsComponent],
+  declarations: [
+    SurveyComponent, 
+    TopComponent, 
+    ChooseComponent, 
+    BottomComponent, 
+    JobComponent, 
+    CompensationComponent, 
+    SpecialConsiderationsComponent, 
+    EmployerComponent, 
+    BenefitsComponent, 
+    EducationComponent, 
+    OptionalResearchQuestionsComponent, 
+    ReportComponent, 
+    PriceAJobComponent, 
+    DetailsComponent],
   imports: [
     CommonModule,
     LayoutModule,
+    AlertModule,
     FormsModule,
     SurveyRoutingModule
   ]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-compensation',
@@ -10,10 +10,13 @@ import { Router } from '@angular/router';
   ]
 })
 export class CompensationComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  id: string;
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( paramMap => {
+      this.id = paramMap.get('id');
+    });
   }
 
   next() {

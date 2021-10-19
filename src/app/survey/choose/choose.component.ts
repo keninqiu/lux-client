@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SurveyService } from 'src/app/services/survey.service';
 
 @Component({
   selector: 'app-choose',
@@ -9,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ChooseComponent implements OnInit {
-
-  constructor() { }
+  type: string;
+  constructor(private router: Router, private surveyServ: SurveyService) { }
 
   ngOnInit(): void {
   }
 
+  select(type: string) {
+    this.type = type;
+    const body = {
+      type
+    };
+    this.surveyServ.add(body).subscribe(
+      (ret: any) => {
+        console.log('ret==', ret);
+        const id = ret._id;
+        this.router.navigate(['/survey/' + id + '/job']);
+      }
+    );
+    
+  }
 }

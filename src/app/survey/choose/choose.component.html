@@ -3,35 +3,35 @@
        <h1 class="choose__title">薪资调研报告</h1>
        <div class="choose__subtitle">哪个选项描述了您的情况？</div>
        <div class="choose__buttons">
-          <div class="choose__btn">
+          <div class="choose__btn"  (click)="select('currentJob')">
              <img class="choose__btn-icon" src="//cdn-payscale.com/content/choose-page-icon-currentjob.png">
              <div class="choose__btn-copy">
                 <div class="choose__btn-header">当前工作</div>
                 <div class="choose__btn-description">我想了解当前职位的薪资信息</div>
              </div>
-             <a routerLink="../job">
+             <a>
                 <button class="choose__btn-input" type="submit" id="currentJobButton" name="profiletype" value="CurrentJob">选择</button><i class="choose__btn-arrow icon-right-open"></i>
             </a>
              
           </div>
-          <div class="choose__btn">
+          <div class="choose__btn" (click)="select('jobOpportunity')">
              <img class="choose__btn-icon" src="//cdn-payscale.com/content/choose-page-icon-joboffer.png">
              <div class="choose__btn-copy">
                 <div class="choose__btn-header">工作机会</div>
                 <div class="choose__btn-description">我正在评估工作机会</div>
              </div>
-             <a routerLink="../job">
+             <a>
                <button class="choose__btn-input" type="submit" id="jobOfferButton" name="profiletype" value="JobOffer">选择</button><i class="choose__btn-arrow icon-right-open"></i>
             </a>
              
           </div>
-          <div class="choose__btn">
+          <div class="choose__btn" (click)="select('browse')">
              <img class="choose__btn-icon" src="//cdn-payscale.com/content/choose-page-icon-whatif.png">
              <div class="choose__btn-copy">
                 <div class="choose__btn-header">只是浏览</div>
                 <div class="choose__btn-description">我正在研究一份不属于我自己的工作</div>
              </div>
-             <a routerLink="../job">
+             <a>
                <button class="choose__btn-input" type="submit" id="exploreButton" name="profiletype" value="Informational">选择</button><i class="choose__btn-arrow icon-right-open"></i>
             </a>
              

@@ -22,6 +22,7 @@ import { PopularService } from './services/popular.service';
 import { HomepageService } from './services/homepage.service';
 import { UtilService } from './services/util.service';
 import { AllService } from './services/all.service';
+import { SurveyService } from './services/survey.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AllService } from './services/all.service';
     PopularService,
     HomepageService,
     UtilService,
-    AllService
+    AllService,
+    SurveyService
   ],
   bootstrap: [AppComponent]
 })

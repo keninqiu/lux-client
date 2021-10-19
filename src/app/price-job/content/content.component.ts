@@ -46,6 +46,8 @@ export class ContentComponent implements OnInit {
     };
     this.authServ.signUp(data).subscribe(
       (ret: any) => {
+        const token = ret.token;
+        localStorage.setItem('token', token);
         this.authServ.isLoggedIn = true;
         let retUrl = this.return ? this.return : '/survey/price-a-job';
 

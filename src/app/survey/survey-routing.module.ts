@@ -20,7 +20,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'choose', component: ChooseComponent},
-      {path: 'job', component: JobComponent},
+      {path: ':id/job', component: JobComponent},
       {path: 'compensation', component: CompensationComponent},
       {path: 'special-considerations', component: SpecialConsiderationsComponent},
       {path: 'employer', component: EmployerComponent},

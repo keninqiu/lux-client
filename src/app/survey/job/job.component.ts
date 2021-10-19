@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { City } from 'src/app/interfaces/city.interface';
 import { Country } from 'src/app/interfaces/country.interface';
 import { Job } from 'src/app/interfaces/job.interface';
@@ -15,9 +15,12 @@ import { JobService } from 'src/app/services/job.service';
   ]
 })
 export class JobComponent implements OnInit {
+  id: string;
   countries: Country[];
   cities: City[];
   jobs: Job[];
+  job: Job;
+  city: City;
   _countryName: string;
   get countryName(): string {
     return this._countryName;
@@ -71,11 +74,13 @@ export class JobComponent implements OnInit {
   }
 
   selectCity(city: City) {
+    this.city = city;
     this._cityName = city.namet.zh + ', ' + city.state.namet.zh;
     this.cities = [];
   }
 
   selectJob(job: Job) {
+    this.job = job;
     this._name = (job.namet && job.namet.zh) ? job.namet.zh : job.name;
     this.jobs = [];
   }
@@ -85,15 +90,23 @@ export class JobComponent implements OnInit {
     private jobServ: JobService,
     private cityServ: CityService,
     private countryServ: CountryService,
+    private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
     this._countryName = '中国';
     this.editCountry = false;
+    this.route.paramMap.subscribe( paramMap => {
+      this.id = paramMap.get('id');
+
+    });
   }
 
   next() {
-    this.router.navigate(['/survey/compensation']);
+    if(!this.city || !this.job) {
+      return;
+    }
+    this.router.navigate(['/survey/' + this.id + 'compensation']);
   }
 
 

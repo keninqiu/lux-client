@@ -48,9 +48,7 @@ export class ContentComponent implements OnInit {
       (ret: any) => {
         const token = ret.token;
         localStorage.setItem('token', token);
-        this.authServ.isLoggedIn = true;
         let retUrl = this.return ? this.return : '/survey/price-a-job';
-
         this.router.navigate([retUrl]);
       }
     );

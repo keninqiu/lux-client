@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       {path: 'choose', component: ChooseComponent},
       {path: ':id/job', component: JobComponent},
-      {path: 'compensation', component: CompensationComponent},
+      {path: ':id/compensation', component: CompensationComponent},
       {path: 'special-considerations', component: SpecialConsiderationsComponent},
       {path: 'employer', component: EmployerComponent},
       {path: 'benefits', component: BenefitsComponent},

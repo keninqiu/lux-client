@@ -4,5 +4,6 @@ export interface Survey extends Entity {
     user: string,
     job: string,
     years: number,
-    city: string
+    city: string,
+    compensationType: string
 }

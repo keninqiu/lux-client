@@ -10,11 +10,11 @@
              <div id="paytype" class="pxl-options control--md">
                 <div class="">
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Annual Salary" type="radio" tabindex="0" class="pxl-option__input" value="Annual Salary">
+                      <input id="Annual Salary" type="radio" class="pxl-option__input" name="compensationType" [(ngModel)]="compensationType" [value]="'salary'">
                       <div class="pxl-option__text">年薪</div>
                    </label>
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Hourly Rate" type="radio" tabindex="0" class="pxl-option__input" value="Hourly Rate">
+                      <input id="Hourly Rate" type="radio" class="pxl-option__input" name="compensationType" [(ngModel)]="compensationType" [value]="'hourlyRate'">
                       <div class="pxl-option__text">小时工</div>
                    </label>
                 </div>

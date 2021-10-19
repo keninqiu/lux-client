@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { SurveyService } from 'src/app/services/survey.service';
 
 @Component({
   selector: 'app-compensation',
@@ -11,7 +12,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CompensationComponent implements OnInit {
   id: string;
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  compensationType: string;
+  constructor(
+    private surveyServ: SurveyService,
+    private route: ActivatedRoute, 
+    private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( paramMap => {
@@ -20,6 +25,15 @@ export class CompensationComponent implements OnInit {
   }
 
   next() {
-    this.router.navigate(['/survey/special-considerations']);
+    const data = {
+      compensationType: this.compensationType
+    };
+    this.surveyServ.update(this.id, data).subscribe(
+      (ret: any) => {
+        console.log('ret===', ret);
+        this.router.navigate(['/survey/' + this.id + '/special-considerations']);
+      }
+    );
+    
   }
 }

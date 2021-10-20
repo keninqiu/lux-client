@@ -2,17 +2,20 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Survey} from "../interfaces/survey.interface";
 import {ApiService} from './api.service';
-
 @Injectable()
 export class SurveyService {
   constructor(private api: ApiService) { }
 
   add(survey: any): Observable<Survey> {
-    return this.api.postPrivate('survey', survey) as Observable<Survey>;
+    const ret = this.api.postPrivate('survey', survey) as Observable<Survey>;
+    console.log('ret==', ret);
+    return ret;
   }
 
   update(id: string, survey: any): Observable<Survey> {
-    return this.api.putPrivate('survey/' + id, survey) as Observable<Survey>;
+    const ret = this.api.putPrivate('survey/' + id, survey) as Observable<Survey>;
+    console.log('ret==', ret);
+    return ret;
   }
 
   getAll(): Observable<Survey[]> {

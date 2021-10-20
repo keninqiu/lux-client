@@ -16,7 +16,8 @@ interface OPTIONS {
 }
 
 @Injectable()
-export class ApiService extends HttpClient{
+export class ApiService extends HttpClient {
+
     postPublic(uri: string, data: any) {
         const ret = new Observable<any>((observer) => {
             this.post<any>(environment.API + uri, data).subscribe(

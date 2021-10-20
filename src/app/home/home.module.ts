@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AlertModule } from './../_alert';
 import { LayoutModule } from '../layout/layout.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -17,7 +19,9 @@ import { RegisterComponent } from './register/register.component';
   declarations: [HomeComponent, LoginComponent, RegisterComponent, AdvComponent, CarouselComponent, ChangeComponent, SalaryDataComponent, CustomersExperienceComponent, BestInClassComponent, GsapComponent],
   imports: [
     CommonModule,
+    FormsModule,
     LayoutModule,
+    AlertModule,
     HomeRoutingModule
   ]
 })

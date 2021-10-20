@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-
+<alert></alert>
 <div class="main-container">
     <div class="account__content">
         
@@ -10,26 +10,21 @@
             
             <div class="pxl-form-group">
                 <label for="m_email">邮箱</label>
-                <input name="ctl00$mainContent$c_loginForm$m_email" type="email" id="m_email" maxlength="100" class="pxl-form-control" placeholder="you@example.com">
+                <input name="ctl00$mainContent$c_loginForm$m_email" [(ngModel)]="email" type="email" maxlength="100" class="pxl-form-control" placeholder="you@example.com">
             </div>
             <div class="pxl-form-group">
                 <label for="m_password">密码</label>
-                <input name="ctl00$mainContent$c_loginForm$m_password" type="password" id="m_password" maxlength="60" class="pxl-form-control">
+                <input name="ctl00$mainContent$c_loginForm$m_password" [(ngModel)]="password" type="password" maxlength="60" class="pxl-form-control">
             </div>
             <div class="pxl-form-group">
                 <label for="m_password">确认密码</label>
-                <input name="ctl00$mainContent$c_loginForm$m_password" type="password" id="m_password" maxlength="60" class="pxl-form-control">
+                <input name="ctl00$mainContent$c_loginForm$m_password" [(ngModel)]="confirmPassword" type="password" maxlength="60" class="pxl-form-control">
             </div>
-            <input type="button" name="ctl00$mainContent$c_loginForm$m_loginSubmit" value="Sign Up" id="m_loginSubmit" class="pxl-btn pxl-btn--primary pxl-btn--block">
-            
-            <div id="ctl00_mainContent_c_loginForm_m_oauthLogin">
-                    
-
-                </div> 
+            <input type="button" name="ctl00$mainContent$c_loginForm$m_loginSubmit" (click)="register()" value="注册" id="m_loginSubmit" class="pxl-btn pxl-btn--primary pxl-btn--block">
             
 
             <div class="account__links">
-                <a class="account__link account__link--signup" href="/login">注册</a>
+                <a class="account__link account__link--signup" href="/login">登录</a>
             </div>
             
         </div>

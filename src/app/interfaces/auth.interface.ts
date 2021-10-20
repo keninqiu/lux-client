@@ -1,5 +1,5 @@
 export interface Login {
-    emailOrPhone: string;
+    email: string;
     password: string;
   }
   
@@ -8,9 +8,9 @@ export interface Login {
   }
   
   export interface SignUp {
-    firstName: string;
+    firstName?: string;
     middleName?: string
-    lastName: string;
+    lastName?: string;
     email: string;
     phone?: string;
     password: string;

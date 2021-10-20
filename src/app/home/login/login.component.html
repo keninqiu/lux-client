@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-
+<alert></alert>
 <div class="main-container">
     <div class="account__content">
         
@@ -17,7 +17,7 @@
                 <input name="ctl00$mainContent$c_loginForm$m_password" type="password" id="m_password" maxlength="60" class="pxl-form-control">
             </div>
 
-            <input type="button" name="ctl00$mainContent$c_loginForm$m_loginSubmit" value="Log In" id="m_loginSubmit" class="pxl-btn pxl-btn--primary pxl-btn--block">
+            <input type="button" name="ctl00$mainContent$c_loginForm$m_loginSubmit" (click)="login()" value="登录" id="m_loginSubmit" class="pxl-btn pxl-btn--primary pxl-btn--block">
             
             <div id="ctl00_mainContent_c_loginForm_m_oauthLogin">
                     

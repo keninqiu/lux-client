@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { SurveyService } from 'src/app/services/survey.service';
-
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 @Component({
   selector: 'app-choose',
   templateUrl: './choose.component.html',
@@ -27,6 +26,10 @@ export class ChooseComponent implements OnInit {
         console.log('ret==', ret);
         const id = ret._id;
         this.router.navigate(['/survey/' + id + '/job']);
+      },
+      (error: any) => {
+        console.log('error==', error);
+        this.router.navigate(['/login']);
       }
     );
     

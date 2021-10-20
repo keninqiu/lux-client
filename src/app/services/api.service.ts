@@ -89,6 +89,7 @@ export class ApiService extends HttpClient{
 
     postPrivate(uri: string, data: any) {
         const token = localStorage.getItem("token");
+        console.log('token===', token);
         const httpHeaders = new HttpHeaders({
             'Content-Type': 'application/json',
             'authorization': token
@@ -147,6 +148,7 @@ export class ApiService extends HttpClient{
 
     putPrivate(uri: string, data: any) {
         const token = localStorage.getItem("token");
+
         const httpHeaders = new HttpHeaders({
             'Content-Type': 'application/json',
             'authorization': token

@@ -1,0 +1,83 @@
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: calc(100vh - 70px);
+}
+
+.account__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 40%;
+}
+
+.account__form {
+    width: 80%;
+}
+
+.account__header {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pxl-form-group {
+    margin-bottom: 15px;
+}
+
+.pxl-btn--primary {
+    background: linear-gradient(
+90deg,#00aaa4,#00817d);
+    color: #fff;
+    border: 1px solid #00aaa4;
+    -webkit-appearance: none;
+}
+
+.pxl-btn {
+    margin-bottom: 15px;
+    -webkit-appearance: none;
+}
+
+.pxl-btn--block {
+    display: block;
+    width: 100%;
+}
+
+.account__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.account__link {
+    font-size: 14px;
+    color: #2d67b9;
+    margin: 0 10px;
+}
+
+.account__visual {
+    background: url(https://cdn-payscale.com/content/blue-waves-salary.png);
+    background-size: cover;
+    width: 60%;
+    background-position: 50%;
+    padding: 80px 30px 0;
+}
+
+.account__headline {
+    font-size: 56px;
+    line-height: 1.2;
+    font-weight: 900;
+    text-align: center;
+    color: #302c2c;
+}
+
+.account__callout {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    color: #302c2c;
+}

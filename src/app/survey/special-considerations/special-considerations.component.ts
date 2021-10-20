@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { SurveyService } from 'src/app/services/survey.service';
 
 @Component({
   selector: 'app-special-considerations',
@@ -10,10 +11,22 @@ import { Router } from '@angular/router';
   ]
 })
 export class SpecialConsiderationsComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  id: string;
+  constructor(
+    private surveyServ: SurveyService,
+    private route: ActivatedRoute, 
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( paramMap => {
+      this.id = paramMap.get('id');
+      this.surveyServ.get(this.id).subscribe(
+        (ret: any) => {
+          console.log('ret===', ret);
+        }
+      );
+    });
   }
   next() {
     this.router.navigate(['/survey/employer']);

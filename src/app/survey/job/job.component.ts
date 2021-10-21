@@ -73,6 +73,10 @@ export class JobComponent implements OnInit {
   selectCountry(country: Country) {
     this._countryName = country.namet.zh;
     this.countries = [];
+    this.job = null;
+    this._name = '';
+    this.city = null;
+    this._cityName = '';
   }
 
   selectCity(city: City) {

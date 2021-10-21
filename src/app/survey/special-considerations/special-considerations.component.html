@@ -1,50 +1,47 @@
 <div class="container-survey">
-    <div id="progress-bar-container-v1" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 1%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Your Pay</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
-    <div id="progress-bar-container-v2" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 2%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Education</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
+
     <div class="form-wrapper">
        <form enctype="application/json" id="surveyForm" novalidate="">
           <div class="survey__header">
              <h1>任何特殊考虑?</h1>
              <p>输入任何适用于您的工作技能或属性。</p>
           </div>
+
+
+          <div id="" class="pxl-form-group  ">
+            <label class="  pxl-control-label" for="YearsExperience">完全胜任此工作平均需要的工作年限</label>
+            <div class="pxl-input-number">
+               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="YearsExperience" tabindex="0" value="">
+               <div class="pxl-input-number__format"></div>
+            </div>
+         </div>
+         <div id="" class="pxl-form-group  ">
+            <label class="  pxl-control-label" for="YearsMinimum">完全胜任此工作至少需要的工作年限</label>
+            <div class="pxl-input-number">
+               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="YearsMinimum" tabindex="0" value="">
+               <div class="pxl-input-number__format"></div>
+            </div>
+         </div>
+         <div class=" ">
+            <div id="" class="pxl-form-group  ">
+               <label class="  pxl-control-label" for="HighestDegreeEarned">教育</label>
+               <select id="HighestDegreeEarned" class="control--md pxl-form-control" tabindex="0">
+                  <option value="">- 点击选择 -</option>
+                  <option value="No Degree">没有学位</option>
+                  <option value="Associate's Degree">副学士学位</option>
+                  <option value="Bachelor's Degree">学士学位</option>
+                  <option value="Other">其他</option>
+                  <option value="High School Diploma or GED">高中文凭</option>
+                  <option value="Non-Degree Certificate Program">非学位证书课程</option>
+                  <option value="Master's Degree (non-MBA)">硕士学位 (非MBA)</option>
+                  <option value="Master of Business Administration (MBA)">MBA</option>
+                  <option value="Law Degree (JD, LLM)">法学学位（法学博士、法学硕士）</option>
+                  <option value="Doctorate (PhD)">博士学位</option>
+                  <option value="Health Professional Doctorate (MD, DMD, DVM, DPT, etc.)">卫生专业博士（MD、DMD、DVM、DPT等）</option>
+               </select>
+            </div>
+         </div>
+
           <div id="" class="pxl-form-group  ">
              <label class="  pxl-control-label" for="Skills">对您的工作至关重要的技能/专业（仅限前 3 名）</label>
              <div class="pxl-tagsinput-autocomplete control--lg">

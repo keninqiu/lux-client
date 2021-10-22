@@ -55,10 +55,11 @@
                 </div>
                 <div id="Skillsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
                    <div class="pxl-options--horizontal">
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
-                         <input id="JavaScript" type="checkbox" tabindex="0" class="pxl-option__input" value="JavaScript">
-                         <div class="pxl-option__text">JavaScript</div>
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary" *ngFor="let skill of job.skills">
+                         <input id="JavaScript" type="checkbox" tabindex="0" class="pxl-option__input" value="{{skill.namet.zh}}">
+                         <div class="pxl-option__text">{{skill.namet ? skill.namet.zh : skill.name}}</div>
                       </label>
+                      <!--
                       <label class="pxl-option pxl-option--pills pxl-pill--primary">
                          <input id="SQL" type="checkbox" tabindex="0" class="pxl-option__input" value="SQL">
                          <div class="pxl-option__text">SQL</div>
@@ -75,8 +76,8 @@
                          <input id=".NET" type="checkbox" tabindex="0" class="pxl-option__input" value=".NET">
                          <div class="pxl-option__text">.NET</div>
                       </label>
+                      -->
                    </div>
-                   <div class="pxl-margin-top-md pxl-text-center"><a class="load-more">Load More</a></div>
                 </div>
              </div>
           </div>
@@ -93,10 +94,11 @@
                 </div>
                 <div id="Certificationsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
                    <div class="">
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary">
+                      <label class="pxl-option pxl-option--checklist pxl-option--primary" *ngFor="let certification of job.certifications">
                          <input id="Higher National Diploma (HND), Computing (Software Development)" type="checkbox" tabindex="0" class="pxl-option__input" value="Higher National Diploma (HND), Computing (Software Development)">
-                         <div class="pxl-option__text">Higher National Diploma (HND), Computing (Software Development)</div>
+                         <div class="pxl-option__text">{{certification.namet ? certification.namet.zh : certification.name}}</div>
                       </label>
+                      <!--
                       <label class="pxl-option pxl-option--checklist pxl-option--primary">
                          <input id="Microsoft Certified Professional (MCP)" type="checkbox" tabindex="0" class="pxl-option__input" value="Microsoft Certified Professional (MCP)">
                          <div class="pxl-option__text">Microsoft Certified Professional (MCP)</div>
@@ -113,8 +115,8 @@
                          <input id="Certified ScrumMaster (CSM)" type="checkbox" tabindex="0" class="pxl-option__input" value="Certified ScrumMaster (CSM)">
                          <div class="pxl-option__text">Certified ScrumMaster (CSM)</div>
                       </label>
+                      -->
                    </div>
-                   <div class="pxl-margin-top-md pxl-text-center"><a class="load-more">Load More</a></div>
                 </div>
              </div>
           </div>

@@ -12,6 +12,7 @@ import { SurveyService } from 'src/app/services/survey.service';
 })
 export class SpecialConsiderationsComponent implements OnInit {
   id: string;
+  job: any;
   constructor(
     private surveyServ: SurveyService,
     private route: ActivatedRoute, 
@@ -24,6 +25,7 @@ export class SpecialConsiderationsComponent implements OnInit {
       this.surveyServ.get(this.id).subscribe(
         (ret: any) => {
           console.log('ret===', ret);
+          this.job = ret;
         }
       );
     });

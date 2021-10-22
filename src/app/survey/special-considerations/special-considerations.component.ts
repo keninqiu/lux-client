@@ -13,12 +13,14 @@ import { SurveyService } from 'src/app/services/survey.service';
 export class SpecialConsiderationsComponent implements OnInit {
   id: string;
   job: any;
+  inputSkill: string;
+  inputCertification: string;
   avgYears: number;
   minYears: number;
   education: string;
-  skills: any[];
+  selectedSkills: string[];
+  selectedCertifications: string[];
   contractStatus: string;
-  certifications: any[];
   isSupervisor: boolean;
   constructor(
     private surveyServ: SurveyService,
@@ -27,8 +29,8 @@ export class SpecialConsiderationsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.skills = [];
-    this.certifications = [];
+    this.selectedSkills = [];
+    this.selectedCertifications = [];
     this.route.paramMap.subscribe( paramMap => {
       this.id = paramMap.get('id');
       this.surveyServ.get(this.id).subscribe(
@@ -40,8 +42,28 @@ export class SpecialConsiderationsComponent implements OnInit {
     });
   }
 
+  onEnterSkill(event) {
+    const value = event.target.value;
+    this.selectedSkills.push(value);
+    this.inputSkill = '';
+  }
+
+  onEnterCertification(event) {
+    const value = event.target.value;
+    this.selectedCertifications.push(value);
+    this.inputCertification = '';
+  }
+
   setContractStatus(status: string) {
     this.contractStatus = status;
+  }
+
+  deleteSkill(skill) {
+    this.selectedSkills = this.selectedSkills.filter(item => item != skill);
+  }
+
+  deleteCertification(certification) {
+    this.selectedCertifications = this.selectedCertifications.filter(item => item != certification);
   }
 
   next() {
@@ -49,19 +71,26 @@ export class SpecialConsiderationsComponent implements OnInit {
       avgYears: this.avgYears,
       minYears: this.minYears,
       education: this.education,
-      skills: this.skills ? this.skills.map(item => item.namet.zh) : '',
-      certifications: this.certifications,
+      skills: this.selectedSkills,
+      certifications: this.selectedCertifications,
       contractStatus: this.contractStatus,
       isSupervisor: this.isSupervisor
     }
-    this.router.navigate(['/survey/employer']);
+
+    this.surveyServ.update(this.id, data).subscribe(
+      (ret: any) => {
+        console.log('ret===', ret);
+        this.router.navigate(['/survey/' + this.id + '/employer']);
+      }
+    );    
   }
 
   clickSkill(skill: any) {
-    if(this.skills.indexOf(skill) >= 0) {
-      this.skills.splice(this.skills.indexOf(skill), 1);
+    const skillName = skill.namet ? skill.namet.zh : skill.name;
+    if(this.selectedSkills.indexOf(skillName) >= 0) {
+      this.selectedSkills = this.selectedSkills.filter(item => item != skillName);
     } else {
-      this.skills.push(skill);
+      this.selectedSkills.push(skillName);
     }
   }
 
@@ -70,10 +99,11 @@ export class SpecialConsiderationsComponent implements OnInit {
   }
 
   clickCertification(certification: any) {
-    if(this.certifications.indexOf(certification) >= 0) {
-      this.certifications.splice(this.certifications.indexOf(certification), 1);
+    const certificationName = certification.namet ? certification.namet.zh : certification.name;
+    if(this.selectedCertifications.indexOf(certificationName) >= 0) {
+      this.selectedCertifications = this.selectedCertifications.filter(item => item != certificationName);
     } else {
-      this.certifications.push(certification);
+      this.selectedCertifications.push(certificationName);
     }
   }
 }

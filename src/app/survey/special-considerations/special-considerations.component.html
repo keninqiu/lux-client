@@ -1,7 +1,6 @@
 <div class="container-survey">
 
     <div class="form-wrapper">
-       <form enctype="application/json" id="surveyForm" novalidate="">
           <div class="survey__header">
              <h1>任何特殊考虑?</h1>
              <p>输入任何适用于您的工作技能或属性。</p>
@@ -47,36 +46,22 @@
              <div class="pxl-tagsinput-autocomplete control--lg">
                 <div class="react-tagsinput">
                    <div>
+                     <span class="pxl-pill pxl-pill--active pxl-pill--primary" *ngFor="let item of selectedSkills">
+                        <span (click)="deleteSkill(item)">{{item}}</span>
+                     </span>
                       <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Skills" aria-expanded="false" class="react-autosuggest__container">
-                         <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Skills" class="react-tagsinput-input" placeholder="Start by typing an answer" tabindex="0" id="Skills" value="">
+                         <input type="text" class="tagsinput-input" placeholder="输入技能"  width="250" [(ngModel)]="inputSkill" (keyup.enter)="onEnterSkill($event)">
                          <div id="react-autowhatever-Skills" role="listbox" class="react-autosuggest__suggestions-container"></div>
                       </div>
                    </div>
                 </div>
                 <div id="Skillsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
                    <div class="pxl-options--horizontal">
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary" *ngFor="let skill of job.skills" (click)="clickSkill(skill)">
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary" *ngFor="let skill of job?.skills" (click)="clickSkill(skill)">
                          <input id="JavaScript" type="checkbox" tabindex="0" class="pxl-option__input" value="{{skill.namet.zh}}">
                          <div class="pxl-option__text">{{skill.namet ? skill.namet.zh : skill.name}}</div>
                       </label>
-                      <!--
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
-                         <input id="SQL" type="checkbox" tabindex="0" class="pxl-option__input" value="SQL">
-                         <div class="pxl-option__text">SQL</div>
-                      </label>
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
-                         <input id="C# Programming Language" type="checkbox" tabindex="0" class="pxl-option__input" value="C# Programming Language">
-                         <div class="pxl-option__text">C# Programming Language</div>
-                      </label>
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
-                         <input id="Java" type="checkbox" tabindex="0" class="pxl-option__input" value="Java">
-                         <div class="pxl-option__text">Java</div>
-                      </label>
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary">
-                         <input id=".NET" type="checkbox" tabindex="0" class="pxl-option__input" value=".NET">
-                         <div class="pxl-option__text">.NET</div>
-                      </label>
-                      -->
+
                    </div>
                 </div>
              </div>
@@ -86,15 +71,18 @@
              <div class="pxl-tagsinput-autocomplete control--lg">
                 <div class="react-tagsinput">
                    <div>
+                     <span class="pxl-pill pxl-pill--active pxl-pill--primary"  *ngFor="let item of selectedCertifications">
+                        <span (click)="deleteCertification(item)">{{item}}</span>
+                     </span>
                       <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Certifications" aria-expanded="false" class="react-autosuggest__container">
-                         <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-Certifications" class="react-tagsinput-input" placeholder="Start by typing an answer" tabindex="0" id="Certifications" value="">
+                         <input type="text" class="tagsinput-input" placeholder="输入证书和执照" width="250" [(ngModel)]="inputCertification" (keyup.enter)="onEnterCertification($event)">
                          <div id="react-autowhatever-Certifications" role="listbox" class="react-autosuggest__suggestions-container"></div>
                       </div>
                    </div>
                 </div>
                 <div id="Certificationsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
                    <div class="">
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary" *ngFor="let certification of job.certifications" (click)="clickCertification(certification)">
+                      <label class="pxl-option pxl-option--checklist pxl-option--primary" *ngFor="let certification of job?.certifications" (click)="clickCertification(certification)">
                          <input id="Higher National Diploma (HND), Computing (Software Development)" type="checkbox" tabindex="0" class="pxl-option__input" value="Higher National Diploma (HND), Computing (Software Development)">
                          <div class="pxl-option__text">{{certification.namet ? certification.namet.zh : certification.name}}</div>
                       </label>
@@ -125,19 +113,19 @@
              <div id="ContractorType" class="pxl-options control--md">
                 <div class="">
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="No, I am not a contractor" type="checkbox" tabindex="0" class="pxl-option__input" (click)="setContractStatus('我不是承包商')" name="contractStatus" value="我不是承包商">
+                      <input type="radio" tabindex="0" class="pxl-option__input" (click)="setContractStatus('我不是承包商')" name="contractStatus" value="我不是承包商">
                       <div class="pxl-option__text">我不是承包商</div>
                    </label>
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Yes, I am an independent contractor" type="checkbox" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('我是独立承包商')" value="我是独立承包商">
+                      <input type="radio" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('我是独立承包商')" value="我是独立承包商">
                       <div class="pxl-option__text">我是独立承包商</div>
                    </label>
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Yes, I am contracted through an agency" type="checkbox" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过代理签约的')" value="是的，我是通过代理签约的">
+                      <input type="radio" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过代理签约的')" value="是的，我是通过代理签约的">
                       <div class="pxl-option__text">是的，我是通过代理签约的</div>
                    </label>
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Yes, I am contracted through a vendor agreement" type="checkbox" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过供应商协议签约的')" value="是的，我是通过供应商协议签约的">
+                      <input type="radio" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过供应商协议签约的')" value="是的，我是通过供应商协议签约的">
                       <div class="pxl-option__text">是的，我是通过供应商协议签约的</div>
                    </label>
                 </div>
@@ -146,13 +134,12 @@
           <div id="" class="pxl-form-group  ">
              <label class="  pxl-control-label" for="ManagementRole">你是管理者吗？</label>
              <div class="pxl-segmented pxl-segmented--justified control--sm pxl-segmented--primary" data-toggle="buttons">
-                 <button type="button" class="pxl-segmented__segment " (click)="checkSupervisor(true)">是</button>
-                 <button type="button" class="pxl-segmented__segment " (click)="checkSupervisor(false)">否</button>
+                 <button type="button" class="pxl-segmented__segment " [ngClass]="isSupervisor ? 'pxl-segmented--active' :''" (click)="checkSupervisor(true)">是</button>
+                 <button type="button" class="pxl-segmented__segment " [ngClass]="!isSupervisor ? 'pxl-segmented--active' :''"  (click)="checkSupervisor(false)">否</button>
              </div>
           </div>
           <div class="survey-btn--block" style="text-align: center;">
             <button type="submit" class="survey-btn--primary" (click)="next()">下一步</button>
         </div>
-       </form>
     </div>
  </div>

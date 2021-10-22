@@ -23,7 +23,7 @@ const routes: Routes = [
       {path: ':id/job', component: JobComponent},
       {path: ':id/compensation', component: CompensationComponent},
       {path: ':id/special-considerations', component: SpecialConsiderationsComponent},
-      {path: 'employer', component: EmployerComponent},
+      {path: ':id/employer', component: EmployerComponent},
       {path: 'benefits', component: BenefitsComponent},
       {path: 'education', component: EducationComponent},
       {path: 'optional-research-questions', component: OptionalResearchQuestionsComponent},

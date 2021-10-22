@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { SurveyService } from 'src/app/services/survey.service';
 
 @Component({
   selector: 'app-employer',
@@ -10,12 +11,44 @@ import { Router } from '@angular/router';
   ]
 })
 export class EmployerComponent implements OnInit {
+  id: string;
+  isGovernmentContractor: boolean;
+  employerType: string;
+  employerProductActivity: string;
+  employerName: string;
+  averageSizeCompetitor: number;
 
-  constructor(private router: Router) { }
+  constructor(
+    private surveyServ: SurveyService,
+    private route: ActivatedRoute, 
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( paramMap => {
+      this.id = paramMap.get('id');
+    });
   }
+
   next() {
-    this.router.navigate(['/survey/benefits']);
+    const data = {
+      employerType: this.employerType,
+      employerProductActivity: this.employerProductActivity,
+      employerName: this.employerName,
+      averageSizeCompetitor: this.averageSizeCompetitor,
+      isGovernmentContractor: this.isGovernmentContractor
+    }
+
+    this.surveyServ.update(this.id, data).subscribe(
+      (ret: any) => {
+        console.log('ret===', ret);
+        this.router.navigate(['/survey/' + this.id + '/benefits']);
+      }
+    );  
+
+  }
+
+  setIsGovernmentContractor(b: boolean) {
+    this.isGovernmentContractor = b;
   }
 }

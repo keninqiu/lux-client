@@ -24,7 +24,7 @@ const routes: Routes = [
       {path: ':id/compensation', component: CompensationComponent},
       {path: ':id/special-considerations', component: SpecialConsiderationsComponent},
       {path: ':id/employer', component: EmployerComponent},
-      {path: 'benefits', component: BenefitsComponent},
+      {path: ':id/benefits', component: BenefitsComponent},
       {path: 'education', component: EducationComponent},
       {path: 'optional-research-questions', component: OptionalResearchQuestionsComponent},
       {path: 'report', component: ReportComponent},

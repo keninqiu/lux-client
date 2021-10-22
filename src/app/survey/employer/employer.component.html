@@ -1,44 +1,5 @@
 <div class="container-survey">
-    <div id="progress-bar-container-v1" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Your Pay</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
-    <div id="progress-bar-container-v2" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 38%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Education</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
+
     <div class="form-wrapper">
        <form enctype="application/json" id="surveyForm" novalidate="">
           <div class="survey__header">
@@ -48,57 +9,57 @@
           </div>
           <div id="" class="pxl-form-group  ">
              <label class="required  pxl-control-label" for="OrganizationType">雇主类型</label>
-             <select id="OrganizationType" class="control--md pxl-form-control" tabindex="0">
-                <option value="">- click to select -</option>
-                <option value="Company">Company</option>
-                <option value="College / University">College / University</option>
-                <option value="Contract">Contract</option>
-                <option value="Fellowship">Fellowship</option>
-                <option value="Foundation / Trust">Foundation / Trust</option>
-                <option value="Franchise">Franchise</option>
-                <option value="Government - Federal">Government - Federal</option>
-                <option value="Government - State &amp; Local">Government - State &amp; Local</option>
-                <option value="Hospital">Hospital</option>
-                <option value="Military">Military</option>
-                <option value="Non-Profit Organization">Non-Profit Organization</option>
-                <option value="Private Practice/Firm">Private Practice/Firm</option>
-                <option value="School / School District">School / School District</option>
-                <option value="Self-Employed">Self-Employed</option>
-                <option value="Team">Team</option>
-                <option value="Other Organization">Other Organization</option>
+             <select id="OrganizationType" class="control--md pxl-form-control" name="employerType" [(ngModel)]="employerType">
+                <option value="">- 点击选择 -</option>
+                <option value="公司">公司</option>
+                <option value="学院 / 大学">学院 / 大学</option>
+                <option value="承包商">承包商</option>
+                <option value="合伙人">合伙人</option>
+                <option value="基金会/信托">基金会/信托</option>
+                <option value="加盟商">加盟商</option>
+                <option value="政府 - 联邦">政府 - 联邦</option>
+                <option value="政府 - 州 和 本地">政府 - 州 和 本地</option>
+                <option value="医院">医院</option>
+                <option value="军队">军队</option>
+                <option value="非盈利机构">非盈利机构</option>
+                <option value="私人执业/公司">私人执业/公司</option>
+                <option value="学校/学区">学校/学区</option>
+                <option value="自雇">自雇</option>
+                <option value="团队">团队</option>
+                <option value="其他组织">其他组织</option>
              </select>
           </div>
           <div id="" class="pxl-form-group  ">
              <label class="required  pxl-control-label" for="EmployerProductActivity">雇主的产品或行业</label>
              <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-EmployerProductActivity" aria-expanded="false" class="react-autosuggest__container">
-                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-EmployerProductActivity" class="pxl-form-control control--md" tabindex="0" id="EmployerProductActivity" placeholder="Start typing to see suggestions" value="">
+                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-EmployerProductActivity" class="pxl-form-control control--md" name="employerProductActivity" [(ngModel)]="employerProductActivity">
                 <div id="react-autowhatever-EmployerProductActivity" role="listbox" class="react-autosuggest__suggestions-container"></div>
              </div>
           </div>
           <div id="" class="pxl-form-group  ">
              <label class="  pxl-control-label" for="EmployerName">雇主名称</label>
              <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-EmployerName" aria-expanded="false" class="react-autosuggest__container">
-                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-EmployerName" class="pxl-form-control control--md" tabindex="0" id="EmployerName" placeholder="Start typing to see suggestions" value="">
+                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-EmployerName" class="pxl-form-control control--md" name="employerName" [(ngModel)]="employerName">
                 <div id="react-autowhatever-EmployerName" role="listbox" class="react-autosuggest__suggestions-container"></div>
              </div>
           </div>
           <div id="" class="pxl-form-group control--horizontal ">
              <label class="  pxl-control-label" for="AverageSizeCompetitor">员工人数（整个组织）</label>
              <div class="pxl-input-number">
-                <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="AverageSizeCompetitor" tabindex="0" value="">
+                <input class="control--xs pxl-input-number__input pxl-form-control" type="number" name="averageSizeCompetitor"  [(ngModel)]="averageSizeCompetitor">
                 <div class="pxl-input-number__format"></div>
              </div>
           </div>
           <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="GovernmentContractor">您的雇主主要是政府承包商吗？</label>
+             <label class="  pxl-control-label" for="GovernmentContractor">您的雇主是政府承包商吗？</label>
              <div id="GovernmentContractor" class="pxl-options control--md">
                 <div class="">
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Yes" type="checkbox" tabindex="0" class="pxl-option__input" value="Yes">
+                   <label class="pxl-option pxl-option--radio pxl-option--primary" (click)="setIsGovernmentContractor(true)">
+                      <input id="Yes" type="radio" name="GovernmentContractor" tabindex="0" class="pxl-option__input" value="Yes">
                       <div class="pxl-option__text">是</div>
                    </label>
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="No" type="checkbox" tabindex="0" class="pxl-option__input" value="No">
+                   <label class="pxl-option pxl-option--radio pxl-option--primary" (click)="setIsGovernmentContractor(false)">
+                      <input id="No" type="radio" name="GovernmentContractor" tabindex="0" class="pxl-option__input" value="No">
                       <div class="pxl-option__text">否</div>
                    </label>
                 </div>

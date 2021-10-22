@@ -11,33 +11,33 @@
           <div id="" class="pxl-form-group  ">
             <label class="  pxl-control-label" for="YearsExperience">完全胜任此工作平均需要的工作年限</label>
             <div class="pxl-input-number">
-               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="YearsExperience" tabindex="0" value="">
+               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" name="avgYears" [(ngModel)]="avgYears">
                <div class="pxl-input-number__format"></div>
             </div>
          </div>
          <div id="" class="pxl-form-group  ">
             <label class="  pxl-control-label" for="YearsMinimum">完全胜任此工作至少需要的工作年限</label>
             <div class="pxl-input-number">
-               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="YearsMinimum" tabindex="0" value="">
+               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" name="minYears" [(ngModel)]="minYears">
                <div class="pxl-input-number__format"></div>
             </div>
          </div>
          <div class=" ">
             <div id="" class="pxl-form-group  ">
                <label class="  pxl-control-label" for="HighestDegreeEarned">教育</label>
-               <select id="HighestDegreeEarned" class="control--md pxl-form-control" tabindex="0">
+               <select id="HighestDegreeEarned" class="control--md pxl-form-control" name="education" [(ngModel)]="education">
                   <option value="">- 点击选择 -</option>
-                  <option value="No Degree">没有学位</option>
-                  <option value="Associate's Degree">副学士学位</option>
-                  <option value="Bachelor's Degree">学士学位</option>
-                  <option value="Other">其他</option>
-                  <option value="High School Diploma or GED">高中文凭</option>
-                  <option value="Non-Degree Certificate Program">非学位证书课程</option>
-                  <option value="Master's Degree (non-MBA)">硕士学位 (非MBA)</option>
-                  <option value="Master of Business Administration (MBA)">MBA</option>
-                  <option value="Law Degree (JD, LLM)">法学学位（法学博士、法学硕士）</option>
-                  <option value="Doctorate (PhD)">博士学位</option>
-                  <option value="Health Professional Doctorate (MD, DMD, DVM, DPT, etc.)">卫生专业博士（MD、DMD、DVM、DPT等）</option>
+                  <option value="没有学位">没有学位</option>
+                  <option value="副学士学位">副学士学位</option>
+                  <option value="学士学位">学士学位</option>
+                  <option value="其他">其他</option>
+                  <option value="高中文凭">高中文凭</option>
+                  <option value="非学位证书课程">非学位证书课程</option>
+                  <option value="硕士学位 (非工商管理硕士)">硕士学位 (非工商管理硕士)</option>
+                  <option value="工商管理硕士">工商管理硕士</option>
+                  <option value="法学学位（法学博士、法学硕士）">法学学位（法学博士、法学硕士）</option>
+                  <option value="博士学位">博士学位</option>
+                  <option value="卫生专业博士（MD、DMD、DVM、DPT等">卫生专业博士（MD、DMD、DVM、DPT等）</option>
                </select>
             </div>
          </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div id="Skillsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
                    <div class="pxl-options--horizontal">
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary" *ngFor="let skill of job.skills">
+                      <label class="pxl-option pxl-option--pills pxl-pill--primary" *ngFor="let skill of job.skills" (click)="clickSkill(skill)">
                          <input id="JavaScript" type="checkbox" tabindex="0" class="pxl-option__input" value="{{skill.namet.zh}}">
                          <div class="pxl-option__text">{{skill.namet ? skill.namet.zh : skill.name}}</div>
                       </label>
@@ -94,7 +94,7 @@
                 </div>
                 <div id="Certificationsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
                    <div class="">
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary" *ngFor="let certification of job.certifications">
+                      <label class="pxl-option pxl-option--checklist pxl-option--primary" *ngFor="let certification of job.certifications" (click)="clickCertification(certification)">
                          <input id="Higher National Diploma (HND), Computing (Software Development)" type="checkbox" tabindex="0" class="pxl-option__input" value="Higher National Diploma (HND), Computing (Software Development)">
                          <div class="pxl-option__text">{{certification.namet ? certification.namet.zh : certification.name}}</div>
                       </label>
@@ -121,35 +121,36 @@
              </div>
           </div>
           <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="ContractorType">你是合同工？</label>
+             <label class="  pxl-control-label" for="ContractorType">你是承包商吗？</label>
              <div id="ContractorType" class="pxl-options control--md">
                 <div class="">
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="No, I am not a contractor" type="checkbox" tabindex="0" class="pxl-option__input" value="No, I am not a contractor">
-                      <div class="pxl-option__text">No, I am not a contractor</div>
+                      <input id="No, I am not a contractor" type="checkbox" tabindex="0" class="pxl-option__input" (click)="setContractStatus('我不是承包商')" name="contractStatus" value="我不是承包商">
+                      <div class="pxl-option__text">我不是承包商</div>
                    </label>
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Yes, I am an independent contractor" type="checkbox" tabindex="0" class="pxl-option__input" value="Yes, I am an independent contractor">
-                      <div class="pxl-option__text">Yes, I am an independent contractor</div>
+                      <input id="Yes, I am an independent contractor" type="checkbox" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('我是独立承包商')" value="我是独立承包商">
+                      <div class="pxl-option__text">我是独立承包商</div>
                    </label>
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Yes, I am contracted through an agency" type="checkbox" tabindex="0" class="pxl-option__input" value="Yes, I am contracted through an agency">
-                      <div class="pxl-option__text">Yes, I am contracted through an agency</div>
+                      <input id="Yes, I am contracted through an agency" type="checkbox" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过代理签约的')" value="是的，我是通过代理签约的">
+                      <div class="pxl-option__text">是的，我是通过代理签约的</div>
                    </label>
                    <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Yes, I am contracted through a vendor agreement" type="checkbox" tabindex="0" class="pxl-option__input" value="Yes, I am contracted through a vendor agreement">
-                      <div class="pxl-option__text">Yes, I am contracted through a vendor agreement</div>
+                      <input id="Yes, I am contracted through a vendor agreement" type="checkbox" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过供应商协议签约的')" value="是的，我是通过供应商协议签约的">
+                      <div class="pxl-option__text">是的，我是通过供应商协议签约的</div>
                    </label>
                 </div>
              </div>
           </div>
           <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="ManagementRole">你监督员工吗？</label>
+             <label class="  pxl-control-label" for="ManagementRole">你是管理者吗？</label>
              <div class="pxl-segmented pxl-segmented--justified control--sm pxl-segmented--primary" data-toggle="buttons">
-                 <button type="button" class="pxl-segmented__segment ">是</button><button type="button" class="pxl-segmented__segment ">否</button></div>
+                 <button type="button" class="pxl-segmented__segment " (click)="checkSupervisor(true)">是</button>
+                 <button type="button" class="pxl-segmented__segment " (click)="checkSupervisor(false)">否</button>
+             </div>
           </div>
           <div class="survey-btn--block" style="text-align: center;">
-            <button type="submit" id="skip-button" class="survey-btn--secondary" style="display: none;">跳过这一步</button>
             <button type="submit" class="survey-btn--primary" (click)="next()">下一步</button>
         </div>
        </form>

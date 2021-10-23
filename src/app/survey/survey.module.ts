@@ -19,6 +19,7 @@ import { ReportComponent } from './report/report.component';
 import { PriceAJobComponent } from './price-a-job/price-a-job.component';
 import { DetailsComponent } from './price-a-job/details/details.component';
 import { CardComponent } from './components/card/card.component';
+import { RadioComponent } from './components/radio/radio.component';
 
 
 
@@ -37,7 +38,7 @@ import { CardComponent } from './components/card/card.component';
     OptionalResearchQuestionsComponent, 
     ReportComponent, 
     PriceAJobComponent, 
-    DetailsComponent, CardComponent],
+    DetailsComponent, CardComponent, RadioComponent],
   imports: [
     CommonModule,
     LayoutModule,

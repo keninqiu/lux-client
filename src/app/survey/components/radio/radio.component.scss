@@ -1,0 +1,49 @@
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+.option {
+    position: relative;
+    display: table;
+    margin: 0 5px 5px 0;
+}
+
+.option__input {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.option__text {
+    margin-bottom: 5px;
+    line-height: 24px;
+}
+
+.option__text:before {
+    content: "";
+    height: 22px;
+    margin-right: 4px;
+    vertical-align: top;
+    width: 22px;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: payscale-icons;
+    color: #c3c3ca;
+    font-size: 24px;
+}
+
+.option__input:checked + .option__text:before {
+    color: #2d67b9;
+    content: "";
+}

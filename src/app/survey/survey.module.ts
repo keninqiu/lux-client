@@ -20,8 +20,9 @@ import { PriceAJobComponent } from './price-a-job/price-a-job.component';
 import { DetailsComponent } from './price-a-job/details/details.component';
 import { CardComponent } from './components/card/card.component';
 import { RadioComponent } from './components/radio/radio.component';
-
-
+import { SelectComponent } from './components/select/select.component';
+import { MultiSelectComponent } from './components/multi-select/multi-select.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { RadioComponent } from './components/radio/radio.component';
     OptionalResearchQuestionsComponent, 
     ReportComponent, 
     PriceAJobComponent, 
-    DetailsComponent, CardComponent, RadioComponent],
+    DetailsComponent, CardComponent, RadioComponent, SelectComponent, MultiSelectComponent, SwitchComponent],
   imports: [
     CommonModule,
     LayoutModule,

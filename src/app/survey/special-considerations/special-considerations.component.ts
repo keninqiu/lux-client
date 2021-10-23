@@ -13,8 +13,6 @@ import { SurveyService } from 'src/app/services/survey.service';
 export class SpecialConsiderationsComponent implements OnInit {
   id: string;
   job: any;
-  inputSkill: string;
-  inputCertification: string;
   avgYears: number;
   minYears: number;
   education: string;
@@ -22,12 +20,36 @@ export class SpecialConsiderationsComponent implements OnInit {
   selectedCertifications: string[];
   contractStatus: string;
   isSupervisor: boolean;
+
+  skillOptions = [];
+  certificationOptions = [];
   constructor(
     private surveyServ: SurveyService,
     private route: ActivatedRoute, 
     private router: Router
   ) { }
 
+  educationOptions = [
+    '没有学位',
+    '副学士学位',
+    '学士学位',
+    '其他',
+    '高中文凭',
+    '非学位证书课程',
+    '硕士学位 (非工商管理硕士)',
+    '工商管理硕士',
+    '法学学位（法学博士、法学硕士）',
+    '博士学位',
+    '卫生专业博士（MD、DMD、DVM、DPT等）'
+  ];
+
+  contractTypeOptions = [
+    '我不是承包商',
+    '我是独立承包商',
+    '是的，我是通过代理签约的',
+    '是的，我是通过供应商协议签约的'
+  ];
+  
   ngOnInit(): void {
     this.selectedSkills = [];
     this.selectedCertifications = [];
@@ -37,33 +59,29 @@ export class SpecialConsiderationsComponent implements OnInit {
         (ret: any) => {
           console.log('ret===', ret);
           this.job = ret;
+          this.skillOptions = this.job.skills.map(item => {
+            let name = item.name;
+            if(item.namet && item.namet.zh) {
+              name = item.namet.zh
+            }
+            return name;
+          });
+
+          this.certificationOptions = this.job.certifications.map(item => {
+            let name = item.name;
+            if(item.namet && item.namet.zh) {
+              name = item.namet.zh
+            }
+            return name;
+          });
         }
       );
     });
   }
 
-  onEnterSkill(event) {
-    const value = event.target.value;
-    this.selectedSkills.push(value);
-    this.inputSkill = '';
-  }
-
-  onEnterCertification(event) {
-    const value = event.target.value;
-    this.selectedCertifications.push(value);
-    this.inputCertification = '';
-  }
 
   setContractStatus(status: string) {
     this.contractStatus = status;
-  }
-
-  deleteSkill(skill) {
-    this.selectedSkills = this.selectedSkills.filter(item => item != skill);
-  }
-
-  deleteCertification(certification) {
-    this.selectedCertifications = this.selectedCertifications.filter(item => item != certification);
   }
 
   next() {

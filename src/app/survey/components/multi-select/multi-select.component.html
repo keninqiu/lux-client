@@ -1,0 +1,24 @@
+<div class="pxl-form-group">
+    <label class="pxl-control-label">{{title}}</label>
+    <div class="pxl-tagsinput-autocomplete control--lg">
+       <div class="react-tagsinput">
+          <div>
+            <span class="pxl-pill pxl-pill--active pxl-pill--primary" *ngFor="let item of value">
+               <span (click)="deleteText(item)">{{item}}</span>
+            </span>
+             <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Skills" aria-expanded="false" class="react-autosuggest__container">
+                <input type="text" class="tagsinput-input" placeholder="{{placeholder}}"  width="250" [(ngModel)]="inputText" (keyup.enter)="onEnterText($event)">
+                <div id="react-autowhatever-Skills" role="listbox" class="react-autosuggest__suggestions-container"></div>
+             </div>
+          </div>
+       </div>
+       <div class="pxl-options pxl-tagsinput-autocomplete__options">
+          <div class="pxl-options--horizontal">
+             <label class="pxl-option pxl-option--pills pxl-pill--primary" *ngFor="let item of options" >
+                <input id="JavaScript" type="checkbox" tabindex="0" class="pxl-option__input" value="{{item}}" (click)="clickOption(item)">
+                <div class="pxl-option__text">{{item}}</div>
+             </label>
+          </div>
+       </div>
+    </div>
+ </div>

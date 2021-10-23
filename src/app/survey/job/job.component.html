@@ -1,6 +1,5 @@
 <div class="container-survey">
     <div class="form-wrapper">
-       <form enctype="application/json" id="surveyForm" novalidate="">
           <div class="survey__header">
              <h1>您的职位和位置</h1>
              <p>让我们从基本信息开始构建您的报告，例如您的职位、位置和经验。 Lux 收集了超过 5400 万人的薪资和职业数据，涵盖 16,000 个独特的职位。</p>
@@ -51,7 +50,8 @@
                 </div>
              </div>
           </div>
-          <button type="button" class="survey-btn--block survey-btn--primary" (click)="next()">下一步</button>
-       </form>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary btn-primary-big" (click)="next()">下一步</button>
+         </div>
     </div>
  </div>

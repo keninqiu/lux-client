@@ -1,7 +1,12 @@
 <h1 class="text-center py-3">你的待遇</h1>
 <p class="text-center">为了准确评估您在市场中的价值，请让我们了解有关您如何获得报酬的更多细节。 你的回答越准确，你的薪水报告的信息就越丰富。</p>
 
-<app-radio [title]="'薪资类型'"></app-radio>
+<app-radio [title]="'薪资类型'" [(ngModel)]="compensationType" [options]="options"></app-radio>
+<div class="text-center">
+   <button type="button" class="btn btn-primary btn-primary-big" (click)="next()">下一步</button>
+</div>
+
+<!--
 <div class="container-survey">
     <div class="form-wrapper">
        <form enctype="application/json" id="surveyForm" novalidate="">
@@ -27,3 +32,4 @@
        </form>
     </div>
  </div>
+ -->

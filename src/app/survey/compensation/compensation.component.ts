@@ -6,13 +6,13 @@ import { SurveyService } from 'src/app/services/survey.service';
   selector: 'app-compensation',
   templateUrl: './compensation.component.html',
   styleUrls: [
-    './compensation.component.scss',
-    '../../../assets/css/market-worth/main.css'
+    './compensation.component.scss'
   ]
 })
 export class CompensationComponent implements OnInit {
   id: string;
   compensationType: string;
+  options = ['年薪', '小时工'];
   constructor(
     private surveyServ: SurveyService,
     private route: ActivatedRoute, 

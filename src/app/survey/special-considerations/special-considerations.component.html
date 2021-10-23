@@ -1,145 +1,44 @@
-<div class="container-survey">
-
-    <div class="form-wrapper">
-          <div class="survey__header">
-             <h1>任何特殊考虑?</h1>
-             <p>输入任何适用于您的工作技能或属性。</p>
-          </div>
+<h1 class="text-center py-3">任何特殊考虑?</h1>
+<p class="text-center pb-3">输入任何适用于您的工作技能或属性。</p>
 
 
-          <div id="" class="pxl-form-group  ">
-            <label class="  pxl-control-label" for="YearsExperience">完全胜任此工作平均需要的工作年限</label>
-            <div class="pxl-input-number">
-               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" name="avgYears" [(ngModel)]="avgYears">
-               <div class="pxl-input-number__format"></div>
-            </div>
-         </div>
-         <div id="" class="pxl-form-group  ">
-            <label class="  pxl-control-label" for="YearsMinimum">完全胜任此工作至少需要的工作年限</label>
-            <div class="pxl-input-number">
-               <input class="control--xs pxl-input-number__input pxl-form-control" type="number" name="minYears" [(ngModel)]="minYears">
-               <div class="pxl-input-number__format"></div>
-            </div>
-         </div>
-         <div class=" ">
-            <div id="" class="pxl-form-group  ">
-               <label class="  pxl-control-label" for="HighestDegreeEarned">教育</label>
-               <select id="HighestDegreeEarned" class="control--md pxl-form-control" name="education" [(ngModel)]="education">
-                  <option value="">- 点击选择 -</option>
-                  <option value="没有学位">没有学位</option>
-                  <option value="副学士学位">副学士学位</option>
-                  <option value="学士学位">学士学位</option>
-                  <option value="其他">其他</option>
-                  <option value="高中文凭">高中文凭</option>
-                  <option value="非学位证书课程">非学位证书课程</option>
-                  <option value="硕士学位 (非工商管理硕士)">硕士学位 (非工商管理硕士)</option>
-                  <option value="工商管理硕士">工商管理硕士</option>
-                  <option value="法学学位（法学博士、法学硕士）">法学学位（法学博士、法学硕士）</option>
-                  <option value="博士学位">博士学位</option>
-                  <option value="卫生专业博士（MD、DMD、DVM、DPT等">卫生专业博士（MD、DMD、DVM、DPT等）</option>
-               </select>
-            </div>
-         </div>
-
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="Skills">对您的工作至关重要的技能/专业（仅限前 3 名）</label>
-             <div class="pxl-tagsinput-autocomplete control--lg">
-                <div class="react-tagsinput">
-                   <div>
-                     <span class="pxl-pill pxl-pill--active pxl-pill--primary" *ngFor="let item of selectedSkills">
-                        <span (click)="deleteSkill(item)">{{item}}</span>
-                     </span>
-                      <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Skills" aria-expanded="false" class="react-autosuggest__container">
-                         <input type="text" class="tagsinput-input" placeholder="输入技能"  width="250" [(ngModel)]="inputSkill" (keyup.enter)="onEnterSkill($event)">
-                         <div id="react-autowhatever-Skills" role="listbox" class="react-autosuggest__suggestions-container"></div>
-                      </div>
-                   </div>
-                </div>
-                <div id="Skillsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
-                   <div class="pxl-options--horizontal">
-                      <label class="pxl-option pxl-option--pills pxl-pill--primary" *ngFor="let skill of job?.skills" (click)="clickSkill(skill)">
-                         <input id="JavaScript" type="checkbox" tabindex="0" class="pxl-option__input" value="{{skill.namet.zh}}">
-                         <div class="pxl-option__text">{{skill.namet ? skill.namet.zh : skill.name}}</div>
-                      </label>
-
-                   </div>
-                </div>
-             </div>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="Certifications">相关的证书和执照</label>
-             <div class="pxl-tagsinput-autocomplete control--lg">
-                <div class="react-tagsinput">
-                   <div>
-                     <span class="pxl-pill pxl-pill--active pxl-pill--primary"  *ngFor="let item of selectedCertifications">
-                        <span (click)="deleteCertification(item)">{{item}}</span>
-                     </span>
-                      <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-Certifications" aria-expanded="false" class="react-autosuggest__container">
-                         <input type="text" class="tagsinput-input" placeholder="输入证书和执照" width="250" [(ngModel)]="inputCertification" (keyup.enter)="onEnterCertification($event)">
-                         <div id="react-autowhatever-Certifications" role="listbox" class="react-autosuggest__suggestions-container"></div>
-                      </div>
-                   </div>
-                </div>
-                <div id="Certificationsoptions" class="pxl-options pxl-tagsinput-autocomplete__options">
-                   <div class="">
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary" *ngFor="let certification of job?.certifications" (click)="clickCertification(certification)">
-                         <input id="Higher National Diploma (HND), Computing (Software Development)" type="checkbox" tabindex="0" class="pxl-option__input" value="Higher National Diploma (HND), Computing (Software Development)">
-                         <div class="pxl-option__text">{{certification.namet ? certification.namet.zh : certification.name}}</div>
-                      </label>
-                      <!--
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary">
-                         <input id="Microsoft Certified Professional (MCP)" type="checkbox" tabindex="0" class="pxl-option__input" value="Microsoft Certified Professional (MCP)">
-                         <div class="pxl-option__text">Microsoft Certified Professional (MCP)</div>
-                      </label>
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary">
-                         <input id="Sun Certified Java Programmer (SCJP)" type="checkbox" tabindex="0" class="pxl-option__input" value="Sun Certified Java Programmer (SCJP)">
-                         <div class="pxl-option__text">Sun Certified Java Programmer (SCJP)</div>
-                      </label>
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary">
-                         <input id="Microsoft Certified Solution Developer (MCSD)" type="checkbox" tabindex="0" class="pxl-option__input" value="Microsoft Certified Solution Developer (MCSD)">
-                         <div class="pxl-option__text">Microsoft Certified Solution Developer (MCSD)</div>
-                      </label>
-                      <label class="pxl-option pxl-option--checklist pxl-option--primary">
-                         <input id="Certified ScrumMaster (CSM)" type="checkbox" tabindex="0" class="pxl-option__input" value="Certified ScrumMaster (CSM)">
-                         <div class="pxl-option__text">Certified ScrumMaster (CSM)</div>
-                      </label>
-                      -->
-                   </div>
-                </div>
-             </div>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="ContractorType">你是承包商吗？</label>
-             <div id="ContractorType" class="pxl-options control--md">
-                <div class="">
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input type="radio" tabindex="0" class="pxl-option__input" (click)="setContractStatus('我不是承包商')" name="contractStatus" value="我不是承包商">
-                      <div class="pxl-option__text">我不是承包商</div>
-                   </label>
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input type="radio" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('我是独立承包商')" value="我是独立承包商">
-                      <div class="pxl-option__text">我是独立承包商</div>
-                   </label>
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input type="radio" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过代理签约的')" value="是的，我是通过代理签约的">
-                      <div class="pxl-option__text">是的，我是通过代理签约的</div>
-                   </label>
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input type="radio" tabindex="0" class="pxl-option__input" name="contractStatus" (click)="setContractStatus('是的，我是通过供应商协议签约的')" value="是的，我是通过供应商协议签约的">
-                      <div class="pxl-option__text">是的，我是通过供应商协议签约的</div>
-                   </label>
-                </div>
-             </div>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="ManagementRole">你是管理者吗？</label>
-             <div class="pxl-segmented pxl-segmented--justified control--sm pxl-segmented--primary" data-toggle="buttons">
-                 <button type="button" class="pxl-segmented__segment " [ngClass]="isSupervisor ? 'pxl-segmented--active' :''" (click)="checkSupervisor(true)">是</button>
-                 <button type="button" class="pxl-segmented__segment " [ngClass]="!isSupervisor ? 'pxl-segmented--active' :''"  (click)="checkSupervisor(false)">否</button>
-             </div>
-          </div>
-          <div class="survey-btn--block" style="text-align: center;">
-            <button type="submit" class="survey-btn--primary" (click)="next()">下一步</button>
-        </div>
-    </div>
+<div class="form-group mb-3">
+   <label class="font-weight-bold">完全胜任此工作平均需要的工作年限</label>
+   <input type="number" class="form-control" name="avgYears" [(ngModel)]="avgYears">
  </div>
+
+ <div class="form-group mb-3">
+   <label class="font-weight-bold">完全胜任此工作至少需要的工作年限</label>
+   <input type="number" class="form-control" name="minYears" [(ngModel)]="minYears">
+ </div>
+
+ <div class="form-group mb-3">
+   <app-select [(ngModel)]="education" [title]="'教育'" [options]="educationOptions"></app-select>
+ </div>
+
+ <div class="form-group mb-3">
+   <app-multi-select 
+   [placeholder]="'输入技能'"
+   [title]="'对您的工作至关重要的技能/专业（仅限前 3 名）'" 
+   [(ngModel)]="selectedSkills" 
+   [options]="skillOptions"></app-multi-select>
+ </div>
+
+ <div class="form-group mb-3">
+   <app-multi-select 
+   [placeholder]="'输入证书和执照'"
+   [title]="'相关的证书和执照'" 
+   [(ngModel)]="selectedCertifications" 
+   [options]="certificationOptions"></app-multi-select>
+ </div>
+
+ <div class="form-group mb-3">
+    <app-radio [title]="'你是承包商吗？'" [(ngModel)]="contractStatus" [options]="contractTypeOptions"></app-radio>
+ </div>
+ <div class="form-group mb-3">
+    <app-switch [title]="'你是管理者吗？'" [(ngModel)]="isSupervisor"></app-switch>
+</div>
+
+<div class="text-center">
+   <button type="button" class="btn btn-primary btn-primary-big" (click)="next()">下一步</button>
+</div>

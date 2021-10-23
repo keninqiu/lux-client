@@ -1,0 +1,7 @@
+<div class="pxl-form-group  ">
+    <label class="  pxl-control-label">{{title}}</label>
+    <div class="pxl-segmented pxl-segmented--justified control--sm pxl-segmented--primary" data-toggle="buttons">
+        <button type="button" class="pxl-segmented__segment " [ngClass]="value ? 'pxl-segmented--active' :''" (click)="writeValue(true)">是</button>
+        <button type="button" class="pxl-segmented__segment " [ngClass]="!value ? 'pxl-segmented--active' :''"  (click)="writeValue(false)">否</button>
+    </div>
+ </div>

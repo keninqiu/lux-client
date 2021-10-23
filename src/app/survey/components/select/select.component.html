@@ -1,0 +1,7 @@
+<div class="pxl-form-group">
+    <label class="pxl-control-label">教育</label>
+    <select class="control--md pxl-form-control" name="select" [(ngModel)]="value">
+       <option value="">- 点击选择 -</option>
+       <option value="{{item}}" *ngFor="let item of options">{{item}}</option>
+    </select>
+ </div>

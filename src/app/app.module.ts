@@ -23,6 +23,7 @@ import { HomepageService } from './services/homepage.service';
 import { UtilService } from './services/util.service';
 import { AllService } from './services/all.service';
 import { SurveyService } from './services/survey.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SurveyService } from './services/survey.service';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ApiService,

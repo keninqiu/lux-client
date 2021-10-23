@@ -1,0 +1,66 @@
+.card-content {
+    background-color: #f6f7f8;
+    cursor: pointer;
+    flex-direction: row;
+}
+
+.card-content:hover {
+    background-color: rgba(132,171,225,.4);
+}
+
+@media (min-width: 768px) {
+    .card-content {
+        flex-direction: column;
+    }
+}
+
+.choose__btn-icon {
+    width: 60px;
+}
+
+@media (min-width: 768px) {
+    .choose__btn-icon {
+        margin-bottom: 15px;
+    }
+}
+
+.choose__btn-copy {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+@media (min-width: 768px) {
+    .choose__btn-copy {
+        margin: 0;
+    }
+}
+
+.choose__btn-header {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d67b9;
+    text-align: left;
+}
+
+.choose__btn-description {
+    text-align: left;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) { 
+    .choose__btn-header {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .choose__btn-description {
+        margin-bottom: 15px;
+        height: 70px;
+        text-align: center;
+    }
+}

@@ -18,6 +18,7 @@ import { OptionalResearchQuestionsComponent } from './optional-research-question
 import { ReportComponent } from './report/report.component';
 import { PriceAJobComponent } from './price-a-job/price-a-job.component';
 import { DetailsComponent } from './price-a-job/details/details.component';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -36,7 +37,7 @@ import { DetailsComponent } from './price-a-job/details/details.component';
     OptionalResearchQuestionsComponent, 
     ReportComponent, 
     PriceAJobComponent, 
-    DetailsComponent],
+    DetailsComponent, CardComponent],
   imports: [
     CommonModule,
     LayoutModule,

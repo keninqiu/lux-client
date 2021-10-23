@@ -1,43 +1,30 @@
-<div class="container-survey">
-    <div class="choose">
-       <h1 class="choose__title">薪资调研报告</h1>
-       <div class="choose__subtitle">哪个选项描述了您的情况？</div>
-       <div class="choose__buttons">
-          <div class="choose__btn"  (click)="select('currentJob')">
-             <img class="choose__btn-icon" src="//cdn-payscale.com/content/choose-page-icon-currentjob.png">
-             <div class="choose__btn-copy">
-                <div class="choose__btn-header">当前工作</div>
-                <div class="choose__btn-description">我想了解当前职位的薪资信息</div>
-             </div>
-             <a>
-                <button class="choose__btn-input" type="submit" id="currentJobButton" name="profiletype" value="CurrentJob">选择</button><i class="choose__btn-arrow icon-right-open"></i>
-            </a>
-             
-          </div>
-          <div class="choose__btn" (click)="select('jobOpportunity')">
-             <img class="choose__btn-icon" src="//cdn-payscale.com/content/choose-page-icon-joboffer.png">
-             <div class="choose__btn-copy">
-                <div class="choose__btn-header">工作机会</div>
-                <div class="choose__btn-description">我正在评估工作机会</div>
-             </div>
-             <a>
-               <button class="choose__btn-input" type="submit" id="jobOfferButton" name="profiletype" value="JobOffer">选择</button><i class="choose__btn-arrow icon-right-open"></i>
-            </a>
-             
-          </div>
-          <div class="choose__btn" (click)="select('browse')">
-             <img class="choose__btn-icon" src="//cdn-payscale.com/content/choose-page-icon-whatif.png">
-             <div class="choose__btn-copy">
-                <div class="choose__btn-header">只是浏览</div>
-                <div class="choose__btn-description">我正在研究一份不属于我自己的工作</div>
-             </div>
-             <a>
-               <button class="choose__btn-input" type="submit" id="exploreButton" name="profiletype" value="Informational">选择</button><i class="choose__btn-arrow icon-right-open"></i>
-            </a>
-             
-          </div>
-       </div>
-       <div class="choose__emp-link"><a href="/price-a-job?src=survey-choose">我是一名希望公平支付的雇主</a></div>
-       <p class="choose__privacy-copy">请记住：当我们引导您完成这项调查时，您的回答越具体，您的薪资报告就越准确。 而且，您与我们分享的任何信息都将保密。</p>
-    </div>
- </div>
+<h1 class="text-center pb-3">薪资调研报告</h1>
+<div class="text-center py-3">哪个选项描述了您的情况？</div>
+<div class="container">
+   <div class="row">
+      <div class="col col-12 col-md-4 pb-3" (click)="select('currentJob')">
+         <app-card 
+         [image]="'/assets/images/choose-page-icon-currentjob.png'"
+         [title]="'当前工作'"
+         [subtitle]="'我想了解当前职位的薪资信息'"
+         ></app-card>
+      </div>
+      <div class="col col-12 col-md-4 pb-3" (click)="select('jobOpportunity')">
+         <app-card
+         [image]="'/assets/images/choose-page-icon-joboffer.png'"
+         [title]="'工作机会'"
+         [subtitle]="'我正在评估工作机会'"
+         ></app-card>
+      </div>
+      <div class="col col-12 col-md-4 pb-3" (click)="select('browse')">
+         <app-card
+         [image]="'/assets/images/choose-page-icon-whatif.png'"
+         [title]="'只是浏览'"
+         [subtitle]="'我正在研究一份不属于我自己的工作'"
+         ></app-card>
+      </div>
+   </div>
+</div>
+
+<div class="text-center py-3"><a href="/price-a-job?src=survey-choose">我是一名希望公平支付的雇主</a></div>
+<p class="text-center">请记住：当我们引导您完成这项调查时，您的回答越具体，您的薪资报告就越准确。 而且，您与我们分享的任何信息都将保密。</p>

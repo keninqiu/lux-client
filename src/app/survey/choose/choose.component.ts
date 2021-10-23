@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyService } from 'src/app/services/survey.service';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-choose',
   templateUrl: './choose.component.html',
   styleUrls: [
-    './choose.component.scss',
-    '../../../assets/css/market-worth/main.css'
+    './choose.component.scss'
   ]
 })
 export class ChooseComponent implements OnInit {

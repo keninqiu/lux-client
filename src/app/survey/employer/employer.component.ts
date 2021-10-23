@@ -6,8 +6,7 @@ import { SurveyService } from 'src/app/services/survey.service';
   selector: 'app-employer',
   templateUrl: './employer.component.html',
   styleUrls: [
-    './employer.component.scss',
-    '../../../assets/css/market-worth/main.css'
+    './employer.component.scss'
   ]
 })
 export class EmployerComponent implements OnInit {
@@ -18,6 +17,24 @@ export class EmployerComponent implements OnInit {
   employerName: string;
   averageSizeCompetitor: number;
 
+  employerTypeOptions = [
+    '公司',
+    '学院 / 大学',
+    '承包商',
+    '合伙人',
+    '基金会/信托',
+    '加盟商',
+    '政府 - 联邦',
+    '政府 - 州 和 本地',
+    '医院',
+    '军队',
+    '非盈利机构',
+    '私人执业/公司',
+    '学校/学区',
+    '自雇',
+    '团队',
+    '其他组织'
+  ];
   constructor(
     private surveyServ: SurveyService,
     private route: ActivatedRoute, 

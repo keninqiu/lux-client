@@ -6,8 +6,7 @@ import { SurveyService } from 'src/app/services/survey.service';
   selector: 'app-special-considerations',
   templateUrl: './special-considerations.component.html',
   styleUrls: [
-    './special-considerations.component.scss',
-    '../../../assets/css/market-worth/main.css'
+    './special-considerations.component.scss'
   ]
 })
 export class SpecialConsiderationsComponent implements OnInit {
@@ -49,7 +48,7 @@ export class SpecialConsiderationsComponent implements OnInit {
     '是的，我是通过代理签约的',
     '是的，我是通过供应商协议签约的'
   ];
-  
+
   ngOnInit(): void {
     this.selectedSkills = [];
     this.selectedCertifications = [];

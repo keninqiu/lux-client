@@ -1,104 +1,26 @@
-<div class="container-survey">
-    <div id="progress-bar-container-v1" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Your Pay</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
-    <div id="progress-bar-container-v2" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 52%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Education</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
-    <div class="form-wrapper">
-       <form enctype="application/json" id="surveyForm" novalidate="">
-          <div class="survey__header">
-             <h1>可选问题</h1>
-             <p>我们已经开始收集其他类型的数据，以帮助我们构建新功能、为您提供有趣的见解或提供有关我们研究中心的更多有用信息。 这些问题完全是可选的。 但是，我们肯定很想知道您的想法。</p>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="JobSatisfaction">你对你的工作有多满意</label>
-             <select id="JobSatisfaction" class="control--md pxl-form-control" tabindex="0">
-                <option value="">- click to select -</option>
-                <option value="Extremely satisfied">Extremely satisfied</option>
-                <option value="Fairly satisfied">Fairly satisfied</option>
-                <option value="A little satisfied">A little satisfied</option>
-                <option value="Dissatisfied">Dissatisfied</option>
-                <option value="I hate my job">I hate my job</option>
-             </select>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="JobStress">您的工作/工作环境压力有多大</label>
-             <select id="JobStress" class="control--md pxl-form-control" tabindex="0">
-                <option value="">- click to select -</option>
-                <option value="Extremely stressful">Extremely stressful</option>
-                <option value="Fairly stressful">Fairly stressful</option>
-                <option value="A little stressful">A little stressful</option>
-                <option value="Not stressful">Not stressful</option>
-                <option value="My job is relaxing">My job is relaxing</option>
-             </select>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="JobMeaning">你的工作是否让世界变得更美好</label>
-             <select id="JobMeaning" class="control--md pxl-form-control" tabindex="0">
-                <option value="">- click to select -</option>
-                <option value="Very much so">Very much so</option>
-                <option value="Yes">Yes</option>
-                <option value="A little">A little</option>
-                <option value="No">No</option>
-                <option value="My job may make the world a worse place">My job may make the world a worse place</option>
-             </select>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="RemoteWorkExpectations">继 2020 年居家令工作之后，您对职业领域远程工作的期望是否发生了变化？</label>
-             <select id="RemoteWorkExpectations" class="control--md pxl-form-control" tabindex="0">
-                <option value="">- click to select -</option>
-                <option value="Yes, I expect more employers to offer remote work options in my field.">Yes, I expect more employers to offer remote work options in my field.</option>
-                <option value="Yes, I expect fewer employers to offer remote work options&nbsp;in my field.">Yes, I expect fewer employers to offer remote work options&nbsp;in my field.</option>
-                <option value="No, my expectations have not changed.">No, my expectations have not changed.</option>
-             </select>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="Parent">您是父母或主要看护人吗？</label>
-             <select id="Parent" class="control--md pxl-form-control" tabindex="0">
-                <option value="">- click to select -</option>
-                <option value="Yes">是</option>
-                <option value="No">否</option>
-             </select>
-          </div>
-          <div class="survey-btn--block" style="text-align: center;">
-            <button type="submit" id="skip-button" class="survey-btn--secondary" style="display: none;">跳过这一步</button>
-            <button type="submit" class="survey-btn--primary" (click)="next()">下一步</button>
-        </div>
-       </form>
-    </div>
- </div>
+<h1 class="text-center py-3">可选问题</h1>
+<p class="text-center pb-3">我们已经开始收集其他类型的数据，以帮助我们构建新功能、为您提供有趣的见解或提供有关我们研究中心的更多有用信息。 这些问题完全是可选的。 但是，我们肯定很想知道您的想法。</p>
+
+<div class="form-group mb-3">
+   <app-select [(ngModel)]="jobSatisfaction" [title]="'你对你的工作有多满意'" [options]="jobSatisfactionOptions"></app-select>
+</div>
+
+<div class="form-group mb-3">
+   <app-select [(ngModel)]="jobStress" [title]="'您的工作/工作环境压力有多大'" [options]="jobStressOptions"></app-select>
+</div>
+
+<div class="form-group mb-3">
+   <app-select [(ngModel)]="jobMeaning" [title]="'你的工作是否让世界变得更美好'" [options]="jobMeaningOptions"></app-select>
+</div>
+
+<div class="form-group mb-3">
+   <app-select [(ngModel)]="remoteWorkExpectations" [title]="'继 2020 年居家令工作之后，您对职业领域远程工作的期望是否发生了变化？'" [options]="remoteWorkExpectationsOptions"></app-select>
+</div>
+
+<div class="form-group mb-3">
+   <app-switch [title]="'您是父母或主要看护人吗？'" [(ngModel)]="isParent"></app-switch>
+</div>
+
+<div class="text-center">
+   <button type="button" class="btn btn-primary btn-primary-big" (click)="next()">下一步</button>
+</div>

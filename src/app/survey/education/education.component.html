@@ -1,110 +1,22 @@
-<div class="container-survey">
-    <div id="progress-bar-container-v1" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 0%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Your Pay</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
-    <div id="progress-bar-container-v2" style="display: none;">
-       <div class="progress-bar">
-          <div class="progress-bar__bar">
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 100%;"></div>
-             </div>
-             <i class="icon-circle progress-bar__step-filled"></i>
-             <div class="progress-bar__range-unfilled">
-                <div class="progress-bar__range" style="width: 1%;"></div>
-             </div>
-             <i class="icon-circle-thin progress-bar__step-end"></i>
-          </div>
-          <div class="progress-bar__labels-container"><span class="progress-bar__labels">Career Profile</span><span class="progress-bar__labels">Pay Factors</span><span class="progress-bar__labels">Education</span><span class="progress-bar__labels">Salary Report</span></div>
-       </div>
-    </div>
-    <div class="form-wrapper">
-       <form enctype="application/json" id="surveyForm" novalidate="">
-          <div class="survey__header">
-             <h1>教育和人口统计</h1>
-             <p>对于某些工作，教育是资格的主要形式之一。</p>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="HighestDegreeEarnedEducationalLevel">选择您完成的最高学位</label>
-             <select id="HighestDegreeEarnedEducationalLevel" class="control--md pxl-form-control" tabindex="0">
-                <option value="">- click to select -</option>
-                <option value="No Degree">No Degree</option>
-                <option value="High School Diploma or GED">High School Diploma or GED</option>
-                <option value="Non-Degree Certificate Program">Non-Degree Certificate Program</option>
-                <option value="Associate's Degree">Associate Degree</option>
-                <option value="Bachelor's Degree">Bachelor's Degree</option>
-                <option value="Master's Degree (non-MBA)">Master's Degree (non-MBA)</option>
-                <option value="Master of Business Administration (MBA)">Master of Business Administration (MBA)</option>
-                <option value="Law Degree (JD, LLM)">Law Degree (JD, LLM)</option>
-                <option value="Doctorate (PhD)">Doctorate (PhD)</option>
-                <option value="Health Professional Doctorate (MD, DMD, DVM, DPT, etc.)">Health Professional Doctorate (MD, DMD, DVM, DPT, etc.)</option>
-             </select>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="Age">您的年龄（岁）：</label>
-             <div class="pxl-input-number">
-                <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="Age" tabindex="0" value="">
-                <div class="pxl-input-number__format"></div>
-             </div>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="Gender">
-                性别:<span class="pxl-tooltip  " data-tip="We use self-reported demographic data to analyze differences in pay across all population segments. This data is kept anonymous and does not affect your pay report at the end of the survey" data-for="GenderTooltip" currentitem="false"><span class="icon-reverse icon-circle"><i class="icon-info"></i></span></span>
+<h1 class="text-center py-3">人口统计</h1>
+<div class="form-group mb-3">
+   <label class="font-weight-bold">您的年龄（岁）</label>
+   <input type="number" class="form-control" name="age" [(ngModel)]="age">
+</div>
 
-             </label>
-             <div id="Gender" class="pxl-options control--md">
-                <div class="">
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Male" type="checkbox" tabindex="0" class="pxl-option__input" value="Male">
-                      <div class="pxl-option__text">Male</div>
-                   </label>
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Female" type="checkbox" tabindex="0" class="pxl-option__input" value="Female">
-                      <div class="pxl-option__text">Female</div>
-                   </label>
-                   <label class="pxl-option pxl-option--radio pxl-option--primary">
-                      <input id="Prefer to self-define" type="checkbox" tabindex="0" class="pxl-option__input" value="Prefer to self-define">
-                      <div class="pxl-option__text">Prefer to self-define</div>
-                   </label>
-                </div>
-             </div>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="MilitaryExperience">你有美国军事经验吗？</label>
-             <div class="pxl-segmented pxl-segmented--justified control--sm pxl-segmented--primary" data-toggle="buttons"><button type="button" class="pxl-segmented__segment ">Yes</button><button type="button" class="pxl-segmented__segment ">No</button></div>
-          </div>
-          <div id="" class="pxl-form-group  ">
-             <label class="  pxl-control-label" for="JobFiveYearsAgo">5年前你的职位是什么？</label>
-             <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-JobFiveYearsAgo" aria-expanded="false" class="react-autosuggest__container">
-                <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-JobFiveYearsAgo" class="pxl-form-control control--md" tabindex="0" id="JobFiveYearsAgo" placeholder="Start typing to see answers" value="">
-                <div id="react-autowhatever-JobFiveYearsAgo" role="listbox" class="react-autosuggest__suggestions-container"></div>
-             </div>
-          </div>
-          <div class="survey-btn--block" style="text-align: center;">
-            <button type="submit" id="skip-button" class="survey-btn--secondary" style="display: none;">跳过这一步</button>
-            <button type="submit" class="survey-btn--primary" (click)="next()">下一步</button>
-        </div>
-       </form>
-    </div>
- </div>
+<div class="form-group mb-3">
+   <app-select [(ngModel)]="gender" [title]="'性别'" [options]="genderOptions"></app-select>
+</div>
+
+<div class="form-group mb-3">
+   <app-switch [title]="'你有美国军事经验吗？'" [(ngModel)]="militaryExperience"></app-switch>
+</div> 
+
+<div class="form-group mb-3">
+   <label class="font-weight-bold">5年前你的职位是什么？</label>
+   <input type="text" class="form-control" name="roleBefore5Years" [(ngModel)]="roleBefore5Years">
+</div>
+
+<div class="text-center">
+   <button type="button" class="btn btn-primary btn-primary-big" (click)="next()">下一步</button>
+</div>

@@ -4,12 +4,18 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { ChatbotContentComponent } from './chatbot/content/content.component';
+import { UserCenterComponent } from './menu/user-center/user-center.component';
+import { SalaryResearchComponent } from './menu/salary-research/salary-research.component';
+import { LeftComponent } from './menu/left/left.component';
 @NgModule({
   declarations: [
     FooterComponent, 
     MenuComponent,
     ChatbotComponent,
-    ChatbotContentComponent
+    ChatbotContentComponent,
+    UserCenterComponent,
+    SalaryResearchComponent,
+    LeftComponent
   ],
   imports: [
     CommonModule

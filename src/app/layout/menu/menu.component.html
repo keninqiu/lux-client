@@ -1,6 +1,8 @@
-<nav class="d-flex justify-content-between align-items-center">
-   <div>
+<!--
+<nav class="d-flex justify-content-between align-items-center"  *ngIf="!showMobileMenuNew" >
+   <div class="d-none d-md-block">
       <ul class="d-flex">
+
          <li class="menu-item px-3">
             <a class="nav-item">
                用户中心
@@ -21,16 +23,25 @@
    </div>
    <div>
       <ul>
-         <li>
+         <li class="d-none d-md-block">
             <a class="menu-item" href="/login">
                登录
             </a>
          </li>
+         <li class="d-block px-3 d-md-none" (click)="toggleMenuNew()">
+            <a class="nav-item">
+               菜单
+            </a>
+
+         </li>
       </ul>
 
    </div>
-</nav>
 
+
+</nav>
+-->
+<app-mobile *ngIf="showMobileMenuNew" class="mobile-menu"></app-mobile>
 <header>
   <div>
      <nav class="pxl-navbar pxl-navbar--white" [ngClass]="showMobileMenu ? 'pxl-navbar--active' : ''">
@@ -372,9 +383,15 @@
 
            <li id="psNavBarMyAccount" class="pxl-navbar__nav-item pxl-navbar__account hidden">
               <div class="pxl-navbar__nav-item-content"><a class="pxl-navbar__nav-link">我的账户</a></div>
-              <div class="pxl-navbar__subnav pxl-navbar__subnav--account"><a class="pxl-navbar__subnav-link" href="/logout.aspx">注销</a><a class="pxl-navbar__subnav-link" href="/myaccount.aspx">我的账户</a><a class="pxl-navbar__subnav-link" href="/mypayscale.aspx">我的薪酬报告</a></div>
+              <div class="pxl-navbar__subnav pxl-navbar__subnav--account">
+                 <a class="pxl-navbar__subnav-link" href="/logout.aspx">注销</a>
+                 <a class="pxl-navbar__subnav-link" href="/myaccount.aspx">我的账户</a>
+                 <a class="pxl-navbar__subnav-link" href="/mypayscale.aspx">我的薪酬报告</a>
+               </div>
            </li>
-           <a id="psNavBarLogin" href="/login.aspx" class="pxl-navbar__login">登录</a><a id="psNavBarMyReports" href="/mypayscale.aspx" class="pxl-navbar__myreports hidden">我的报告</a><a id="psNavBarLogout" href="/logout.aspx" class="pxl-navbar__logout hidden">注销</a>
+           <a id="psNavBarLogin" href="/login.aspx" class="pxl-navbar__login">登录</a>
+           <a id="psNavBarMyReports" href="/mypayscale.aspx" class="pxl-navbar__myreports hidden">我的报告</a>
+           <a id="psNavBarLogout" href="/logout.aspx" class="pxl-navbar__logout hidden">注销</a>
            <div id="psNavBarMobileMenu" class="pxl-navbar__menu--mobile" (click)="toggleMenu()">菜单</div>
         </div>
      </nav>

@@ -14,9 +14,19 @@ import { BestInClassComponent } from './best-in-class/best-in-class.component';
 import { GsapComponent } from './gsap/gsap.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
 @NgModule({
-  declarations: [HomeComponent, LoginComponent, RegisterComponent, AdvComponent, CarouselComponent, ChangeComponent, SalaryDataComponent, CustomersExperienceComponent, BestInClassComponent, GsapComponent],
+  declarations: [
+    HomeComponent, 
+    LoginComponent, 
+    RegisterComponent, 
+    AdvComponent, 
+    CarouselComponent, 
+    ChangeComponent, 
+    SalaryDataComponent, 
+    CustomersExperienceComponent, 
+    BestInClassComponent, 
+    GsapComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,

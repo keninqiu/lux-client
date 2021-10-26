@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   showMobileMenu:boolean;
+  showMobileMenuNew:boolean;
   activeTab: string;
   constructor() { }
 
@@ -19,6 +20,10 @@ export class MenuComponent implements OnInit {
     this.showMobileMenu = !this.showMobileMenu;
   }
 
+  toggleMenuNew() {
+    this.showMobileMenuNew = !this.showMobileMenuNew;
+  }
+  
   toggleActiveTab(tabName: string) {
     if(!this.activeTab) {
       this.activeTab = tabName;

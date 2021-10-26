@@ -35,9 +35,12 @@ export class UtilService {
     if((url.indexOf('/research') === 0) && ((url.indexOf('/Salary') > 0 || url.indexOf('/Hourly_Rate') > 0))) {
       console.log('url==', url);
       const arr = url.split('=');
-      const subarr = arr[1].split('/');
-      const subarr0 = subarr[0].replace('(','%28').replace(')','%29');
-      return arr[0] + '%3D' + subarr0 + '/' + subarr[1];
+      if(arr[1]) {
+        const subarr = arr[1].split('/');
+        const subarr0 = subarr[0].replace('(','%28').replace(')','%29');
+        return arr[0] + '%3D' + subarr0 + '/' + subarr[1];        
+      }
+      return url;
     }
     return url;
   }

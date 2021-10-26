@@ -4,17 +4,6 @@ import { LayoutModule } from '../layout/layout.module';
 import { SharedModule } from '../shared/shared.module';
 import { ResearchRoutingModule } from './research-routing.module';
 import { ResearchComponent } from './research.component';
-
-import { BrowseAllCategoriesComponent } from './browse-all-categories/browse-all-categories.component';
-import { FindYourMarketWorthComponent } from './find-your-market-worth/find-your-market-worth.component';
-import { BrowsePopularJobsComponent } from './browse-popular-jobs/browse-popular-jobs.component';
-import { LearnAboutEmployersComponent } from './learn-about-employers/learn-about-employers.component';
-import { ResearchSchoolsAndDegreesComponent } from './research-schools-and-degrees/research-schools-and-degrees.component';
-import { GetCareerTipsAndAdviceComponent } from './get-career-tips-and-advice/get-career-tips-and-advice.component';
-import { BrowseByStatesComponent } from './browse-by-states/browse-by-states.component';
-import { RelatedArticlesComponent } from './related-articles/related-articles.component';
-import { CompensationBestPracticesComponent } from './compensation-best-practices/compensation-best-practices.component';
-
 import { CountriesComponent } from './countries/countries.component';
 import { PopularCountriesComponent } from './countries/popular/popular.component';
 import { CountryComponent } from './country/country.component';
@@ -43,15 +32,6 @@ import { CountryCategoryModule } from './country-category/country-category.modul
   declarations: [
     PopularCountriesComponent,
     ResearchComponent, 
-    BrowseAllCategoriesComponent, 
-    FindYourMarketWorthComponent, 
-    BrowsePopularJobsComponent, 
-    LearnAboutEmployersComponent, 
-    ResearchSchoolsAndDegreesComponent, 
-    GetCareerTipsAndAdviceComponent, 
-    BrowseByStatesComponent,
-    RelatedArticlesComponent, 
-    CompensationBestPracticesComponent,
     CountriesComponent, 
     CountryComponent, 
     BreadcrumbsComponent, 

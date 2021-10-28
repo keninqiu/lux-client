@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
       (ret: any) => {
         const token = ret.token;
         localStorage.setItem('token', token);
-        let retUrl = this.return ? this.return : '/survey/price-a-job';
+        let retUrl = this.return ? this.return : '/survey/choose';
         this.router.navigate([retUrl]);
       }
     );

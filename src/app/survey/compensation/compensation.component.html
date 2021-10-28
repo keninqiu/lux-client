@@ -2,6 +2,107 @@
 <p class="text-center">为了准确评估您在市场中的价值，请让我们了解有关您如何获得报酬的更多细节。 你的回答越准确，你的薪水报告的信息就越丰富。</p>
 
 <app-radio [title]="'薪资类型'" [(ngModel)]="compensationType" [options]="options"></app-radio>
+<div *ngIf="compensationType == '年薪'">
+   <div class="d-flex justify-content-between align-items-center">
+      <label class="pxl-control-label" for="YearlyPay">基本年薪</label>
+      <div>
+         <div class="d-flex align-items-center">
+            <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="YearlyPay" tabindex="0" value="">
+            <div class="px-3">
+               <span>
+                  <span class="currency-link-text"> {{currencyCode}} </span>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="d-flex justify-content-between align-items-center py-3">
+      <label class="  pxl-control-label" for="SalaryHoursPerWeek">工作类型</label>
+      <select id="SalaryHoursPerWeek" class="control--md pxl-form-control" style="width: 300px">
+         <option value="Standard Full-Time 40+ Hours Per Week">全职 (每周40小时以上)</option>
+         <option value="Part-time: 35-39 Hours">兼职 (每周35-39小时)</option>
+         <option value="Part-time: 30-34 Hours">兼职 (每周30-34小时)</option>
+         <option value="Part-time: 25-29 Hours">兼职 (每周25-29小时)</option>
+         <option value="Part-time: 20-24 Hours">兼职 (每周20-24小时)</option>
+         <option value="Part-time: 15-19 Hours">兼职 (每周15-19小时)</option>
+         <option value="Teaching: 9-10 Month Contract">教师 (每年9-10个月)</option>
+         <option value="Teaching: 11-12 Month Contract">Teaching (每年11-12个月)</option>
+      </select>
+   </div>
+</div>
+<div *ngIf="compensationType == '小时工'">
+   <div class="d-flex justify-content-between align-items-center">
+      <label class="  pxl-control-label" for="HourlyPay">基本时薪</label>
+      <div class="control--currency">
+         <div class="d-flex align-items-center">
+            <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="HourlyPay" tabindex="0" value="">
+            <div class="px-3">
+               <span>
+                  <span class="currency-link-text"> {{currencyCode}}</span>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="d-flex justify-content-between align-items-center pt-3">
+      <label class="  pxl-control-label" for="HoursPerWeek">每周平均正常工作时间（不包括加班）</label>
+      <div class="pxl-input-number">
+         <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="HoursPerWeek" tabindex="0" value="">
+         <div class="pxl-input-number__format"></div>
+      </div>
+   </div>
+</div>
+
+<div *ngIf="compensationType == '小时工' || compensationType == '年薪'">
+   <div id="" class="pxl-form-group pxl-margin-top-xlarge">
+      <label class=" pxl-header-xs margin-bottom-md inline-display  pxl-control-label" for="AdditionalIncome">额外补偿</label>
+   </div>
+   <div id="" class="pxl-form-group  form-group--checkbox pt-3">
+      <label class="pxl-option pxl-option--checklist pxl-option--primary">
+         <input type="checkbox" tabindex="0" class="pxl-option__input" value="" checked="">
+         <div class="pxl-option__text">奖金</div>
+      </label>
+   </div>
+   <div id="" class="pxl-form-group pt-3">
+      <label class="  pxl-control-label" for="AnnualBonus">年终奖</label>
+      <div class="pxl-input-number d-flex align-items-center">
+         <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="AnnualBonus" tabindex="0" value="">
+         <div class="pxl-input-number__format px-3">{{currencyCode}}</div>
+      </div>
+   </div>
+   <div id="" class="pxl-form-group form-group--checkbox pt-3">
+      <label class="pxl-option pxl-option--checklist pxl-option--primary">
+         <input type="checkbox" tabindex="0" class="pxl-option__input" value="" checked="">
+         <div class="pxl-option__text">现金分红</div>
+      </label>
+   </div>
+   <div id="" class="pxl-form-group pt-3">
+      <label class="  pxl-control-label" for="ProfitShare">你的每年现金分红总额</label>
+      <div class="pxl-input-number d-flex align-items-center">
+         <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="ProfitShare" tabindex="0" value="">
+         <div class="pxl-input-number__format px-3">{{currencyCode}}</div>
+      </div>
+   </div>
+   <div id="" class="pxl-form-group form-group--checkbox pt-3">
+      <label class="pxl-option pxl-option--checklist pxl-option--primary">
+         <input type="checkbox" tabindex="0" class="pxl-option__input" value="" checked="">
+         <div class="pxl-option__text">销售佣金</div>
+      </label>
+   </div>
+   <div id="" class="pxl-form-group pt-3">
+      <label class="  pxl-control-label" for="AnnualSalesCommissions">年度销售佣金</label>
+      <div class="pxl-input-number d-flex align-items-center">
+         <input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="AnnualSalesCommissions" tabindex="0" value="">
+         <div class="pxl-input-number__format px-3">{{currencyCode}}</div>
+      </div>
+   </div>
+   <div id="" class="pxl-form-group pt-3">
+      <label class="  pxl-control-label" for="AnnualSalesVolume">年销售额（总销售额）</label>
+      <div class="pxl-input-number d-flex align-items-center"><input class="control--xs pxl-input-number__input pxl-form-control" type="number" id="AnnualSalesVolume" tabindex="0" value="">
+         <div class="pxl-input-number__format px-3">{{currencyCode}}</div>
+      </div>
+   </div>
+</div>
 <div class="text-center">
    <button type="button" class="btn btn-primary btn-primary-big" (click)="next()">下一步</button>
 </div>

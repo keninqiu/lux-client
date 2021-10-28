@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Survey } from 'src/app/interfaces/survey.interface';
 import { SurveyService } from 'src/app/services/survey.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { SurveyService } from 'src/app/services/survey.service';
 export class CompensationComponent implements OnInit {
   id: string;
   compensationType: string;
+  currencyCode: string;
   options = ['年薪', '小时工'];
   constructor(
     private surveyServ: SurveyService,
@@ -21,6 +23,12 @@ export class CompensationComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe( paramMap => {
       this.id = paramMap.get('id');
+      this.surveyServ.get(this.id).subscribe(
+        (survey: any) => {
+          console.log('survey===', survey);
+          this.currencyCode = survey?.city?.state?.country?.rawData.props.pageProps.pageData.currencyCode;
+        }
+      );
     });
   }
 

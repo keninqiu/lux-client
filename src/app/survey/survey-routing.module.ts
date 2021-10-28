@@ -16,6 +16,10 @@ import { AuthGuard } from '../services/auth-guard.service';
 
 const routes: Routes = [
   {
+    path: 'report',
+    component: ReportComponent
+  },
+  {
     path: '', component: SurveyComponent,
     canActivate: [AuthGuard],
     children: [
@@ -27,7 +31,6 @@ const routes: Routes = [
       {path: ':id/benefits', component: BenefitsComponent},
       {path: ':id/education', component: EducationComponent},
       {path: ':id/optional-research-questions', component: OptionalResearchQuestionsComponent},
-      {path: ':id/report', component: ReportComponent},
       {path: 'price-a-job', component: PriceAJobComponent},
       {path: 'price-a-job/details', component: DetailsComponent}
     ]

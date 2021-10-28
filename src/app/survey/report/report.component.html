@@ -4,10 +4,12 @@
           <div class="dashboard__container">
              <div class="dashboard-nav ">
                 <div class="dashboard-nav__top-content">
+                   <!--
                    <div class="dashboard-nav__tab-container">
                       <a class="dashboard-nav__tab " href="/mypayscale.aspx?tab=business&amp;view=report&amp;surveyId=19525a65-40c2-4405-8100-e960fbc66fb7">商业</a>
                       <a class="dashboard-nav__tab dashboard-nav__tab--active" href="/mypayscale.aspx?tab=personal&amp;view=report&amp;surveyId=1d792eab-5203-48ba-ac76-bfa8e05a4324">个人</a>
-                     </div>
+                  </div>
+                  -->
                    <div class="dashboard-nav__items">
                       <div class="dashboard-nav__links-container--desktop">
                          <a class="dashboard-nav__link dashboard-nav__link--active" href="/mypayscale.aspx?tab=personal&amp;view=reports&amp;surveyId=1d792eab-5203-48ba-ac76-bfa8e05a4324">
@@ -45,39 +47,39 @@
                             <button id="addNewReport" class="navigation__button navigation__button--wide">添加新报告</button>
                             <div class="navigation__summary">
                                <div class="navigation__summary-reports">
-                                  <div class="navigation__summary-detail">Remaining: <span class="navigation__summary-value">4</span></div>
-                                  <div class="navigation__more-info">More Info</div>
+                                  <div class="navigation__summary-detail">剩余份数: <span class="navigation__summary-value">{{remaining}}</span></div>
+                                  <div class="navigation__more-info">更多信息</div>
                                </div>
                             </div>
                             <div class="reports">
                                <div class="reports--desktop">
-                                  <a class="report__container" href="/mypayscale.aspx?tab=personal&amp;view=report&amp;surveyId=1d792eab-5203-48ba-ac76-bfa8e05a4324">
+                                  <a class="report__container" *ngFor="let survey of surveys">
                                      <div class="report report--active">
-                                        <div class="report__title">Software Developer, HERE Technologies</div>
+                                        <div class="report__title">{{survey.job.namet.zh}}</div>
                                         <div class="report__details">
-                                           <div class="report__exp"><i class="icon-calendar"></i>4 years</div>
-                                           <div class="report__location"><i class="icon-location"></i>Toronto</div>
+                                           <div class="report__exp"><i class="icon-calendar"></i>4 年</div>
+                                           <div class="report__location"><i class="icon-location"></i>{{survey.city.namet.zh}}</div>
                                         </div>
-                                        <div class="report__type">Current Job</div>
+                                        <div class="report__type">{{survey.type}}</div>
                                      </div>
                                   </a>
                                </div>
                                <div class="reports--mobile">
-                                  <a class="report__container" href="/mypayscale.aspx?tab=personal&amp;view=report&amp;surveyId=1d792eab-5203-48ba-ac76-bfa8e05a4324">
+                                  <a class="report__container"  *ngFor="let survey of surveys">
                                      <div class="report report--active">
-                                        <div class="report__title">Software Developer, HERE Technologies</div>
+                                        <div class="report__title">{{survey.job.namet.zh}}</div>
                                         <div class="report__details">
-                                           <div class="report__exp"><i class="icon-calendar"></i>4 years</div>
-                                           <div class="report__location"><i class="icon-location"></i>Toronto</div>
+                                           <div class="report__exp"><i class="icon-calendar"></i>4 年</div>
+                                           <div class="report__location"><i class="icon-location"></i>{{survey.city.namet.zh}}</div>
                                         </div>
-                                        <div class="report__type">Current Job</div>
+                                        <div class="report__type">{{survey.type}}</div>
                                      </div>
                                   </a>
                                </div>
                             </div>
                          </div>
                       </div>
-                      <div class="reports-container">
+                      <div class="reports-container" *ngIf="selectedSurvey">
                          <div class="widget ">
                             <div class="report-summary">
                                <div class="report-summary__content">
@@ -86,11 +88,11 @@
                                      <div><a class="report-summary__edit-url" href="/my/survey/edit?start&amp;originalSurveyId=1d792eab-5203-48ba-ac76-bfa8e05a4324"><i class="report-summary__url-icon icon-pencil"></i>Edit</a><a class="report-summary__download"><i class="report-summary__url-icon icon-print"></i>Print</a></div>
                                   </div>
                                   <div class="report-summary__profile">
-                                     <h2 class="report-summary__header">Software Developer</h2>
+                                     <h2 class="report-summary__header">{{selectedSurvey.job.namet.zh}}</h2>
                                      <div class="report-summary__facts">
-                                        <div class="report-summary__fact"><i class="icon-location"></i>Toronto, Ontario</div>
+                                        <div class="report-summary__fact"><i class="icon-location"></i>{{selectedSurvey.city.namet.zh}}</div>
                                         <span class="report-summary__spacer">|</span>
-                                        <div class="report-summary__fact"><i class="icon-calendar"></i>4 years</div>
+                                        <div class="report-summary__fact"><i class="icon-calendar"></i>4 年</div>
                                      </div>
                                   </div>
                                </div>

@@ -67,7 +67,7 @@ export class OptionalResearchQuestionsComponent implements OnInit {
     this.surveyServ.update(this.id, data).subscribe(
       (ret: any) => {
         console.log('ret===', ret);
-        this.router.navigate(['/survey/' + this.id + '/report']);
+        this.router.navigate(['/survey/report']);
       }
     );   
 

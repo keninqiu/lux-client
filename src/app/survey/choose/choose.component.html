@@ -2,21 +2,21 @@
 <div class="text-center py-3">哪个选项描述了您的情况？</div>
 <div class="container">
    <div class="row">
-      <div class="col col-12 col-md-4 pb-3" (click)="select('currentJob')">
+      <div class="col col-12 col-md-4 pb-3" (click)="select('当前工作')">
          <app-card 
          [image]="'/assets/images/choose-page-icon-currentjob.png'"
          [title]="'当前工作'"
          [subtitle]="'我想了解当前职位的薪资信息'"
          ></app-card>
       </div>
-      <div class="col col-12 col-md-4 pb-3" (click)="select('jobOpportunity')">
+      <div class="col col-12 col-md-4 pb-3" (click)="select('工作机会')">
          <app-card
          [image]="'/assets/images/choose-page-icon-joboffer.png'"
          [title]="'工作机会'"
          [subtitle]="'我正在评估工作机会'"
          ></app-card>
       </div>
-      <div class="col col-12 col-md-4 pb-3" (click)="select('browse')">
+      <div class="col col-12 col-md-4 pb-3" (click)="select('只是浏览')">
          <app-card
          [image]="'/assets/images/choose-page-icon-whatif.png'"
          [title]="'只是浏览'"

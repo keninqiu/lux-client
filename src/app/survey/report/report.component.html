@@ -54,10 +54,10 @@
                             <div class="reports">
                                <div class="reports--desktop">
                                   <a class="report__container" *ngFor="let survey of surveys">
-                                     <div class="report report--active">
+                                     <div class="report" [ngClass]="survey == selectedSurvey ? 'report--active' : ''" (click)="select(survey)">
                                         <div class="report__title">{{survey.job.namet.zh}}</div>
                                         <div class="report__details">
-                                           <div class="report__exp"><i class="icon-calendar"></i>4 年</div>
+                                           <div class="report__exp"><i class="icon-calendar"></i>{{survey.years}} 年</div>
                                            <div class="report__location"><i class="icon-location"></i>{{survey.city.namet.zh}}</div>
                                         </div>
                                         <div class="report__type">{{survey.type}}</div>
@@ -66,10 +66,10 @@
                                </div>
                                <div class="reports--mobile">
                                   <a class="report__container"  *ngFor="let survey of surveys">
-                                     <div class="report report--active">
+                                     <div class="report" [ngClass]="survey == selectedSurvey ? 'report--active' : ''" (click)="select(survey)">
                                         <div class="report__title">{{survey.job.namet.zh}}</div>
                                         <div class="report__details">
-                                           <div class="report__exp"><i class="icon-calendar"></i>4 年</div>
+                                           <div class="report__exp"><i class="icon-calendar"></i>{{survey.years}} 年</div>
                                            <div class="report__location"><i class="icon-location"></i>{{survey.city.namet.zh}}</div>
                                         </div>
                                         <div class="report__type">{{survey.type}}</div>
@@ -92,28 +92,35 @@
                                      <div class="report-summary__facts">
                                         <div class="report-summary__fact"><i class="icon-location"></i>{{selectedSurvey.city.namet.zh}}</div>
                                         <span class="report-summary__spacer">|</span>
-                                        <div class="report-summary__fact"><i class="icon-calendar"></i>4 年</div>
+                                        <div class="report-summary__fact"><i class="icon-calendar"></i>{{selectedSurvey.years}} 年</div>
                                      </div>
                                   </div>
                                </div>
                                <div class="pay-breakdown">
                                   <div class="pay-breakdown__total-pay">
-                                     <span class="pxl-tooltip  pay-breakdown__tooltip" data-tip="Total Pay combines base annual salary or hourly wage, bonuses, profit sharing, tips, commissions, overtime pay and other forms of cash earnings, as applicable for this job." data-for="paybreakdownTooltip" currentitem="false">Your Total Pay<span class="icon-reverse icon-circle"><i class="icon-info"></i></span></span>
+                                     <span class="pxl-tooltip  pay-breakdown__tooltip" data-tip="Total Pay combines base annual salary or hourly wage, bonuses, profit sharing, tips, commissions, overtime pay and other forms of cash earnings, as applicable for this job." data-for="paybreakdownTooltip" currentitem="false">
+                                        你的总收入
+                                        <!--
+                                        <span class="icon-reverse icon-circle">
+                                           <i class="icon-info"></i>
+                                        </span>
+                                        -->
+                                     </span>
 
-                                     <div class="pay-breakdown__total-pay-value">CA$106k</div>
+                                     <div class="pay-breakdown__total-pay-value">{{totalPay}} {{currencyCode}}</div>
                                   </div>
                                   <div class="pay-breakdown__pay-buckets" id="paybuckets">
                                      <div class="pay-breakdown__pay-bucket">
-                                        <div class="pay-breakdown__pay-bucket-label">Base Salary</div>
-                                        <div class="pay-breakdown__pay-bucket-value">CA$90k</div>
+                                        <div class="pay-breakdown__pay-bucket-label">基本工资</div>
+                                        <div class="pay-breakdown__pay-bucket-value">{{baseSalary}} {{currencyCode}}</div>
                                      </div>
                                      <div class="pay-breakdown__pay-bucket">
-                                        <div class="pay-breakdown__pay-bucket-label">Bonus</div>
-                                        <div class="pay-breakdown__pay-bucket-value">CA$6k</div>
+                                        <div class="pay-breakdown__pay-bucket-label">奖金</div>
+                                        <div class="pay-breakdown__pay-bucket-value">{{annualBonus}} {{currencyCode}}</div>
                                      </div>
                                      <div class="pay-breakdown__pay-bucket">
-                                        <div class="pay-breakdown__pay-bucket-label">Other</div>
-                                        <div class="pay-breakdown__pay-bucket-value">CA$10k</div>
+                                        <div class="pay-breakdown__pay-bucket-label">其他</div>
+                                        <div class="pay-breakdown__pay-bucket-value">{{annualSalesCommissions}} {{currencyCode}}</div>
                                      </div>
                                   </div>
                                </div>
@@ -121,20 +128,32 @@
                          </div>
                          <div class="widget ">
                             <div class="pay-range">
-                               <h2 class="pay-range__header">You vs. The Market</h2>
+                               <h2 class="pay-range__header">你和市场的比较</h2>
                                <div class="pay-range__content">
                                   <div class="pay-range__median-diff">
-                                     <span class="pxl-tooltip  pay-range__tooltip" data-tip="Range includes salary, bonus and other factors that may affect your compensation. The chart displays 10th (Low), 25th, 50th (Median), 75th, and 90th (High) percentile values." data-for="range" currentitem="false">Market Range<span class="icon-reverse icon-circle"><i class="icon-info"></i></span></span>
-                                     <div class="pay-range__median-diff-text"><span class="pay-range__median-diff-range">CA$55k - CA$93k</span></div>
+                                     <span class="pxl-tooltip  pay-range__tooltip" data-tip="Range includes salary, bonus and other factors that may affect your compensation. The chart displays 10th (Low), 25th, 50th (Median), 75th, and 90th (High) percentile values." data-for="range" currentitem="false">
+                                        市场范围
+                                        <!--
+                                        <span class="icon-reverse icon-circle"><i class="icon-info"></i></span>
+                                        -->
+                                    </span>
+                                     <div class="pay-range__median-diff-text">
+                                        <span class="pay-range__median-diff-range" *ngIf="min > 0 && max > 0">{{min}} - {{max}}</span>
+                                        <span class="pay-range__median-diff-range" *ngIf="min == 0 && max == 0 && avg > 0">{{avg}}</span>
+                                     </div>
                                      <div class="median-diff">
-                                        <div>Your Difference from Median</div>
-                                        <div class="median-diff__text"><span class="arrow-indicator--up">▲</span>CA$34k</div>
+                                        <div>你与中位数的差别</div>
+                                        <div class="median-diff__text">
+                                           <span class="arrow-indicator--up" *ngIf="totalPay > avg">▲</span>
+                                           <span class="arrow-indicator--down" *ngIf="totalPay < avg">▼</span>
+                                           {{difference}}
+                                        </div>
                                      </div>
                                   </div>
                                   <div class="pay-range__section">
                                      <div class="pay-range__chart">
                                         <div id="percentile-chart-container">
-                                           <div class="percentile-chart__pay-tooltip-end" style="left: 100%; transform: translate(-100%);">You: CA$106k</div>
+                                           <div class="percentile-chart__pay-tooltip-end" style="left: 100%; transform: translate(-100%);">你的收入: {{totalPay}} {{currencyCode}}</div>
                                            <div class="percentile-chart ">
                                               <div class="percentile-chart__edge">
                                                  <div class="percentile-chart__edge-bar-low">
@@ -153,7 +172,7 @@
                                                  <div class="percentile-chart__low-bar"></div>
                                                  <div class="percentile-chart__label">
                                                     <div>10%</div>
-                                                    <div>CA$55k</div>
+                                                    <div>{{min}}</div>
                                                  </div>
                                               </div>
                                               <div class="percentile-chart__middle">
@@ -171,8 +190,8 @@
                                                  <div class="percentile-chart__label--median">
                                                     <div class="percentile-chart__label percentile-chart__label--quartile"></div>
                                                     <div class="percentile-chart__label">
-                                                       <div>MEDIAN</div>
-                                                       <div class="percentile-chart__median">CA$72k</div>
+                                                       <div>中位数</div>
+                                                       <div class="percentile-chart__median">{{avg}}</div>
                                                     </div>
                                                     <div class="percentile-chart__label percentile-chart__label--quartile"></div>
                                                  </div>
@@ -181,7 +200,7 @@
                                                  <div class="percentile-chart__high-bar"></div>
                                                  <div class="percentile-chart__label">
                                                     <div>90%</div>
-                                                    <div>CA$93k</div>
+                                                    <div>{{max}}</div>
                                                  </div>
                                               </div>
                                               <div class="percentile-chart__edge">
@@ -200,9 +219,11 @@
                                            </div>
                                         </div>
                                      </div>
+                                     <!--
                                      <div class="pay-range__chart-description">
                                         <div class="pay-range__comparison">You're making <span class="pay-range__bold">more money than 100%</span> of people like you.</div>
                                      </div>
+                                     -->
                                   </div>
                                </div>
                             </div>

@@ -55,10 +55,10 @@
                                <div class="reports--desktop">
                                   <a class="report__container" *ngFor="let survey of surveys">
                                      <div class="report" [ngClass]="survey == selectedSurvey ? 'report--active' : ''" (click)="select(survey)">
-                                        <div class="report__title">{{survey.job.namet.zh}}</div>
+                                        <div class="report__title">{{survey.job?.namet.zh}}</div>
                                         <div class="report__details">
                                            <div class="report__exp"><i class="icon-calendar"></i>{{survey.years}} 年</div>
-                                           <div class="report__location"><i class="icon-location"></i>{{survey.city.namet.zh}}</div>
+                                           <div class="report__location"><i class="icon-location"></i>{{survey.city?.namet.zh}}</div>
                                         </div>
                                         <div class="report__type">{{survey.type}}</div>
                                      </div>
@@ -67,10 +67,10 @@
                                <div class="reports--mobile">
                                   <a class="report__container"  *ngFor="let survey of surveys">
                                      <div class="report" [ngClass]="survey == selectedSurvey ? 'report--active' : ''" (click)="select(survey)">
-                                        <div class="report__title">{{survey.job.namet.zh}}</div>
+                                        <div class="report__title">{{survey.job?.namet.zh}}</div>
                                         <div class="report__details">
                                            <div class="report__exp"><i class="icon-calendar"></i>{{survey.years}} 年</div>
-                                           <div class="report__location"><i class="icon-location"></i>{{survey.city.namet.zh}}</div>
+                                           <div class="report__location"><i class="icon-location"></i>{{survey.city?.namet.zh}}</div>
                                         </div>
                                         <div class="report__type">{{survey.type}}</div>
                                      </div>
@@ -88,9 +88,9 @@
                                      <div><a class="report-summary__edit-url" href="/my/survey/edit?start&amp;originalSurveyId=1d792eab-5203-48ba-ac76-bfa8e05a4324"><i class="report-summary__url-icon icon-pencil"></i>Edit</a><a class="report-summary__download"><i class="report-summary__url-icon icon-print"></i>Print</a></div>
                                   </div>
                                   <div class="report-summary__profile">
-                                     <h2 class="report-summary__header">{{selectedSurvey.job.namet.zh}}</h2>
+                                     <h2 class="report-summary__header">{{selectedSurvey.job?.namet.zh}}</h2>
                                      <div class="report-summary__facts">
-                                        <div class="report-summary__fact"><i class="icon-location"></i>{{selectedSurvey.city.namet.zh}}</div>
+                                        <div class="report-summary__fact"><i class="icon-location"></i>{{selectedSurvey.city?.namet.zh}}</div>
                                         <span class="report-summary__spacer">|</span>
                                         <div class="report-summary__fact"><i class="icon-calendar"></i>{{selectedSurvey.years}} 年</div>
                                      </div>
@@ -653,7 +653,7 @@
                          <div class="widget ">
                             <div class="gender-comparison">
                                <h2 class="gender-comparison__header">不同工作经验的薪酬对比</h2>
-                               <p class="gender-comparison__copy">比较{{selectedSurvey.city.namet.zh}}的软件开发人员按经验年数的薪酬差异。
+                               <p class="gender-comparison__copy">比较{{selectedSurvey.city?.namet.zh}}的软件开发人员按经验年数的薪酬差异。
                                   <!--
                                   Learn more
                                   about the <a href="/data/gender-pay-gap?tk=mypayscale" target="_blank">gender pay gap</a>.

@@ -31,7 +31,7 @@
                             </div>
                          </a>
                       </div>
-                      <a class="dashboard-nav__cta-primary">新报告</a>
+                      <a class="dashboard-nav__cta-primary" [routerLink]="'/survey/choose'">新报告</a>
                       <div class="dashboard-nav__links-container--desktop"></div>
                       <div class="dashboard-nav__collapse "><i class="icon-left-open"></i></div>
                    </div>
@@ -44,7 +44,7 @@
                          </div>
                          <div class="navigation__reports">
                             <div class="navigation__search"><input class=" pxl-form-control" type="text" id="reportssearch" placeholder="Search reports" tabindex="0" value=""></div>
-                            <button id="addNewReport" class="navigation__button navigation__button--wide">添加新报告</button>
+                            <button id="addNewReport" [routerLink]="'/survey/choose'" class="navigation__button navigation__button--wide">添加新报告</button>
                             <div class="navigation__summary">
                                <div class="navigation__summary-reports">
                                   <div class="navigation__summary-detail">剩余份数: <span class="navigation__summary-value">{{remaining}}</span></div>
@@ -241,20 +241,24 @@
                                      </div>
                                   </div>
                                </div>
-                               <h2 class="variable-pay-range__header">Your Variable Pay</h2>
+                               <h2 class="variable-pay-range__header">你的可变收入</h2>
                                <div class="variable-pay-range__tabs">
                                   <div class="tabs-container">
                                      <div class="tabs-container__tabs undefined">
-                                        <div class="tab tab--selected " role="button" tabindex="0"><span class="tab__name">Bonus</span></div>
-                                        <div class="tab " role="button" tabindex="0"><span class="tab__name">Profit Sharing</span></div>
+                                        <div class="tab" [ngClass]="selectedTab=='bonus' ? 'tab--selected' : ''" (click)="changeTab('bonus')">
+                                           <span class="tab__name">奖金</span>
+                                        </div>
+                                        <div class="tab" [ngClass]="selectedTab=='profitSharing' ? 'tab--selected' : ''" (click)="changeTab('profitSharing')">
+                                           <span class="tab__name">分红</span>
+                                        </div>
                                      </div>
                                   </div>
                                </div>
-                               <div class="variable-pay-range__screen-view">
+                               <div class="variable-pay-range__screen-view" *ngIf="variablePay">
                                   <div class="variable-pay-range__chart">
                                      <div class="range-chart-container">
                                         <div id="percentile-chart-container">
-                                           <div class="percentile-chart__pay-tooltip" style="left: 78%; transform: translate(-50%);">You: CA$6k</div>
+                                           <div class="percentile-chart__pay-tooltip" style="left: 78%; transform: translate(-50%);">你的收入: {{yourVariablePay}}</div>
                                            <div class="percentile-chart ">
                                               <div class="percentile-chart__edge">
                                                  <div class="percentile-chart__edge-bar-low">
@@ -273,7 +277,7 @@
                                                  <div class="percentile-chart__low-bar"></div>
                                                  <div class="percentile-chart__label">
                                                     <div>10%</div>
-                                                    <div>CA$814.66</div>
+                                                    <div>{{variablePay.min}}</div>
                                                  </div>
                                               </div>
                                               <div class="percentile-chart__middle">
@@ -291,8 +295,8 @@
                                                  <div class="percentile-chart__label--median">
                                                     <div class="percentile-chart__label percentile-chart__label--quartile"></div>
                                                     <div class="percentile-chart__label">
-                                                       <div>MEDIAN</div>
-                                                       <div class="percentile-chart__median">CA$3k</div>
+                                                       <div>中位数</div>
+                                                       <div class="percentile-chart__median">{{variablePay.avg}}</div>
                                                     </div>
                                                     <div class="percentile-chart__label percentile-chart__label--quartile"></div>
                                                  </div>
@@ -301,7 +305,7 @@
                                                  <div class="percentile-chart__high-bar"></div>
                                                  <div class="percentile-chart__label">
                                                     <div>90%</div>
-                                                    <div>CA$8k</div>
+                                                    <div>{{variablePay.max}}</div>
                                                  </div>
                                               </div>
                                               <div class="percentile-chart__edge">
@@ -321,9 +325,11 @@
                                         </div>
                                      </div>
                                   </div>
+                                  <!--
                                   <div class="variable-pay-range__description">Your bonus is higher than 78% of people like you</div>
                                   <a class="variable-pay-range__faq">Why am I being paid more or less than other typical employees in the same role?</a>
-                               </div>
+                               -->
+                              </div>
                                <div class="variable-pay-range__print-view">
                                   <div>
                                      <div class="variable-pay-range__print-view__subtitle">Bonus</div>
@@ -350,7 +356,7 @@
                                                        <div class="percentile-chart__low-bar"></div>
                                                        <div class="percentile-chart__label">
                                                           <div>10%</div>
-                                                          <div>CA$814.66</div>
+                                                          <div>CA$8145.66</div>
                                                        </div>
                                                     </div>
                                                     <div class="percentile-chart__middle">
@@ -482,6 +488,7 @@
                                </div>
                             </div>
                          </div>
+                         <!--
                          <div class="widget ">
                             <div class="market-worth">
                                <h2>Your Market Worth Over Time</h2>
@@ -642,12 +649,18 @@
                                </div>
                             </div>
                          </div>
+                        -->
                          <div class="widget ">
                             <div class="gender-comparison">
-                               <h2 class="gender-comparison__header">Pay By Experience Level, By Gender</h2>
-                               <p class="gender-comparison__copy">Compare pay difference by years of experience and gender for a typical Software Developer in Toronto, Ontario. Learn more
+                               <h2 class="gender-comparison__header">不同工作经验的薪酬对比</h2>
+                               <p class="gender-comparison__copy">比较{{selectedSurvey.city.namet.zh}}的软件开发人员按经验年数的薪酬差异。
+                                  <!--
+                                  Learn more
                                   about the <a href="/data/gender-pay-gap?tk=mypayscale" target="_blank">gender pay gap</a>.
+                                  -->
                                </p>
+                               <app-chart *ngIf="pays" [pays]="pays"></app-chart>
+                               <!--
                                <div class="gender-comparison__chart-parent" style="width: 100%; height: 100%;">
                                   <div style="position: relative; width: inherit; height: inherit;">
                                      <div class="line-chart line-chart--legend-top" style="max-width: 826px; max-height: 300px;">
@@ -793,11 +806,13 @@
                                      </div>
                                   </div>
                                </div>
+                              -->
                             </div>
                          </div>
                          <div class="widget widget--sm "></div>
                          <div class="widget widget--sm "></div>
                          <div class="widget widget--sm "></div>
+                         <!--
                          <div class="widget next-steps__widget">
                             <div class="next-steps">
                                <div class="next-steps__header">Next Steps</div>
@@ -808,6 +823,7 @@
                                <a class="next-steps__button" href="/mypayscale.aspx?tab=personal&amp;view=advice&amp;surveyId=1d792eab-5203-48ba-ac76-bfa8e05a4324">View Advice</a>
                             </div>
                          </div>
+                         -->
                       </div>
                    </div>
                 </div>

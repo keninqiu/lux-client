@@ -26,8 +26,31 @@ export class ReportComponent implements OnInit {
   annualBonus: number;
   annualSalesCommissions: number;
   difference: number;
+
+  variablePay: any;
+  yourVariablePay: number;
+  selectedTab: string;
+  pays: any;
   constructor(private surveyServ: SurveyService) { }
 
+  changeTab(tab: string) {
+    this.selectedTab = tab;
+    const compensation = this.selectedSurvey.job?.compensation;
+    if(compensation) {
+      if(tab == 'bonus') {
+        if(compensation.bonus) {
+          this.variablePay = compensation.bonus;
+        }
+        this.yourVariablePay = this.selectedSurvey.annualBonus;
+      }
+      if(tab == 'profitSharing') {
+        if(compensation.profitSharing) {
+          this.variablePay = compensation.profitSharing;
+        }
+        this.yourVariablePay = this.selectedSurvey.profitShare;
+      }
+    }
+  }
   ngOnInit(): void {
     this.min = 0;
     this.max = 0;
@@ -41,6 +64,7 @@ export class ReportComponent implements OnInit {
         this.selectedSurvey = ret[0];
         this.remaining = 5 - this.surveys.length;
         this.getSurveyDetail();
+
       }
     );
   }
@@ -63,6 +87,8 @@ export class ReportComponent implements OnInit {
     this.totalPay = this.baseSalary + this.annualBonus + this.annualSalesCommissions;
     const compensation = survey.job?.compensation;
     if(compensation) {
+
+      
       const total = compensation.total;
       if(total) {
         if(total.min) {
@@ -78,5 +104,17 @@ export class ReportComponent implements OnInit {
       }
 
     }
+
+    const experience = survey.job?.byDimension?.experience;
+    if(experience) {
+      this.pays = [
+        experience.entryLevel.avg,
+        experience.earlyCareer.avg,
+        experience.midCareer.avg,
+        experience.lateCareer.avg,
+        experience.experienced.avg
+      ];
+    }
+    this.changeTab('bonus');
   }
 }

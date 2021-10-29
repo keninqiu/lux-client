@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertModule } from './../_alert';
+import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { LayoutModule } from '../layout/layout.module';
 import { SurveyRoutingModule } from './survey-routing.module';
@@ -23,6 +24,7 @@ import { RadioComponent } from './components/radio/radio.component';
 import { SelectComponent } from './components/select/select.component';
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { ChartComponent } from './report/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +41,11 @@ import { SwitchComponent } from './components/switch/switch.component';
     OptionalResearchQuestionsComponent, 
     ReportComponent, 
     PriceAJobComponent, 
-    DetailsComponent, CardComponent, RadioComponent, SelectComponent, MultiSelectComponent, SwitchComponent],
+    DetailsComponent, CardComponent, RadioComponent, SelectComponent, MultiSelectComponent, SwitchComponent, ChartComponent],
   imports: [
     CommonModule,
     LayoutModule,
+    ChartsModule,
     AlertModule,
     FormsModule,
     SurveyRoutingModule
